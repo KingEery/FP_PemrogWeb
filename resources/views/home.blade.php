@@ -51,8 +51,5 @@
               <img src="image/buildwebsite.png" alt="">
           </div>
 </section>
-
-  
-  </section>
 </body>
 </html>
