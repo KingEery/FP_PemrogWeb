@@ -7,7 +7,7 @@
     outline: none;
     scroll-behavior: smooth;
     font-family: "Poppins",sans-serif;
-  } 
+  }
   :root{
     --bg-color: #116CFF;
     --second-bg-color: #FFFFFF;
@@ -49,7 +49,7 @@
     font-size: 1.8rem;
     color: var(--bg-color);
     margin-left: 4rem;
-    font-weight: bold; 
+    font-weight: bold;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
   }
@@ -108,7 +108,7 @@
     color: #FFCF2D;
   }
   .logo span{
-      color: var(--main-color); 
+      color: var(--main-color);
   }
   .home-content h3{
       margin-bottom: 2rem;
@@ -132,7 +132,7 @@
     border-radius: 5%;
     box-shadow: 0 0 25px var(--second-bg-color);
     cursor: pointer;
-    transition: 0.4s ease-in-out; 
+    transition: 0.4s ease-in-out;
   }
   .hi-img img:hover{
     box-shadow: 0 0 25px var(--second-bg-color),
@@ -291,7 +291,7 @@
   border-radius: 5%;
   box-shadow: 0 0 25px var(--second-bg-color);
   cursor: pointer;
-  transition: 0.4s ease-in-out; 
+  transition: 0.4s ease-in-out;
   }
   .hi-img img:hover{
   box-shadow: 0 0 25px var(--second-bg-color),
@@ -305,4 +305,4 @@
   max-width: 1000px;
   margin-top: 1.5rem;
   color: var(--text-color);
-  } 
+  }
