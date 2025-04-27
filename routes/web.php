@@ -11,3 +11,8 @@ Route::get('home', function () {
 
 
 });
+
+use App\Http\Controllers\Auth\RegisterController;
+
+Route::get('/register', [RegisterController::class, 'show']);
+
