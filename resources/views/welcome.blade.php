@@ -19,6 +19,8 @@
       <a href="#class">Class</a>
       <a href="#ouractivity">Our Activity</a>
       <a href="#contactus" >Contact Us</a>
+      <a href="#contactus" >Course</a>
+
     </nav>
     <nav class="navbar1">
       <a href="#login" class="login">Login</a>
