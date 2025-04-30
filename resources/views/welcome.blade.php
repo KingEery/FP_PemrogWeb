@@ -20,7 +20,6 @@
       <a href="#ouractivity">Our Activity</a>
       <a href="#contactus" >Contact Us</a>
       <a href="<?php echo route('course'); ?>">Course</a>
-
     </nav>
     <nav class="navbar1">
       <a href="#login" class="login">Login</a>
@@ -33,7 +32,6 @@
         <span class="txt1">Bukan Sulit!</span>
         <h3 class="text-animation"><span class="animate"></span></h3>
         <p>Belajar ngoding dari nol dengan cara yang seru, kerjain berbagai proyek praktis yang bikin kamu makin jago, dan dapetin sertifikat keren untuk memperkuat portofoliomu serta buka peluang karier di dunia teknologi!</p>
-
             <div class="btn-group">
                 <a href="#" class="btn">Ayo mulai</a>
                 <a href="#" class="btn">Lihat selengkapnya</a>
