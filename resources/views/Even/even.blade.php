@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ asset('css1/even.css') }}">
+
   <title>ITQOM - Event Page</title>
 
 </head>
@@ -36,7 +38,7 @@
       </div>
     </div>
     <div class="hero-border">
-      <img class="hero-image" src="images.jpg" alt="Event Image" />
+      <img class="hero-image" src="image/devfest-stockholm.png" alt="Event Image" />
     </div>
   </section>
 
@@ -54,7 +56,7 @@
 
     <div class="event-cards">
       <div class="card">
-        <img src="images.jpg" alt="DevFest Jakarta">
+        <img src="image/devfest-stockholm.png" alt="DevFest Jakarta">
         <div class="card-body">
           <h3>DevFest Jakarta</h3>
           <p>1 Oktober 2023 • Jakarta</p>
@@ -62,7 +64,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="images.jpg" alt="DevFest Bandung">
+        <img src="image/devfest-stockholm.png" alt="DevFest Bandung">
         <div class="card-body">
           <h3>DevFest Bandung</h3>
           <p>5 Oktober 2023 • Bandung</p>
@@ -70,7 +72,7 @@
         </div>
       </div>
       <div class="card">
-        <img src="images.jpg" alt="DevFest Surabaya">
+        <img src="image/devfest-stockholm.png" alt="DevFest Surabaya">
         <div class="card-body">
           <h3>DevFest Surabaya</h3>
           <p>10 Oktober 2023 • Surabaya</p>
@@ -78,25 +80,25 @@
         </div>
       </div>
       <div class="card">
-        <img src="images.jpg" alt="Meetup JS Indonesia">
+        <img src="image/devfest-stockholm.png" alt="DevFest Yogyakarta">
         <div class="card-body">
-          <h3>Meetup JS Indonesia</h3>
+          <h3>DevFest Yogyakarta</h3>
           <p>15 Oktober 2023 • Online</p>
           <a href="#">Gratis</a>
         </div>
       </div>
       <div class="card">
-        <img src="images.jpg" alt="React Conf Indonesia">
+        <img src="image/devfest-stockholm.png" alt="DevFest Semarang">
         <div class="card-body">
-          <h3>React Conf Indonesia</h3>
-          <p>20 Oktober 2023 • Yogyakarta</p>
+          <h3>DevFest Semaranga</h3>
+          <p>20 Oktober 2023 • Semarang</p>
           <a href="#">Gratis</a>
         </div>
       </div>
       <div class="card">
-        <img src="images.jpg" alt="Flutter Festival">
+        <img src="image/devfest-stockholm.png" alt="DevFest Medan">
         <div class="card-body">
-          <h3>Flutter Festival</h3>
+          <h3>DevFest Medan</h3>
           <p>25 Oktober 2023 • Medan</p>
           <a href="#">Gratis</a>
         </div>
@@ -107,9 +109,9 @@
   <footer>
     <div class="footer-content">
       <div class="footer-info">
-        <div class="footer-logo">
-          <div style="display: flex; align-items: center;">
-            <div style="background-color: white; color: #051b47; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 10px; font-weight: bold;">IT</div>
+        <div class="footer-itqm">
+          <div class="footer-logo_text">
+            <div class="footer-logo">IT</div>
             <span style="font-weight: bold; font-size: 1.2rem;">ITQOM</span>
           </div>
         </div>
