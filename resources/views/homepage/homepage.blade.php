@@ -20,10 +20,10 @@
 
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#class">Class</a></li>
+      <li><a href="/class">Class</a></li>
       <li><a href="/mentoring">Mentoring</a></li>
       <li><a href="/course">Course</a></li>
-      <li><a href="#event">Event</a></li>
+      <li><a href="/event">Event</a></li>
 
     </ul>
    
