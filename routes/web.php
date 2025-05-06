@@ -29,6 +29,11 @@ Route::get('/mentoring', function () {
     return view('mentoring.mentoring');
 })->name('mentoring');
 
+Route::get('/course_description', function () {
+    return view('course.course_description');
+})->name('course_description');
+
+
 // ----------- AUTH ROUTES -------------
 Route::get('/register', [RegisterController::class, 'show'])->name('register.form');
 
