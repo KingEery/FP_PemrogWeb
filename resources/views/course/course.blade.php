@@ -46,6 +46,7 @@
 
         <!-- Kartu Kursus -->
         <div class="col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
             @for ($i = 0; $i < 6; $i++)
                 @include('course.card_sell', [
                     'title' => 'Laravel 12 Mastery',
