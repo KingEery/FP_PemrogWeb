@@ -6,7 +6,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view(view: 'homepage');
+=======
+    return view('homepage.homepage');
+>>>>>>> 9808261588fa8ab53c72718e38f383e700358b04
 });
 
 Route::get('/home', function () {
