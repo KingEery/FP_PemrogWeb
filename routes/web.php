@@ -6,7 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage.homepage');
 });
 
 Route::get('/home', function () {
