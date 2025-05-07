@@ -1,19 +1,47 @@
-@extends('layout.app')
+@extends('layout.headfoot')
 
 @section('content')
 
     <!-- Hero Section -->
-    <section id="home" class="bg-indigo-600 text-white py-16 px-6 md:flex md:items-center md:justify-between">
-        <div class="md:w-1/2 mb-8 md:mb-0">
-            <h2 class="text-3xl font-bold mb-4">Buka Potensimu!</h2>
-            <p class="mb-6">Telusuri kursus menarik dan interaktif bersama kami.</p>
-            <div class="space-x-4">
-                <a href="#" class="bg-white text-indigo-600 px-4 py-2 rounded hover:bg-gray-100">Get Started</a>
-                <a href="#" class="border border-white px-4 py-2 rounded hover:bg-white hover:text-indigo-600">Learn More</a>
+    <section id="home" class="bg-indigo-900 text-white py-16 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+            <!-- Teks Hero -->
+            <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+                <h2 class="text-4xl font-bold mb-4 leading-tight">Buka Potensimu!</h2>
+                <p class="mb-6 text-lg text-gray-300">Telusuri kursus menarik dan interaktif bersama kami.</p>
+                <div class="space-x-4">
+                    <a href="#" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Get Started
+                    </a>
+                    <a href="#" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
+                        Learn More
+                    </a>
+                </div>
             </div>
-        </div>
-        <div class="md:w-1/2">
-            <iframe class="rounded-xl w-full" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+
+            <!-- Slider Gambar -->
+            <div class="md:w-1/2 flex justify-center mt-12">
+                <div class="swiper mySwiper w-full max-w-md md:max-w-lg">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/noomore.png') }}" alt="Slide 3" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <!-- Navigasi -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -60,6 +88,28 @@
         </div>
     </section>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/coursejs.js"></script>
+    <script>
+        const swiper = new Swiper('.mySwiper', {
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true,
+            },
+        });
+    </script>
 
 @endsection
