@@ -33,6 +33,9 @@ Route::get('/course_description', function () {
     return view('course.course_description');
 })->name('course_description');
 
+Route::get('/payment', function() {
+    return view('payment.payment');
+})->name('payment');
 
 // ----------- AUTH ROUTES -------------
 Route::get('/register', [RegisterController::class, 'show'])->name('register.form');
