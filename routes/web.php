@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\LoginController; 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
+use App\Http\Controllers\PaymentController;
 
 Route::get('/', function () {
     return view('homepage.homepage');
@@ -32,6 +33,11 @@ Route::get('/mentoring', function () {
 Route::get('/course_description', function () {
     return view('course.course_description');
 })->name('course_description');
+
+
+Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
+Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
+
 
 
 // ----------- AUTH ROUTES -------------
