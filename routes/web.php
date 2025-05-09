@@ -34,6 +34,9 @@ Route::get('/course_description', function () {
     return view('course.course_description');
 })->name('course_description');
 
+Route::get('/payment', function() {
+    return view('payment.payment');
+})->name('payment');
 
 Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
 Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
