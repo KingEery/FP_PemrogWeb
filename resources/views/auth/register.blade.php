@@ -71,7 +71,7 @@
         <!-- Gambar kanan -->
         <div class="hidden md:block w-1/2 bg-primaryLight flex items-center justify-center">
             <div class="text-center">
-                <img src="/image/engas.jpg" alt="no more" class="w-70 h-80 object-cover rounded-lg shadow-md">
+                <img src="/image/hajisodikin.jpg" alt="no more" class="w-70 h-80 object-cover rounded-lg shadow-md">
                 <p class="mt-4 text-primaryDark font-semibold">Welcome to Our Community!</p>
             </div>
         </div>

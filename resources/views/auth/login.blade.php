@@ -24,7 +24,7 @@
         <!-- Gambar kiri -->
         <div class="hidden md:flex w-1/2 bg-primaryDark items-center justify-center">
             <div class="text-center">
-                <img src="/image/engas.jpg" alt="welcome" class="w-60 h-60 object-cover rounded-lg shadow-md">
+                <img src="/image/hajisodikin.jpg" alt="welcome" class="w-60 h-60 object-cover rounded-lg shadow-md">
                 <p class="mt-4 text-white font-semibold">Welcome Back!</p>
             </div>
         </div>

@@ -64,75 +64,7 @@
                     info@itqom.co.id
                 </div>
             </div>
-            <div class="min-w-[150px]">
-                <h4
-                    class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">
-                    Company</h4>
-                <ul class="list-none">
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">About</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Contact</a>
-                    </li>
-                    <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">FAQ</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Partners</a></li>
-                </ul>
-            </div>
-            <div class="min-w-[150px]">
-                <h4
-                    class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">
-                    Our Class</h4>
-                <ul class="list-none">
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Beginner
-                            Class</a></li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Intermediate Class</a></li>
-                    <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Expert
-                            Class</a></li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Bootcamp</a></li>
-                </ul>
-            </div>
-            <div class="min-w-[150px]">
-                <h4
-                    class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">
-                    Information</h4>
-                <ul class="list-none">
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Registration</a></li>
-                    <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Free
-                            Trial
-                            Class</a></li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Teacher</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Scholarship</a></li>
-                </ul>
-            </div>
-            <div class="min-w-[150px]">
-                <h4
-                    class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">
-                    Our Activity</h4>
-                <ul class="list-none">
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Gallery</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Events</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Blog</a>
-                    </li>
-                    <li class="mb-3"><a href="#"
-                            class="text-sm opacity-80 hover:opacity-100 transition-opacity">Community</a></li>
-                </ul>
-            </div>
-        </div>
+            <img src="public/logo.png" alt="tes">
     </footer>
 
 </body>
