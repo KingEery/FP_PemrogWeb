@@ -1,105 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-            colors: {
-                primary: {
-                DEFAULT: '#564AB1',
-                dark: '#4739AA',
-                light: '#5e4dc9',
-                lighter: '#f2eeff',
-                lightest: '#f0ebff',
-                },
-                navy: '#051b47',
-            }
-            }
-        }
-    }
-    </script>
-</head>
-<body>
-<header class="bg-primary shadow-md px-[5%] py-5 flex justify-between items-center text-white">
-    <div class="text-2xl font-bold flex items-center">
-      ITQOM
-    </div>
-    <nav>
-      <ul class="flex">
-        <li class="mx-5"><a href="#" class="font-medium hover:text-gray-100 relative pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Home</a></li>
-        <li class="mx-5"><a href="#" class="font-medium hover:text-gray-100 relative pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Class</a></li>
-        <li class="mx-5"><a href="#" class="font-medium hover:text-gray-100 relative pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Event</a></li>
-        <li class="mx-5"><a href="#" class="font-medium hover:text-gray-100 relative pb-1 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Mentoring</a></li>
-      </ul>
-    </nav>
-    <div class="flex gap-3">
-      <button class="px-5 py-2 rounded border border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Sign Up</button>
-      <button class="px-5 py-2 rounded bg-white text-primary-light font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Login</button>
-    </div>
-  </header>
+@extends('layout.headfoot')
 
+@section('content')
 
-
-  <footer class="bg-navy text-white px-[5%] py-14 mt-auto">
-    <div class="flex flex-wrap gap-12 justify-between">
-      <div class="flex-1 max-w-[300px]">
-        <div class="mb-6">
-          <div class="flex items-center">
-            <div class="bg-white text-navy w-7 h-7 rounded flex items-center justify-center mr-2.5 font-bold">IT</div>
-            <span class="font-bold text-xl">ITQOM</span>
-          </div>
+    <section class="bg-gray-100 text-gray-800 font-sans">
+        <div class="max-w-7xl mx-auto px-4 py-5">
+            <div class="mb-5">
+                <h1 class="text-3xl md:text-4xl font-bold text-black-900 mb-5">Acara & Konferensi Developer - Google for Developer</h1>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-6">
+            
+                <div class="md:w-2/3">
+                    <div>
+                        <img src="image/devfest-stockholm.png" alt="DevFest Conference" class="w-full h-96 rounded-xl object-cover">
+                        <div class="mt-4 p-3">
+                             <span class="inline-block bg-[#564AB1] text-white px-7 py-3 rounded-full text-sm font-medium">Web Programming</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <h3 class="text-xl font-semibold text-purple-600 mb-4">Overview</h3>
+                        <p class="mb-3">DevFest adalah konferensi komunitas teknologi yang diselenggarakan oleh Google Developer Groups (GDG) di seluruh dunia. Acara ini menawarkan kesempatan untuk mempelajari teknologi Google terbaru.</p>
+                        <p>Bergabunglah dengan kami untuk sesi interaktif yang dipimpin oleh pakar industri, workshop hands-on, dan kesempatan networking.</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <h3 class="text-xl font-semibold text-purple-600 mb-4">What you'll learn</h3>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2">Pemrograman web terkini dengan teknologi Google</li>
+                            <li class="mb-2">Pengembangan aplikasi Android dengan Kotlin</li>
+                            <li class="mb-2">Cloud computing dan teknologi Google Cloud Platform</li>
+                            <li class="mb-2">Machine Learning dan TensorFlow</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <h3 class="text-xl font-semibold text-purple-600 mb-4">Term And Condition</h3>
+                        <p class="mb-3">Dengan mendaftar pada acara ini, peserta menyetujui ketentuan berikut:</p>
+                        <ul class="list-disc pl-5">
+                            <li class="mb-2">Peserta wajib hadir minimal 15 menit sebelum acara dimulai</li>
+                            <li class="mb-2">Sertifikat hanya diberikan kepada peserta yang mengikuti acara hingga selesai</li>
+                            <li class="mb-2">Materi yang dibagikan tidak boleh diperjualbelikan</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <div class="bg-white rounded-lg p-5 border border-gray-200">
+                        <h2 class="text-2xl font-bold text-black-900 mb-1">Free</h2>
+                        <p class="text-gray-500 line-through text-base mb-4">Rp. 200.000</p>
+                        <a href="#" class="block bg-[#564AB1] text-white text-center py-3 px-4 rounded-lg font-bold no-underline w-full">Daftar Event</a>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mr-4">
+                                <svg viewBox="0 0 24 24" width="24" height="24" class="text-gray-500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="10" r="4"></circle>
+                                    <path d="M12,14 C8,14 4,16 4,19 L4,20 L20,20 L20,19 C20,16 16,14 12,14 Z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-black-900 m-0">Yafa Nanda Putra</h4>
+                                <p class="text-gray-500 text-sm m-0">Software Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <h3 class="text-xl font-semibold text-[#564AB1] mb-4">Event Information</h3>
+                        
+                        <div class="flex mb-4 ps-6">
+                            <div>
+                                <h4 class="text-base font-medium text-blue-900 m-0 mb-2">Tanggal</h4>
+                                <p class="text-gray-500 m-0 mb-1">20 November 2025</p>
+                                <p class="text-gray-500 m-0 mb-1">21 November 2025</p>
+                                <p class="text-gray-500 m-0 mb-1">22 November 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4 ps-6">
+                            <div>
+                                <h4 class="text-base font-medium text-[#564AB1] m-0 mb-2">Waktu</h4>
+                                <p class="text-gray-500 m-0 mb-1">12.20 WIB - 15.20 WIB</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex mb-4 ps-6">
+                            <div>
+                                <h4 class="text-base font-medium text-blue-900 m-0 mb-2">Lokasi</h4>
+                                <p class="text-gray-500 m-0 mb-1">Google Meet</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
+                        <h3 class="text-xl font-semibold text-[#564AB1] mb-4">This Event Includes</h3>
+                        
+                        <div class="flex items-center mb-3 ps-6">
+                            <div class="font-medium text-blue-900">Project File</div>
+                        </div>
+                        
+                        <div class="flex items-center mb-3 ps-6">
+                            <div class="font-medium text-blue-900">Sertifikat</div>
+                        </div>
+                        
+                        <div class="flex items-center mb-3 ps-6">
+                            <div class="font-medium text-blue-900">Slide Materi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="mt-4 text-sm opacity-80 leading-relaxed">
-          Jl. Menteng Raya No. 21, Jakarta Pusat, Indonesia 10340
-        </div>
-        <div class="mt-4 text-sm opacity-80">
-          info@itqom.co.id
-        </div>
-      </div>
-      <div class="min-w-[150px]">
-        <h4 class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">Company</h4>
-        <ul class="list-none">
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">About</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Contact</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">FAQ</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Partners</a></li>
-        </ul>
-      </div>
-      <div class="min-w-[150px]">
-        <h4 class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">Our Class</h4>
-        <ul class="list-none">
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Beginner Class</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Intermediate Class</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Expert Class</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Bootcamp</a></li>
-        </ul>
-      </div>
-      <div class="min-w-[150px]">
-        <h4 class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">Information</h4>
-        <ul class="list-none">
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Registration</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Free Trial Class</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Teacher</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Scholarship</a></li>
-        </ul>
-      </div>
-      <div class="min-w-[150px]">
-        <h4 class="mb-5 text-lg font-semibold relative pb-2.5 after:content-[''] after:absolute after:w-10 after:h-0.5 after:bg-primary-light after:left-0 after:bottom-0">Our Activity</h4>
-        <ul class="list-none">
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Gallery</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Events</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Blog</a></li>
-          <li class="mb-3"><a href="#" class="text-sm opacity-80 hover:opacity-100 transition-opacity">Community</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+    </section>
+@endsection
