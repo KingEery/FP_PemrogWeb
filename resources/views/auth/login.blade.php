@@ -23,10 +23,8 @@
     <div class="bg-white rounded-xl shadow-2xl flex w-full max-w-3xl overflow-hidden">
         <!-- Gambar kiri -->
         <div class="hidden md:flex w-1/2 bg-primaryDark items-center justify-center">
-            <div class="text-center">
-<<<<<<< HEAD
-                <img src="/image/hajisodikin.jpg" alt="welcome" class="w-60 h-60 object-cover rounded-lg shadow-md">
-=======
+            <div class="text-center"><<<<<<< HEAD
+                <img src="/image/hajisodikin.jpg" alt="welcome" class="w-60 h-60 object-cover rounded-lg shadow-md">=======
                 <dotlottie-player
                 src="https://lottie.host/da3cda18-274e-4907-b0c7-710b6d159bf2/I88cIwlTEp.lottie"
                 background="transparent"
@@ -35,7 +33,6 @@
                 loop
                 autoplay
               ></dotlottie-player>
->>>>>>> 8e82cb099e0936183e8db6aa6e83a91fbafe9c2c
                 <p class="mt-4 text-white font-semibold">Welcome Back!</p>
             </div>
         </div>
