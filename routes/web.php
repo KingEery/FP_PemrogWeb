@@ -30,9 +30,13 @@ Route::get('/mentoring', function () {
     return view('mentoring.mentoring');
 })->name('mentoring');
 
-Route::get('/course_description', function () {
-    return view('course.course_description');
-})->name('course_description');
+Route::get('/mentoring_mendaftar', function () {
+    return view('mentoring.mentoring');
+})->name('mentoring');
+
+Route::get('/mentoring_mendaftar', function () {
+    return view('mentoring.mentoring_mendaftar');
+})->name('mentoring_mendaftar');
 
 Route::get('/payment', function() {
     return view('payment.payment');
