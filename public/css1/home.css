@@ -287,5 +287,33 @@ section {
   width: 100%;
 }
 
+/* page 3 */
+
+.masking-img {
+  position: absolute;
+  height: 450px;
+  left: 450px;
+}  
+
+.masking {
+  background: transparent;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 30px 10%;
+  text-align: left;
+}
+
+.masking-text h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  max-width: 200px;
+}
+
+.masking-text p {
+  font-size: 0.5rem;
+  max-width: 150px;
+}
 
 }
