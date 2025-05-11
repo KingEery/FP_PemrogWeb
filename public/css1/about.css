@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.mentoring-buttons {
+    width: 500px;
+    z-index: 1000;
+    justify-content: up;
+    align-items: center;
+    display: flex;
+}
+
+.mentoring-btn {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid #0000;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 500;
+    color: #5b1ee3;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.3s;
+}
+
+.mentoring-btn.active {
+    background: #6f3ce9;
+    color: white;
+    border-color: #6f3ce9;
+}
+
+.mentoring-btn:hover {
+    background: #6f3ce9;
+    color: white;
+}

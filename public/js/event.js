@@ -73,3 +73,43 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('all').checked = true;
   filterEvents('all');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Fungsi untuk tombol filter saat halaman sudah dimuat sepenuhnya
+  const filterButtons = document.querySelectorAll('.bg-white.py-6 button'); // Ambil semua tombol filter dalam kontainer tertentu
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Hapus kelas 'aktif' dari semua tombol
+      filterButtons.forEach(btn => {
+        btn.classList.remove('bg-[#564AB1]', 'text-white'); // Hapus tampilan tombol yang aktif
+        btn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]'); // Tambahkan tampilan tombol default
+      });
+
+      // Tambahkan kelas 'aktif' ke tombol yang diklik
+      this.classList.remove('border-2', 'border-[#564AB1]', 'text-[#564AB1]'); // Hapus tampilan default
+      this.classList.add('bg-[#564AB1]', 'text-white'); // Tambahkan tampilan tombol aktif
+
+      // Anda bisa menambahkan logika pemfilteran di sini berdasarkan tombol yang diklik
+      const filterType = this.textContent.trim(); // Ambil teks dari tombol yang diklik sebagai tipe filter
+      console.log(`Memfilter berdasarkan: ${filterType}`); // Tampilkan ke konsol untuk debugging
+    });
+  });
+});
+
+  // Menangani tombol radio untuk gambar hero
+  const radioButtons = document.querySelectorAll('[data-slide]'); 
+  
+  radioButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Hapus kelas aktif (bg-white) dari semua tombol
+      radioButtons.forEach(b => b.classList.remove('bg-white'));
+      
+      // Tambahkan kelas aktif ke tombol yang diklik
+      this.classList.add('bg-white');
+      
+      // Opsional: Ganti gambar hero sesuai slide yang dipilih
+      const slideNumber = this.getAttribute('data-slide');
+      console.log('Slide yang dipilih:', slideNumber);
+    });
+  });

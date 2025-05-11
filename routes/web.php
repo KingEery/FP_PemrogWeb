@@ -6,13 +6,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 use App\Http\Controllers\PaymentController;
 
+
 Route::get('/', function () {
     return view('homepage.homepage');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/about_mentoring', function () {
+    return view('mentoring.about_mentoring');
+})->name('about_mentoring');
 
 Route::get('/course', function () {
     return view('course.course');
