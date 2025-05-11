@@ -38,8 +38,8 @@
     </div>
   </div>
   
-<link rel="stylesheet" href="{{ asset('css1/about.css') }}">
 
+<section class="bg-primary-light text-black px-[5%] py-16 flex justify-between items-center flex-wrap gap-8" id="about_section" data-aos="fade-up">
 <div class="about-section">
     <h1>Tentang Kami</h1>
     <p>Kami adalah platform mentoring yang menghubungkan profesional berpengalaman dengan para pembelajar dan pengembang pemula.</p>
@@ -71,8 +71,15 @@
         </div>
     </div>
 </div>
-
+</section>
 
 <script src="/js/event.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
   
 @endsection

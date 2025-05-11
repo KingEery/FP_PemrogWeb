@@ -33,29 +33,26 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 10%;
-  background:#564AB1 ;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px 5%;
+  background: #564AB1;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
   width: 140px;
-  z-index: 1000;
-  justify-content: space-between;
-  align-items: center;
-  display: flex;
-}  
-.homepage-img {
-position: absolute;
-height: 450px;
-left: 450px;
-
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   gap: 1.5rem;
+  justify-content: center;
+  flex: 1; /* Agar berada di tengah */
 }
 
 .nav-links li a {
@@ -63,6 +60,7 @@ left: 450px;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 5px 10px;
 }
 
 .nav-links li a:hover,
@@ -72,21 +70,23 @@ left: 450px;
   color: #ffda44;
 }
 
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 .auth-buttons button {
-  margin-left: 10px;
   padding: 8px 16px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
   font-weight: 500;
-  transition: 0.3s ease;
-  left : 500px;
+  transition: background-color 0.3s ease;
 }
 
 .login {
   background: #fff;
   color: var(--bg-color);
-  left: 400px;
 }
 
 .login:hover {
@@ -96,11 +96,27 @@ left: 450px;
 .signup {
   background: #ffda44;
   color: #000;
-  
 }
 
 .signup:hover {
   background: #ffd000;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
 }
 
 section {
@@ -148,333 +164,79 @@ section {
   margin-bottom: 10px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 10px;
-  }
-
-  .auth-buttons {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  section {
-    padding: 100px 5% 60px;
-  }
-  .page2 .head h1 {
-    font-size: 2rem;
-  }
-  
-  /* Animasi Transisi (Opsional) */
-  .page2 {
-    transition: background-color 0.5s ease;
-  }
-  
-  .page2:hover {
-    background-color: rgba(255, 255, 255, 0.5);  /* Efek transisi yang halus saat hover */
-  }
 
 
-.image-png {
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-png:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.image-png {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.main-section {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 5%;
-  flex: 1;
-}
-
-.section-title {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #333;
-  text-align: center;
-}
-
-.event-cards {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.8rem;
-  justify-content: center;
-}
-
-.card {
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 1.2rem;
-}
-
-.card-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-  color: #333;
-}
-
-.card-body p {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.card-body a {
-  text-decoration: none;
-  color: #5e4dc9;
-  font-weight: bold;
-  font-size: 0.95rem;
-  display: inline-block;
-  padding: 0.4rem 0;
-  position: relative;
-}
-
-.card-body a:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #5e4dc9;
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-}
-
-.card-body a:hover:after {
-  width: 100%;
-}
-
-/* page 3 */
-
-.masking-img {
-  position: absolute;
-  height: 450px;
-  left: 450px;
-}  
-
+/* Section Masking */
 .masking {
-  background: transparent;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  padding: 30px 10%;
-  text-align: left;
-}
-
-.masking-text h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  max-width: 200px;
-}
-
-.masking-text p {
-  font-size: 0.5rem;
-  max-width: 150px;
-}
-
-}
-
-/* page 2 */
-.page3 {
   background: transparent; /* Sama seperti page 1, biarkan latar belakang diatur oleh body */
   color: var(--text-color);
   padding: 100px 10%;
   min-height: 100vh;
 }
 
-.page3 .head {
-  text-align: center;
+
+.masking-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  padding: 20px;
+  gap: 40px;
+  width: 100%;
 }
 
-.page3 .head span {
-  font-size: 1.2rem;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 10px;
+.masking-text {
+  flex: 1;
+  padding: 20px;
 }
 
-/* Responsive */
+.masking-text h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.masking-text p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.masking-png {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.masking-png img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsiveness */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .masking-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+  }
+}
+
+  .masking-text {
+      margin-bottom: 20px;
   }
 
-  .nav-links {
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 10px;
+  .masking-png {
+      justify-content: center;
   }
 
-  .auth-buttons {
-    margin-top: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
+  .masking-text h1 {
+      font-size: 1.8rem;
   }
 
-  section {
-    padding: 100px 5% 60px;
-  }
-  .page3 .head h1 {
-    font-size: 2rem;
-  }
-  
-  /* Animasi Transisi (Opsional) */
-  .page3 {
-    transition: background-color 0.5s ease;
-  }
-  
-  .page3:hover {
-    background-color: rgba(255, 255, 255, 0.5);  /* Efek transisi yang halus saat hover */
+  .masking-text p {
+      font-size: 1rem;
   }
 
-
-.image-png {
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.image-png:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.image-png {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.main-section {
-  display: flex;
-  gap: 1rem;
-  padding: 1rem 5%;
-  flex: 1;
-}
-
-.section-title {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #333;
-  text-align: center;
-}
-
-.event-cards {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.8rem;
-  justify-content: center;
-}
-
-.card {
-  width: 280px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-body {
-  padding: 1.2rem;
-}
-
-.card-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-  color: #333;
-}
-
-.card-body p {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
-
-.card-body a {
-  text-decoration: none;
-  color: #5e4dc9;
-  font-weight: bold;
-  font-size: 0.95rem;
-  display: inline-block;
-  padding: 0.4rem 0;
-  position: relative;
-}
-
-.card-body a:after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: #5e4dc9;
-  left: 0;
-  bottom: 0;
-  transition: width 0.3s ease;
-}
-
-.card-body a:hover:after {
-  width: 100%;
-}
-
-
-}
