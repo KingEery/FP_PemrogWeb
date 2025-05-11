@@ -1,6 +1,8 @@
 @extends('layout.headfoot')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset (path: 'css1/home.css') }}">
+
 <!-- page 1 -->
   <section class="homepage" id="home" data-aos="fade-up">
     <div class="homepage-text">
@@ -8,7 +10,11 @@
       <p>Discover the best coding course for your kids. Learn Coding from basic</p>
     </div>
     <div class="homepage-img md:w-1/2 flex justify-center">
+<<<<<<< HEAD
         <img class = "homepage-img" src="image/homepsge-img.png "alt="">
+=======
+        <img class = "homepage-img" src="image/homepage-img.png "alt="">
+>>>>>>> 5c90b9ab8f118943931d9d47800fda09b34fd172
     </div>
   </section>
 <!-- page 2 -->
@@ -20,6 +26,7 @@
 
   <!-- page 3 -->
 
+<<<<<<< HEAD
 <!-- <div data-aos="fade-up"
 data-aos-anchor-placement="top-bottom">
 </div> -->
@@ -27,6 +34,22 @@ data-aos-anchor-placement="top-bottom">
     <div class="head">
       <span>Telah dipercaya oleh :</span>
    </div>
+=======
+  <section class="masking" id="masking">
+    <div class="masking-text">
+      <h1>Exclusive Mentoring</h1>
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+      </p>
+    </div>
+    <div class = "masking-img md:w-1/2 flex justify-center">
+    <img class = "masking-img" src="image/masking.png "alt="mentor">
+    </div>
+>>>>>>> 5c90b9ab8f118943931d9d47800fda09b34fd172
   </section>
 
   <!-- AOS JS -->
