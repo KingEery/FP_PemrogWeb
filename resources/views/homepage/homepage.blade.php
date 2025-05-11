@@ -10,11 +10,9 @@
       <p>Discover the best coding course for your kids. Learn Coding from basic</p>
     </div>
     <div class="homepage-img md:w-1/2 flex justify-center">
-<<<<<<< HEAD
         <img class = "homepage-img" src="image/homepsge-img.png "alt="">
-=======
         <img class = "homepage-img" src="image/homepage-img.png "alt="">
->>>>>>> 5c90b9ab8f118943931d9d47800fda09b34fd172
+
     </div>
   </section>
 <!-- page 2 -->
@@ -26,7 +24,7 @@
 
   <!-- page 3 -->
 
-<<<<<<< HEAD
+
 <!-- <div data-aos="fade-up"
 data-aos-anchor-placement="top-bottom">
 </div> -->
@@ -34,7 +32,7 @@ data-aos-anchor-placement="top-bottom">
     <div class="head">
       <span>Telah dipercaya oleh :</span>
    </div>
-=======
+
   <section class="masking" id="masking">
     <div class="masking-text">
       <h1>Exclusive Mentoring</h1>
@@ -49,7 +47,6 @@ data-aos-anchor-placement="top-bottom">
     <div class = "masking-img md:w-1/2 flex justify-center">
     <img class = "masking-img" src="image/masking.png "alt="mentor">
     </div>
->>>>>>> 5c90b9ab8f118943931d9d47800fda09b34fd172
   </section>
 
   <!-- AOS JS -->

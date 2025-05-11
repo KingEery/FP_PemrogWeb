@@ -28,7 +28,7 @@
         <button class="px-6 py-3 rounded-full bg-[#564AB1] text-white font-medium transition-all duration-300 hover:bg-[#473D94]">
           Exclusive Mentoring
         </button>
-        <a href="{{ route('about_mentoring') }}">
+        <a href="{{ route('about_consultan') }}">
         <button class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
           Consultan
         </button>

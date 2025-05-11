@@ -20,8 +20,24 @@
         <button type="button" class="w-3 h-3 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" data-slide="3"></button>
       </div>
     </div>
-  </section>
 
+  </section>
+  <div class="bg-white py-6 px-[5%]">
+    <div class="flex flex-wrap gap-4 justify-start">
+      <a href="{{ route('mentoring') }}">
+      <button class="px-6 py-3 rounded-full bg-[#564AB1] text-white font-medium transition-all duration-300 hover:bg-[#473D94]">
+        Exclusive Mentoring
+      </button>
+    </a>
+      <button class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
+        Consultan
+      </button>
+      <button class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
+        All Mentor
+      </button>
+    </div>
+  </div>
+  
 <link rel="stylesheet" href="{{ asset('css1/about.css') }}">
 
 <div class="about-section">

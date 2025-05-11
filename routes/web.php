@@ -11,9 +11,9 @@ Route::get('/', function () {
     return view('homepage.homepage');
 });
 
-Route::get('/about_mentoring', function () {
-    return view('mentoring.about_mentoring');
-})->name('about_mentoring');
+Route::get('/about_consultan', function () {
+    return view('mentoring.about_consultan');
+})->name('about_consultan');
 
 Route::get('/course', function () {
     return view('course.course');
