@@ -192,13 +192,13 @@ section {
 
 .masking-text h1 {
   font-size: 2.5rem;
-  color: #333;
+  color: #000;
   margin-bottom: 16px;
 }
 
 .masking-text p {
   font-size: 1.1rem;
-  color: #333;
+  color: #000;
   line-height: 1.6;
 }
 
