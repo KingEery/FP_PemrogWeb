@@ -46,25 +46,25 @@
 
     <div class="team-container">
         <div class="team-card">
-            <img src="{{ asset('images/adithya.jpg') }}" alt="Adithya">
+            <img src="{{ asset('image/adithya.jpeg') }}" alt="Adithya" class="width-32 h-32 rounded-full">
             <h3>Adithya Firmansyah Putra</h3>
             <p>Product Engineer at Zero One Group</p>
             <p>5 Tahun Pengalaman</p>
         </div>
         <div class="team-card">
-            <img src="{{ asset('images/ahmad.jpg') }}" alt="Ahmad">
+            <img src="{{ asset('image/ahmad.jpeg') }}" alt="Ahmad" class="width-32 h-32 rounded-full">
             <h3>Ahmad Alfan Juniyanto</h3>
             <p>Backend Developer at RCTI+</p>
             <p>5 Tahun Pengalaman</p>
         </div>
         <div class="team-card">
-            <img src="{{ asset('images/aldo.jpg') }}" alt="Aldo">
+            <img src="{{ asset('image/aldo.jpeg') }}" alt="Aldo" class="width-32 h-32 rounded-full">
             <h3>Aldo Wijaya</h3>
             <p>Software Engineer at Saptakarsa Prima</p>
             <p>2 Tahun Pengalaman</p>
         </div>
         <div class="team-card">
-            <img src="{{ asset('images/alfian.jpg') }}" alt="Alfian">
+            <img src="{{ asset('image/alfian.jpeg') }}" alt="Alfian" class="width-32 h-32 rounded-full">
             <h3>Alfian Luthfi</h3>
             <p>Software Engineer at Dunia Coding</p>
             <p>4 Tahun Pengalaman</p>
