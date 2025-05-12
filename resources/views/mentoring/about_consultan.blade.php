@@ -49,23 +49,6 @@
         All Mentor
       </button>
 
-    <a href="{{ route('mentoring') }}">
-      <button
-      class="px-6 py-3 rounded-full bg-[#564AB1] text-white font-medium transition-all duration-300 hover:bg-[#473D94]">
-      Exclusive Mentoring
-      </button>
-    </a>
-    <button
-      class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
-      Consultan
-    </button>
-    <button
-      class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
-      All Mentor
-    </button>
-    </div>
-  </div>
-
 
 <div class="bg-white text-black px-[5%] py-16 flex justify-between items-center flex-wrap gap-8" >
     <div class="team-container">
