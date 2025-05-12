@@ -58,6 +58,72 @@ data-aos-anchor-placement="top-bottom">
   </div>
 </section> -->
 
+<!-- page 4 -->
+<script>
+  // Data untuk setiap program mentoring
+  const programs = [
+    {
+      title: "Mentoring Web Development",
+      desc: "Belajar HTML, CSS, dan JavaScript dari dasar hingga mahir.",
+      price: "Rp 100.000"
+    },
+    {
+      title: "Mentoring UI/UX Design",
+      desc: "Pelajari prinsip desain, Figma, dan user research.",
+      price: "Rp 120.000"
+    },
+    {
+      title: "Mentoring Data Science",
+      desc: "Mulai dari analisis data hingga machine learning dengan Python.",
+      price: "Rp 150.000"
+    },
+    {
+      title: "Mentoring Mobile App",
+      desc: "Bangun aplikasi Android/iOS menggunakan Flutter.",
+      price: "Rp 130.000"
+    }
+  ];
+
+  // Container utama
+  const container = document.createElement('div');
+  container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-10";
+
+  // Loop untuk membuat setiap kartu
+  programs.forEach(program => {
+    const card = document.createElement('div');
+    card.className = "bg-white p-6 rounded-2xl shadow hover:shadow-xl transition";
+
+    const title = document.createElement('h2');
+    title.className = "text-xl font-bold mb-2";
+    title.textContent = program.title;
+
+    const desc = document.createElement('p');
+    desc.className = "text-gray-600 mb-4";
+    desc.textContent = program.desc;
+
+    const price = document.createElement('p');
+    price.className = "text-lg font-semibold text-green-600 mb-4";
+    price.textContent = program.price;
+
+    const button = document.createElement('button');
+    button.className = "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition";
+    button.textContent = "Daftar Sekarang";
+
+    // Tambahkan ke dalam kartu
+    card.appendChild(title);
+    card.appendChild(desc);
+    card.appendChild(price);
+    card.appendChild(button);
+
+    // Tambahkan kartu ke container
+    container.appendChild(card);
+  });
+
+  // Tambahkan container ke body
+  document.body.appendChild(container);
+</script>
+
+
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

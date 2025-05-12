@@ -43,6 +43,7 @@
                 <p class="mt-4 text-primaryDark font-semibold">Welcome to Our Community!</p>
             </div>
 
+
         <div>
           <label for="email" class="block mb-1 text-sm font-medium text-gray-700">Email Address</label>
           <input type="email" name="email" id="email" required
