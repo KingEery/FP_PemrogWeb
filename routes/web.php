@@ -6,13 +6,14 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 use App\Http\Controllers\PaymentController;
 
+
 Route::get('/', function () {
     return view('homepage.homepage');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/about_consultan', function () {
+    return view('mentoring.about_consultan');
+})->name('about_consultan');
 
 Route::get('/course', function () {
     return view('course.course');
@@ -41,6 +42,10 @@ Route::get('/mentoring_mendaftar', function () {
 Route::get('/payment', function() {
     return view('payment.payment');
 })->name('payment');
+
+Route::get('/learnmore', function() {
+    return view('learnmore.learnmore');
+})->name('learnmore');
 
 Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
 Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');

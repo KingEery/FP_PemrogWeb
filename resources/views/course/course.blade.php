@@ -13,7 +13,7 @@
                     <a href="#" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                         Get Started
                     </a>
-                    <a href="#" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
+                    <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
                         Learn More
                     </a>
                 </div>

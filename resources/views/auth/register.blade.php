@@ -34,20 +34,11 @@
           <input type="text" name="name" id="name" required
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryDark focus:outline-none">
         </div>
-
-<<<<<<< HEAD
-        <!-- Gambar kanan -->
-        <div class="hidden md:block w-1/2 bg-primaryLight flex items-center justify-center">
-            <div class="text-center">
-                <img src="/image/hajisodikin.jpg" alt="no more" class="w-70 h-80 object-cover rounded-lg shadow-md">
-                <p class="mt-4 text-primaryDark font-semibold">Welcome to Our Community!</p>
-            </div>
-=======
         <div>
           <label for="email" class="block mb-1 text-sm font-medium text-gray-700">Email Address</label>
           <input type="email" name="email" id="email" required
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryDark focus:outline-none">
->>>>>>> 8e82cb099e0936183e8db6aa6e83a91fbafe9c2c
+
         </div>
 
         <div>

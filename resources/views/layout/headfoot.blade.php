@@ -12,6 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
+
 </head>
 
 <body class="bg-gray-100 text-gray-800">

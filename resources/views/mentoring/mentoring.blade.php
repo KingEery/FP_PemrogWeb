@@ -6,7 +6,7 @@
       <h1 class="text-4xl font-bold mb-5 leading-tight">Get Closer with Mentoring</h1>
       <p class="mb-8 opacity-90 text-lg leading-relaxed">Nikmati pengalaman belajar yang intensif dan private melalui program Mentoring kami. Semua dilakukan secara privat dengan mentor berpengalaman, memastikan setiap sesi dirancang khusus untuk kebutuhan dan tujuanmu</p>
       <div class="flex gap-4">
-        <button class="px-7 py-3 rounded-md bg-white text-primary-light font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
+        <button class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
         <button class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</button>
       </div>
     </div>
@@ -23,6 +23,22 @@
   </section>
 
   <section class="bg-white px-[5%] py-12 flex-1">
+    <div class="bg-white py-6 px-[0%]">
+      <div class="flex flex-wrap gap-4 justify-start">
+        <button class="px-6 py-3 rounded-full bg-[#564AB1] text-white font-medium transition-all duration-300 hover:bg-[#473D94]">
+          Exclusive Mentoring
+        </button>
+        <a href="{{ route('about_consultan') }}">
+        <button class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
+          Consultan
+        </button>
+      </a>
+        <button class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
+          All Mentor
+        </button>
+      </div>
+    </div>
+    
     <div class="flex flex-wrap md:flex-nowrap gap-8">
 
       <div class="flex-1">
@@ -54,6 +70,7 @@
               <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
             </div>
           </div>
+          
 
           <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
             <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
@@ -156,6 +173,8 @@
       </div>
     </div>
   </section>
+
+
 
   <script src="/js/event.js"></script>
   
