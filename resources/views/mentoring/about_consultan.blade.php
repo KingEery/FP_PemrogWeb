@@ -63,7 +63,6 @@
       class="px-6 py-3 rounded-full border-2 border-[#564AB1] text-[#564AB1] font-medium transition-all duration-300 hover:bg-[#564AB1]/5">
       All Mentor
     </button>
->>>>>>> 212c0a1780328ea77e5ced8c7457f9c437137474
     </div>
   </div>
 
