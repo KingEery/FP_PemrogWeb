@@ -25,24 +25,28 @@
   <!-- page 3 -->
 
 
-<!-- <div data-aos="fade-up"
-data-aos-anchor-placement="top-bottom">
-</div> -->
-<section class="masking" id="masking" data-aos="fade-up">
-  <div class="masking-content">
-      <div class="masking-text">
-          <h1>Exclusive Mentoring</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+  <section class="masking bg-white min-h-screen flex items-center justify-center" id="masking" data-aos="fade-up">
+    <div class="container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center justify-between gap-12">
+      
+      <!-- Text Section -->
+      <div class="w-full lg:w-1/2 text-center lg:text-left">
+        <h1 class="text-3xl md:text-5xl font-bold mb-6">Exclusive Mentoring</h1>
+        <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
       </div>
-      <div class="masking-png">
-          <img src="{{ asset('image/masking.png') }}" alt="homepage">
+  
+      <!-- Image Section -->
+      <div class="w-full lg:w-1/2 flex justify-center">
+        <img src="{{ asset('image/masking.png') }}" alt="homepage" class="max-w-full h-auto lg:max-w-[80%]">
       </div>
-  </div>
-</section>
+  
+    </div>
+  </section>
+  
 
 
 
@@ -58,72 +62,114 @@ data-aos-anchor-placement="top-bottom">
   </div>
 </section> -->
 
-<!-- page 4 -->
-<script>
-  // Data untuk setiap program mentoring
-  const programs = [
-    {
-      title: "Mentoring Web Development",
-      desc: "Belajar HTML, CSS, dan JavaScript dari dasar hingga mahir.",
-      price: "Rp 100.000"
-    },
-    {
-      title: "Mentoring UI/UX Design",
-      desc: "Pelajari prinsip desain, Figma, dan user research.",
-      price: "Rp 120.000"
-    },
-    {
-      title: "Mentoring Data Science",
-      desc: "Mulai dari analisis data hingga machine learning dengan Python.",
-      price: "Rp 150.000"
-    },
-    {
-      title: "Mentoring Mobile App",
-      desc: "Bangun aplikasi Android/iOS menggunakan Flutter.",
-      price: "Rp 130.000"
-    }
-  ];
-
-  // Container utama
-  const container = document.createElement('div');
-  container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-10";
-
-  // Loop untuk membuat setiap kartu
-  programs.forEach(program => {
-    const card = document.createElement('div');
-    card.className = "bg-white p-6 rounded-2xl shadow hover:shadow-xl transition";
-
-    const title = document.createElement('h2');
-    title.className = "text-xl font-bold mb-2";
-    title.textContent = program.title;
-
-    const desc = document.createElement('p');
-    desc.className = "text-gray-600 mb-4";
-    desc.textContent = program.desc;
-
-    const price = document.createElement('p');
-    price.className = "text-lg font-semibold text-green-600 mb-4";
-    price.textContent = program.price;
-
-    const button = document.createElement('button');
-    button.className = "bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition";
-    button.textContent = "Daftar Sekarang";
-
-    // Tambahkan ke dalam kartu
-    card.appendChild(title);
-    card.appendChild(desc);
-    card.appendChild(price);
-    card.appendChild(button);
-
-    // Tambahkan kartu ke container
-    container.appendChild(card);
-  });
-
-  // Tambahkan container ke body
-  document.body.appendChild(container);
-</script>
+<!-- page 4 - Program Mentoring -->
+<section class="mentoring-section p-10" data-aos="fade-up">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <h2 class="text-xl font-bold mb-2">Mentoring Web Development</h2>
+      <p class="text-gray-600 mb-4">Belajar HTML, CSS, dan JavaScript dari dasar hingga mahir.</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 100.000</p>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <h2 class="text-xl font-bold mb-2">Mentoring UI/UX Design</h2>
+      <p class="text-gray-600 mb-4">Pelajari prinsip desain, Figma, dan user research.</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 120.000</p>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <h2 class="text-xl font-bold mb-2">Mentoring Data Science</h2>
+      <p class="text-gray-600 mb-4">Mulai dari analisis data hingga machine learning dengan Python.</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 150.000</p>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <h2 class="text-xl font-bold mb-2">Mentoring Mobile App</h2>
+      <p class="text-gray-600 mb-4">Bangun aplikasi Android/iOS menggunakan Flutter.</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 130.000</p>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
+    </div>
+  </div>
+</section>
 
 
+<!-- page 5 - Kategori Event -->
+<section class="event-section" data-aos="fade-up">
+  <div class="left-content">
+    <button class="badge">Our Product</button>
+    <h2 class="title">Online <span class="highlight">Event</span></h2>
+    <p class="description">Dunia Coding menghadirkan webinar, workshop, dan miniclasse yang dirancang untuk meningkatkan skill IT dan memperluas jaringan profesionalmu.</p>
+    
+    <div class="features">
+      <ul>
+        <li>✔ Live Session</li>
+        <li>✔ E-Book</li>
+        <li>✔ File Project</li>
+      </ul>
+      <ul>
+        <li>✔ E-Certificate</li>
+        <li>✔ Exclusive Community</li>
+        <li>✔ Video Record</li>
+      </ul>
+    </div>
+
+    <button class="explore-btn" onclick="window.location.href='/event'">Explore All Event</button>
+
+    
+  </div>
+
+  <div class="right-cards">
+    <div class="card"><i class="icon">🌐</i> Web Programming</div>
+    <div class="card"><i class="icon">📱</i> Mobile Programming</div>
+    <div class="card"><i class="icon">🎨</i> UI / UX</div>
+    <div class="card"><i class="icon">🗄️</i> Data</div>
+  </div>
+</section>
+
+<!-- Upcoming Event Section -->
+<section class="upcoming-event p-10" data-aos="fade-up">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold">Upcoming Event</h2>
+    <a href="/event" class="text-purple-600 font-semibold hover:underline">Lihat Selengkapnya</a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 1" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">16 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Hasilkan Portofolio Mahal! Bikin Aplikasi Kasir dengan NextJS dalam Hitungan Hari</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 2" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">11 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Step by Step Belajar UI/UX Dari Nol Sampai Bikin Project Sendiri</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 3" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">8 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Kerja Remote, Gaji Dollar: Cara Developer Dapet Project Luar Negeri Tanpa Pindah Negara</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 4" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">4 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Membangun Aplikasi Dating Real-Time dengan Flutter & Firebase</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+  </div>
+</section>
+
+<!-- page 6 -->
+~
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>

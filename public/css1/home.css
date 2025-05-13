@@ -166,7 +166,7 @@ section {
 
 
 
-/* Section Masking */
+/* Page 3 Section Masking */
 .masking {
   background: transparent; /* Sama seperti page 1, biarkan latar belakang diatur oleh body */
   color: var(--text-color);
@@ -250,3 +250,96 @@ section {
   
   
 
+
+  /* page 5 */
+
+  .event-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px;
+  }
+  
+  .left-content {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .right-cards {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #4f008c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .badge {
+    background: #7f3cf0;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: none;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin: 20px 0 10px;
+  }
+  
+  .highlight {
+    color: #7f3cf0;
+  }
+  
+  .description {
+    color: #444;
+    margin-bottom: 20px;
+  }
+  
+  .features {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features li {
+    margin-bottom: 10px;
+    color: #7f3cf0;
+  }
+  
+  .explore-btn {
+    background: #7f3cf0;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  /* page 6 */
+  
