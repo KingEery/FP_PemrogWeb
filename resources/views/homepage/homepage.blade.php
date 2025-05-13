@@ -64,6 +64,9 @@
 
 <!-- page 4 - Program Mentoring -->
 <section class="mentoring-section p-10" data-aos="fade-up">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold">🙌🏻 Join Exclusive Mentoring Sekarang!</h2>
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
       <h2 class="text-xl font-bold mb-2">Mentoring Web Development</h2>
