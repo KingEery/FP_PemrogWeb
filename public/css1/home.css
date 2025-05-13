@@ -342,4 +342,60 @@ section {
   }
   
   /* page 6 */
-  
+.missed-events {
+  background: transparent; /* Sama seperti page 1, biarkan latar belakang diatur oleh body */
+  color: var(--text-color);
+}
+
+.missed-events h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.missed-events .event-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.missed-events .event-card:hover {
+  transform: translateY(-5px);
+}
+
+.missed-events .event-card img {
+  border-radius: 0.75rem;
+  width: 100%;
+  height: auto;
+}
+
+.missed-events .badge {
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  color: #fff;
+}
+
+.missed-events .badge.best-seller {
+  background-color: #10b981; /* Tailwind green-500 */
+  top: 0.5rem;
+  left: 0.5rem;
+}
+
+.missed-events .badge.missed {
+  background-color: #ef4444; /* Tailwind red-500 */
+  bottom: 0.5rem;
+  left: 0.5rem;
+}
+
+.missed-events h3 {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.missed-events p {
+  margin-top: 0.25rem;
+}
