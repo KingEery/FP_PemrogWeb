@@ -51,9 +51,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -65,9 +67,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
           
@@ -80,9 +84,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -94,9 +100,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -108,9 +116,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -122,9 +132,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -136,9 +148,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -150,9 +164,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
 
@@ -164,9 +180,11 @@
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
               <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
               <h4 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h4>
-              <p class="text-sm text-gray-600 mb-4 ">Rp. 8.000.000</p>
-              <p class="text-sm text-gray-600 mb-4">Rp. 135.000</p>
-              <a href="/event_pendaftaran" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Gratis</a>
+              <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
+              <p class="text-sm text-[#30B34C] mb-4">Rp. 135.000</p>
+              <div class="text-right">
+                 <a href="/mentoring_mendaftar" class="text-purple-600 font-bold text-base inline-block py-1.5 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-purple-600 after:left-0 after:bottom-0 hover:after:w-full after:transition-all after:duration-300">Lihat Detail</a>
+              </div>
             </div>
           </div>
         </div>
