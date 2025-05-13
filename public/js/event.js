@@ -143,3 +143,59 @@ document.addEventListener('DOMContentLoaded', function() {
       activateButton(consultanBtn);
     });
   });
+
+//data mentor 
+  document.addEventListener("DOMContentLoaded", function () {
+    const dataMentor = [
+      {
+        nama: "Adithya Firmansyah Putra",
+        jabatan: "Product Engineer at Zero One Group",
+        pengalaman: "5 Tahun Pengalaman",
+        foto: "image/hajisodikin.jpg"
+      },
+      {
+        nama: "Budi Santoso",
+        jabatan: "Project Manager at TechNova",
+        pengalaman: "8 Tahun Pengalaman",
+        foto: "image/engas.jpg"
+      },
+      {
+        nama: "Siti Aisyah",
+        jabatan: "UI/UX Designer at CreativeLab",
+        pengalaman: "3 Tahun Pengalaman",
+        foto: "image/siti.jpg"
+      },
+      {
+        nama: "Yafa Nanda",
+        jabatan: "UI/UX Designer at CreativeLab",
+        pengalaman: "3 Tahun Pengalaman",
+        foto: "image/yafa.jpg"
+      },
+      {
+        nama: "Muhammad Raihan Alfarizi",
+        jabatan: "Software Engineer at DevSpace",
+        pengalaman: "4 Tahun Pengalaman",
+        foto: "image/raihan.jpg"
+      }
+    ];
+  
+    const container = document.getElementById("card-container");
+    const template = document.getElementById("card-template");
+  
+    dataMentor.forEach((mentor) => {
+      const clone = template.content.cloneNode(true);
+      clone.querySelector("img").src = mentor.foto;
+      clone.querySelector(".mentor-name").textContent = mentor.nama;
+      clone.querySelector(".mentor-job").textContent = mentor.jabatan;
+      clone.querySelector(".mentor-exp").textContent = mentor.pengalaman;
+      container.appendChild(clone);
+    });
+  });
+//efek fade 
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+  
+
+  

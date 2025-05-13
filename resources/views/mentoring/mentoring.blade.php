@@ -31,6 +31,9 @@
         <button id="btn-consultan" class="px-6 py-3 rounded-full font-medium transition-all duration-300 border-2 border-[#564AB1] text-[#564AB1] hover:bg-[#564AB1]/5">
           Consultan
         </button>
+        <button id="btn-consultan" class="px-6 py-3 rounded-full font-medium transition-all duration-300 border-2 border-[#564AB1] text-[#564AB1] hover:bg-[#564AB1]/5">
+          All mentor
+        </button>
       </div>
     </div>
 
@@ -59,33 +62,33 @@
     </div>
 
     {{-- Consultan Section --}}
-    <div id="consultan-section" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-8 hidden">
-      <div class="w-full bg-white rounded-xl shadow-md overflow-hidden">
-        <img src="/image/hajisodikin.jpg" alt="Mas Nungnung" class="h-48 w-full object-cover">
-        <div class="p-5">
-          <p class="text-sm text-gray-500 mb-1">Product Management</p>
-          <h3 class="text-xl font-semibold mb-2 text-gray-800">Mas Nungnung</h3>
-          <div class="bg-gray-100 rounded-lg p-3 space-y-2">
-            <div class="flex items-center gap-2 text-sm text-gray-700">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-6h13V7H2v4h7v6z" />
-              </svg>
-              Product Engineer at Zero One Group
-            </div>
-            <div class="flex items-center gap-2 text-sm text-gray-700">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
-              </svg>
-              5 Tahun Pengalaman
-            </div>
-          </div>
+<!-- Card Container -->
+<div id="consultan-section" class="hidden"> 
+<div id="card-container" class="flex flex-wrap gap-6 justify-center" ></div>
+<!-- Card Template -->
+<template id="card-template">
+  <a href="/profil_consultan" class="w-50 bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <img class="w-full h-48 object-cover" src="image/default.jpg" alt="Mentor Photo" />
+    <div class="p-4">
+      <p class="text-sm text-gray-500 mb-1">Product Management</p>
+      <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>
+      <div class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
+          <span class="mentor-job">Jabatan Mentor</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
+          <span class="mentor-exp">Pengalaman Mentor</span>
         </div>
       </div>
     </div>
-  </section>
+  </a>
+</template>
+<section>
 
-
-
-  <script src="/js/event.js"></script>
-
+   <!-- Script -->
+    <script src="/js/event.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+   
 @endsection
