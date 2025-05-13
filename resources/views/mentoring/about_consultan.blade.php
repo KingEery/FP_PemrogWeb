@@ -1,4 +1,4 @@
-@extends('layout.headfoot')
+{{-- @extends('layout.headfoot')
 
 @section('content')
   <section class="bg-primary-light text-white px-[5%] py-16 flex justify-between items-center flex-wrap gap-8">
@@ -73,7 +73,7 @@
         </div>
       </div>
     </section>
-    
+
 
 
   <script src="/js/event.js"></script>
@@ -85,4 +85,4 @@
     });
   </script>
 
-@endsection
+@endsection --}}

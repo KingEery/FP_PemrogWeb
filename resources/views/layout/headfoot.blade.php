@@ -12,7 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
+
 
 </head>
 
@@ -24,12 +24,27 @@
           <img src="image/logo.png" alt="Logo" />
         </a>
 
-        <ul class="nav-links">
-          <li><a href="/" class="active">Home</a></li>
-          <li><a href="/mentoring">Mentoring</a></li>
-          <li><a href="/course">Course</a></li>
-          <li><a href="/event">Event</a></li>
-
+        <ul class="nav-links flex space-x-6">
+            <li>
+                <a href="/" class="relative {{ Request::is('/') ? 'text-purple-700 font-semibold active' : 'text-gray-800' }} hover:text-purple-700">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="/mentoring" class="relative {{ Request::is('mentoring') ? 'text-purple-700 font-semibold active' : 'text-gray-800' }} hover:text-purple-700">
+                    Mentoring
+                </a>
+            </li>
+            <li>
+                <a href="/course" class="relative {{ Request::is('course') ? 'text-purple-700 font-semibold active' : 'text-gray-800' }} hover:text-purple-700">
+                    Course
+                </a>
+            </li>
+            <li>
+                <a href="/event" class="relative {{ Request::is('event') ? 'text-purple-700 font-semibold active' : 'text-gray-800' }} hover:text-purple-700">
+                    Event
+                </a>
+            </li>
         </ul>
 
 

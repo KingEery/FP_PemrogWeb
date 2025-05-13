@@ -11,7 +11,7 @@
             dari pemula hingga tingkat lanjutan. Dipandu oleh mentor profesional dan materi yang selalu diperbarui, setiap
             kursus memberi pengalaman belajar yang fleksibel, terstruktur, dan relevan dengan dunia kerja saat ini.
         </p>
-        <a href="#" class="bg-black text-white font-semibold py-3 px-6 rounded hover:bg-gray-800 transition duration-300">
+        <a href="/register" class="bg-black text-white font-semibold py-3 px-6 rounded hover:bg-gray-800 transition duration-300">
             Get Started
         </a>
 
