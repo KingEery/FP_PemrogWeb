@@ -47,6 +47,11 @@ Route::get('/learnmore', function() {
     return view('learnmore.learnmore');
 })->name('learnmore');
 
+Route::get('/dashboard', function () {
+    return view('user.dashboard');
+})->name('dashboard');
+
+
 Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
 Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
 
