@@ -1,8 +1,22 @@
 @extends('layout.headfoot')
 
 @section('content')
-
-        <section class="bg-gray-50 text-gray-800 font-sans">
+        <section class="bg-[#7C72C3] text-white px-[5%] py-25 flex justify-between items-center flex-wrap gap-8">
+            <div class="max-w-lg">
+                <h1 class="text-4xl font-bold mb-5 leading-tight">Full Stack Web Developer – Raih Penghasilan dari Proyek Freelance!</h1>
+                <p class="mb-8 opacity-90 text-lg leading-relaxed">Belajar coding dari nol hingga mahir dengan HTML, CSS, dan JavaScript. Bangun website profesional dan temukan peluang freelance dengan bimbingan mentor berpengalaman.</p>
+                <div class="flex gap-4">
+                    <button class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
+                    <button class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</button>
+                </div>
+            </div>
+           
+            <div class="mt-5 text-center">
+                <img class="w-[576px] h-[324px] mx-auto rounded-xl object-cover" src="image/devfest-stockholm.png" alt="Event Image" />
+            </div>
+            
+        </section>
+        <section class="bg-gray-50 text-gray-800 font-sans py-16">
             <div class="max-w-5xl mx-auto p-5">
                 <div class="text-center mb-10">
                     <h1 class="text-3xl font-bold text-purple-800 mb-5">Siapa yang Cocok Mengikuti Program Ini?</h1>

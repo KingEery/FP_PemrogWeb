@@ -1,7 +1,7 @@
 @extends('layout.headfoot')
 
 @section('content')
-  <section class="bg-primary-light text-white px-[5%] py-16 flex justify-between items-center flex-wrap gap-8">
+  <section class="bg-primary-light text-white px-[5%] py-25 flex justify-between items-center flex-wrap gap-8">
     <div class="max-w-lg">
       <h1 class="text-4xl font-bold mb-5 leading-tight">Get Closer with Mentoring</h1>
       <p class="mb-8 opacity-90 text-lg leading-relaxed">Nikmati pengalaman belajar yang intensif dan private melalui program Mentoring kami. Semua dilakukan secara privat dengan mentor berpengalaman, memastikan setiap sesi dirancang khusus untuk kebutuhan dan tujuanmu</p>
