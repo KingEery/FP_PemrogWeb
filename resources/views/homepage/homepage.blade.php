@@ -230,7 +230,55 @@
 </section>
 
 <!-- page 7 -->
+<section class="event-section" data-aos="fade-up">
+  <div class="left-content">
+    <button class="badge">Our Product</button>
+    <h2 class="title">Online <span class="highlight">Course</span></h2>
+    <p class="description">Dapatkan fleksibilitas penuh dengan video tutorial dan e-book yang bisa diakses kapanpun, lengkap dan selalu relevan dengan industri.</p>   
+    <div class="features">
+      <ul>
+        <li>✔ Flexible Access</li>
+        <li>✔ E-Book</li>
+        <li>✔ File Project</li>
+      </ul>
+      <ul>
+        <li>✔ E-Certificate</li>
+        <li>✔ Exclusive Community</li>
+        <li>✔ Free Consultation
+        </li>
+      </ul>
+    </div>
 
+    <button class="explore-btn" onclick="window.location.href='/course'">Explore All Course</button>
+
+    
+  </div>
+
+              <!-- Slider Gambar -->
+              <div class="md:w-1/2 flex justify-center mt-12">
+                <div class="swiper mySwiper w-full max-w-md md:max-w-lg">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide">
+                            <img src="{{ asset('image/noomore.png') }}" alt="Slide 3" class="rounded-xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+                    <!-- Navigasi -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
