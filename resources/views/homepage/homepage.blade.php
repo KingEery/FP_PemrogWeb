@@ -186,7 +186,7 @@
         <span class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded">Best Seller</span>
         <span class="absolute bottom-2 left-2 bg-red-500 text-white px-3 py-1 text-xs font-bold rounded">Missed Event</span>
       </div>
-      <h3 class="font-semibold mt-2">Memulai Karir Backend dengan Node.js</h3>
+      <h3 class="font-semibold mt-2">Memulai Karir FrontEnd dengan PHP</h3>
       <p class="text-yellow-500 text-sm">⭐ 5 (242)</p>
       <p class="text-green-600 font-bold">Rp 50.000</p>
     </div>
