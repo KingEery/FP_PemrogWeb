@@ -55,9 +55,10 @@ Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->name('dashboard');
 
+Route::get('/profile', function () {
+    return view('user.profile');
+})->name('dashboard');
 
-Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
-Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
 
 
 

@@ -1,7 +1,8 @@
 @extends('layout.headfoot')
 
 @section('content')
-
+<section class="min-h-screen text-gray-800 font-sans">
+  <div class="max-w-6xl mx-auto px-6 pt-24">
   <div class="container mx-auto px-4">
     <h1 class="text-2xl font-semibold mb-4">Keranjang Belanja</h1>
     <div class="flex flex-col md:flex-row gap-4">
@@ -80,7 +81,8 @@
       </div>
     </div>
   </div>
-
+</div>
+</section>
   <script>
   const pajakElement = document.getElementById("pajak-value");
   const pajakRingkasan = document.getElementById("pajak-ringkasan");
