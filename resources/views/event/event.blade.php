@@ -11,7 +11,7 @@
       <a href="/register">
         <button class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
       </a>
-      <a href="/login">
+      <a href="/learnmore">
         <button  class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</button>
       </a>
       </div>
@@ -32,7 +32,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="bg-white px-[5%] py-12 flex-1">
     <div class="flex flex-wrap md:flex-nowrap gap-8">
       <div class="w-full md:w-[280px] mb-6 md:mb-0">
@@ -45,7 +45,7 @@
               </svg>
             </div>
           </div>
-          
+
           <div class="overflow-hidden transition-all duration-500 max-h-0" id="dropdownContent">
             <div class="py-2">
               <div class="py-1 px-5">
@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="flex-1">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           <a href="/event_pendaftaran" class="block">
@@ -226,7 +226,7 @@
               </div>
             </div>
           </a>
-          
+
         </div>
       </div>
     </div>
@@ -236,6 +236,6 @@
   type="module"></script>
 
   <script src="/js/event.js"></script>
-  
+
 @endsection
 

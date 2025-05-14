@@ -10,7 +10,7 @@
                 <h2 class="text-4xl font-bold mb-4 leading-tight">Buka Potensimu!</h2>
                 <p class="mb-6 text-lg text-gray-300">Telusuri kursus menarik dan interaktif bersama kami.</p>
                 <div class="space-x-4">
-                    <a href="#" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    <a href="/register" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                         Get Started
                     </a>
                     <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">

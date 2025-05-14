@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
   window.toggleDropdown = function() {
     const content = document.getElementById('dropdownContent');
     const icon = document.getElementById('dropdownIcon');
-    
+
     // Jika dropdown sedang tertutup, buka dropdown
     if (content.style.maxHeight === "0px" || !content.style.maxHeight) {
       content.style.maxHeight = content.scrollHeight + "px";
@@ -14,30 +14,30 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove('rotate-180'); // Kembalikan ikon ke posisi awal
     }
   };
-  
+
   // Set kondisi awal dropdown menjadi tertutup
   const dropdownContent = document.getElementById('dropdownContent');
   if (dropdownContent) {
     dropdownContent.style.maxHeight = "0px";
   }
-  
+
   // Menangani tombol radio untuk gambar hero
   const radioButtons = document.querySelectorAll('[data-slide]');
-  
+
   radioButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       // Hapus kelas aktif (bg-white) dari semua tombol
       radioButtons.forEach(b => b.classList.remove('bg-white'));
-      
+
       // Tambahkan kelas aktif ke tombol yang diklik
       this.classList.add('bg-white');
-      
+
       // Opsional: Ganti gambar hero sesuai slide yang dipilih
       const slideNumber = this.getAttribute('data-slide');
       console.log('Slide yang dipilih:', slideNumber);
     });
   });
-  
+
   // Tambahkan event listener untuk tombol radio kategori
   const radioButtonsCategory = document.querySelectorAll('input[name="category"]');
   radioButtonsCategory.forEach(radio => {
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
       filterEvents(selectedCategory); // Panggil fungsi filter berdasarkan kategori
     });
   });
-  
+
   // Fungsi untuk memfilter event berdasarkan kategori yang dipilih
   function filterEvents(selectedCategory) {
     const events = document.querySelectorAll('[data-category]');
-    
+
     if (selectedCategory === 'all') {
       // Tampilkan semua event jika kategori "Semua Kategori" dipilih
       events.forEach(event => {
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
-  
+
   // Secara default, pilih "Semua Kategori" saat pertama kali halaman dimuat
   document.getElementById('all').checked = true;
   filterEvents('all');
@@ -98,18 +98,104 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   // Menangani tombol radio untuk gambar hero
-  const radioButtons = document.querySelectorAll('[data-slide]'); 
-  
+  const radioButtons = document.querySelectorAll('[data-slide]');
+
   radioButtons.forEach(btn => {
     btn.addEventListener('click', function() {
       // Hapus kelas aktif (bg-white) dari semua tombol
       radioButtons.forEach(b => b.classList.remove('bg-white'));
-      
+
       // Tambahkan kelas aktif ke tombol yang diklik
       this.classList.add('bg-white');
-      
+
       // Opsional: Ganti gambar hero sesuai slide yang dipilih
       const slideNumber = this.getAttribute('data-slide');
       console.log('Slide yang dipilih:', slideNumber);
     });
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const mentoringBtn = document.getElementById('btn-mentoring');
+    const consultanBtn = document.getElementById('btn-consultan');
+    const mentoringSection = document.getElementById('mentoring-section');
+    const consultanSection = document.getElementById('consultan-section');
+
+    function activateButton(button) {
+      mentoringBtn.classList.remove('bg-[#564AB1]', 'text-white');
+      mentoringBtn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
+
+      consultanBtn.classList.remove('bg-[#564AB1]', 'text-white');
+      consultanBtn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
+
+      button.classList.remove('border-2', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
+      button.classList.add('bg-[#564AB1]', 'text-white');
+    }
+
+    mentoringBtn.addEventListener('click', () => {
+      mentoringSection.classList.remove('hidden');
+      consultanSection.classList.add('hidden');
+      activateButton(mentoringBtn);
+    });
+
+    consultanBtn.addEventListener('click', () => {
+      mentoringSection.classList.add('hidden');
+      consultanSection.classList.remove('hidden');
+      activateButton(consultanBtn);
+    });
+  });
+
+//data mentor 
+  document.addEventListener("DOMContentLoaded", function () {
+    const dataMentor = [
+      {
+        nama: "Adithya Firmansyah Putra",
+        jabatan: "Product Engineer at Zero One Group",
+        pengalaman: "5 Tahun Pengalaman",
+        foto: "image/hajisodikin.jpg"
+      },
+      {
+        nama: "Budi Santoso",
+        jabatan: "Project Manager at TechNova",
+        pengalaman: "8 Tahun Pengalaman",
+        foto: "image/engas.jpg"
+      },
+      {
+        nama: "Siti Aisyah",
+        jabatan: "UI/UX Designer at CreativeLab",
+        pengalaman: "3 Tahun Pengalaman",
+        foto: "image/siti.jpg"
+      },
+      {
+        nama: "Yafa Nanda",
+        jabatan: "UI/UX Designer at CreativeLab",
+        pengalaman: "3 Tahun Pengalaman",
+        foto: "image/yafa.jpg"
+      },
+      {
+        nama: "Muhammad Raihan Alfarizi",
+        jabatan: "Software Engineer at DevSpace",
+        pengalaman: "4 Tahun Pengalaman",
+        foto: "image/raihan.jpg"
+      }
+    ];
+  
+    const container = document.getElementById("card-container");
+    const template = document.getElementById("card-template");
+  
+    dataMentor.forEach((mentor) => {
+      const clone = template.content.cloneNode(true);
+      clone.querySelector("img").src = mentor.foto;
+      clone.querySelector(".mentor-name").textContent = mentor.nama;
+      clone.querySelector(".mentor-job").textContent = mentor.jabatan;
+      clone.querySelector(".mentor-exp").textContent = mentor.pengalaman;
+      container.appendChild(clone);
+    });
+  });
+//efek fade 
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+  
+
+  
