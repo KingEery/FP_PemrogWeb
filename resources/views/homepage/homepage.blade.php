@@ -15,12 +15,19 @@
 
     </div>
   </section>
+
 <!-- page 2 -->
-  <section class="page2" id="page2" data-aos="fade-up">
-    <div class="head">
-      <span>Telah dipercaya oleh :</span>
-   </div>
-  </section>
+ <!-- Partner Logos Section -->
+<div class="partners-section text-center mt-8">
+  <p class="text-gray-700 text-lg font-medium mb-6">Dunia Coding telah bekerja sama dengan</p>
+  <div class="flex flex-wrap justify-center items-center gap-8 mb-4">
+    <img src="{{ asset('image/maze.png') }}" alt="Maze" class="h-10 md:h-12">
+    <img src="{{ asset('image/dropbox.png') }}" alt="Dropbox" class="h-10 md:h-12">
+    <img src="{{ asset('image/webflow.png') }}" alt="WebFlow" class="h-10 md:h-12">
+  </div>
+  <p class="text-gray-700 text-base">Dan 100+ Tech Company Lainnya</p>
+</div>
+
 
   <!-- page 3 -->
 

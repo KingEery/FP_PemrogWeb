@@ -146,6 +146,7 @@ section {
   font-size: 1.2rem;
   max-width: 500px;
 }
+
 /* page 2 */
 .page2 {
   background: transparent; /* Sama seperti page 1, biarkan latar belakang diatur oleh body */
@@ -184,7 +185,7 @@ section {
   padding: 30px 10%;
   text-align: left;
 
-  max-width: 1500px;
+  max-width: 100px;
   padding: 100px;
   gap: 40px;
   width: 100%;
