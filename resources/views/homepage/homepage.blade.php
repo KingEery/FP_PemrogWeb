@@ -287,6 +287,46 @@
         </div>
     </section>
 
+    <!-- Upcoming Event Section -->
+<section class="Best-Course-Choices p-10" data-aos="fade-up">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold">Best Course Choices</h2>
+    <a href="/course" class="text-purple-600 font-semibold hover:underline">Lihat Selengkapnya</a>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Card 1 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 1" class="rounded-xl mb-3">
+      <h3 class="font-bold mt-1 mb-2">Full Stack Mobile Development</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 2" class="rounded-xl mb-3">
+      <h3 class="font-bold mt-1 mb-2">Complete Flutter Development :</h3>
+      <h4 class="font-bold mt-1 mb-2">Build Event Apps</h4>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 3" class="rounded-xl mb-3">
+      <h3 class="font-bold mt-1 mb-2">Fundamental ReactJS untuk pemula</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 4" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">4 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Membangun Aplikasi Dating Real-Time dengan Flutter & Firebase</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+  </div>
+</section>
+
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
