@@ -27,7 +27,7 @@
     <div class="w-full md:w-1/2 p-8">
       <h2 class="text-3xl font-bold text-center mb-6 text-primaryDark">Buat Akun ITQOM</h2>
 
-      <form action="#" method="POST" class="space-y-5">
+      <form action="{{ url('/register') }}" method="POST" class="space-y-5">
         @csrf
         <div>
           <label for="name" class="block mb-1 text-sm font-medium text-gray-700">Full Name</label>
@@ -35,20 +35,10 @@
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryDark focus:outline-none">
         </div>
 
-
-        <!-- Gambar kanan -->
-        <div class="hidden md:block w-1/2 bg-primaryLight flex items-center justify-center">
-            <div class="text-center">
-                <img src="/image/hajisodikin.jpg" alt="no more" class="w-70 h-80 object-cover rounded-lg shadow-md">
-                <p class="mt-4 text-primaryDark font-semibold">Welcome to Our Community!</p>
-            </div>
-
-
         <div>
           <label for="email" class="block mb-1 text-sm font-medium text-gray-700">Email Address</label>
           <input type="email" name="email" id="email" required
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primaryDark focus:outline-none">
-
         </div>
 
         <div>
@@ -71,7 +61,7 @@
 
       <p class="text-center text-sm text-gray-600 mt-6">
         Already have an account?
-        <a href="/login" class="text-primaryDark hover:underline">Login here</a>
+        <a href="{{ route('login.form') }}" class="text-primaryDark hover:underline">Login here</a>
       </p>
     </div>
 
