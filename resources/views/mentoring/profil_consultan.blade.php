@@ -3,12 +3,12 @@
 @section('content')
 <section class="bg-gray-100 text-textDark leading-relaxed">
     <div class="bg-primary h-14 relative"></div>
-    
+
     <div class="max-w-screen-xl mx-auto px-4 relative">
         <div class="w-24 h-24 rounded-full border-4 border-white absolute -top-12 left-8 bg-gray-100 overflow-hidden flex items-center justify-center">
-            <img src="image/engas.jpg" alt="Adithya Firmansyah Putra" class="w-full h-auto">
+            <img src="image/user3.png" alt="Adithya Firmansyah Putra" class="w-1/9 h-auto">
         </div>
-        
+
         <div class="pt-16 pl-32 flex justify-between items-start">
             <div>
                 <h1 class="text-2xl font-bold mb-1">Adithya Firmansyah Putra</h1>
@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="mt-8 border-b border-gray-300">
             <ul class="flex">
                 <li class="mr-6"><a href="#" class="block py-2 text-primary font-medium relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-0.5 after:bg-primary">Overview</a></li>
@@ -41,18 +41,18 @@
                 <li class="mr-6"><a href="#" class="block py-2 text-textLight">Certification</a></li>
             </ul>
         </div>
-        
+
         <div class="py-8">
             <div class="grid grid-cols-3 gap-8">
                 <div class="col-span-2">
                     <h2 class="text-lg font-semibold mb-4">About Me</h2>
                     <p class="mb-6 text-sm leading-relaxed">
-                        Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and 
-                        hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving, 
-                        leadership, and communication. As a freshman at Bina Nusantara University, I am passionate 
+                        Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and
+                        hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving,
+                        leadership, and communication. As a freshman at Bina Nusantara University, I am passionate
                         about using technology to make a positive impact on society.
                     </p>
-                    
+
                     <div>
                         <div class="flex justify-between items-center">
                             <h2 class="text-lg font-semibold mb-4">Experiences</h2>
@@ -60,7 +60,7 @@
                                 <a href="#" class="text-accent text-sm">View More</a>
                             </div>
                         </div>
-                        
+
                         <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
                             <h3 class="font-semibold mb-1">iOS Developer</h3>
                             <div class="text-textLight text-sm flex items-center mb-1">
@@ -68,7 +68,7 @@
                             </div>
                             <div class="text-textLight text-xs">Feb 2025 - Sekarang</div>
                         </div>
-                        
+
                         <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
                             <h3 class="font-semibold mb-1">Chief Technology Officer</h3>
                             <div class="text-textLight text-sm mb-1">
@@ -76,7 +76,7 @@
                             </div>
                             <div class="text-textLight text-xs">Jan 2025 - Sekarang</div>
                         </div>
-                        
+
                         <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
                             <h3 class="font-semibold mb-1">Project Manager</h3>
                             <div class="text-textLight text-sm mb-1">
@@ -84,7 +84,7 @@
                             </div>
                             <div class="text-textLight text-xs">Nov 2024 - Sekarang</div>
                         </div>
-                        
+
                         <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
                             <h3 class="font-semibold mb-1">Founder</h3>
                             <div class="text-textLight text-sm mb-1">
@@ -93,10 +93,10 @@
                             <div class="text-textLight text-xs">Okt 2024 - Sekarang</div>
                         </div>
                     </div>
-                    
+
                     <div class="mt-8">
                         <h2 class="text-lg font-semibold mb-4">Educations</h2>
-                        
+
                         <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white flex">
                             <div class="w-12 h-12 bg-gray-100 flex items-center justify-center mr-4 border border-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div>
                     <div class="mb-6">
                         <h3 class="text-lg font-semibold mb-4">Location</h3>
@@ -125,7 +125,7 @@
                             <div>Jakarta Timur</div>
                         </div>
                     </div>
-                    
+
                     <div class="bg-accent text-white p-6 rounded-lg">
                         <h3 class="text-lg font-semibold mb-4">Booking sesi konsultasimu sekarang!</h3>
                         <p class="text-sm mb-4">Kamu dapat melakukan konsultasi secara 1 on 1 bersama mentor berpengalaman.</p>

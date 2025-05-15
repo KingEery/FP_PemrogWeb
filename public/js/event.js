@@ -114,88 +114,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const mentoringBtn = document.getElementById('btn-mentoring');
-    const consultanBtn = document.getElementById('btn-consultan');
-    const mentoringSection = document.getElementById('mentoring-section');
-    const consultanSection = document.getElementById('consultan-section');
+ document.addEventListener('DOMContentLoaded', function () {
+  const mentoringBtn = document.getElementById('btn-mentoring');
+  const consultanBtn = document.getElementById('btn-consultan');
+  const allmentorBtn = document.getElementById('btn-allmentor');
 
-    function activateButton(button) {
-      mentoringBtn.classList.remove('bg-[#564AB1]', 'text-white');
-      mentoringBtn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
+  const mentoringSection = document.getElementById('mentoring-section');
+  const consultanSection = document.getElementById('consultan-section');
+  const allmentorSection = document.getElementById('allmentor-section');
 
-      consultanBtn.classList.remove('bg-[#564AB1]', 'text-white');
-      consultanBtn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
-
-      button.classList.remove('border-2', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
-      button.classList.add('bg-[#564AB1]', 'text-white');
-    }
-
-    mentoringBtn.addEventListener('click', () => {
-      mentoringSection.classList.remove('hidden');
-      consultanSection.classList.add('hidden');
-      activateButton(mentoringBtn);
+  function activateButton(button) {
+    // Reset semua tombol ke style default
+    [mentoringBtn, consultanBtn, allmentorBtn].forEach(btn => {
+      btn.classList.remove('bg-[#564AB1]', 'text-white');
+      btn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
     });
 
-    consultanBtn.addEventListener('click', () => {
-      mentoringSection.classList.add('hidden');
-      consultanSection.classList.remove('hidden');
-      activateButton(consultanBtn);
-    });
+    // Aktifkan tombol yang dipilih
+    button.classList.remove('border-2', 'text-[#564AB1]', 'hover:bg-[#564AB1]/5');
+    button.classList.add('bg-[#564AB1]', 'text-white');
+  }
+
+  mentoringBtn.addEventListener('click', () => {
+    mentoringSection.classList.remove('hidden');
+    consultanSection.classList.add('hidden');
+    allmentorSection.classList.add('hidden');
+    activateButton(mentoringBtn);
   });
 
-//data mentor 
-  document.addEventListener("DOMContentLoaded", function () {
-    const dataMentor = [
-      {
-        nama: "Adithya Firmansyah Putra",
-        jabatan: "Product Engineer at Zero One Group",
-        pengalaman: "5 Tahun Pengalaman",
-        foto: "image/hajisodikin.jpg"
-      },
-      {
-        nama: "Budi Santoso",
-        jabatan: "Project Manager at TechNova",
-        pengalaman: "8 Tahun Pengalaman",
-        foto: "image/engas.jpg"
-      },
-      {
-        nama: "Siti Aisyah",
-        jabatan: "UI/UX Designer at CreativeLab",
-        pengalaman: "3 Tahun Pengalaman",
-        foto: "image/siti.jpg"
-      },
-      {
-        nama: "Yafa Nanda",
-        jabatan: "UI/UX Designer at CreativeLab",
-        pengalaman: "3 Tahun Pengalaman",
-        foto: "image/yafa.jpg"
-      },
-      {
-        nama: "Muhammad Raihan Alfarizi",
-        jabatan: "Software Engineer at DevSpace",
-        pengalaman: "4 Tahun Pengalaman",
-        foto: "image/raihan.jpg"
-      }
-    ];
-  
-    const container = document.getElementById("card-container");
-    const template = document.getElementById("card-template");
-  
-    dataMentor.forEach((mentor) => {
-      const clone = template.content.cloneNode(true);
-      clone.querySelector("img").src = mentor.foto;
-      clone.querySelector(".mentor-name").textContent = mentor.nama;
-      clone.querySelector(".mentor-job").textContent = mentor.jabatan;
-      clone.querySelector(".mentor-exp").textContent = mentor.pengalaman;
-      container.appendChild(clone);
-    });
+  consultanBtn.addEventListener('click', () => {
+    mentoringSection.classList.add('hidden');
+    consultanSection.classList.remove('hidden');
+    allmentorSection.classList.add('hidden');
+    activateButton(consultanBtn);
   });
-//efek fade 
-  AOS.init({
-    duration: 1000,
-    once: true
+
+  allmentorBtn.addEventListener('click', () => {
+    mentoringSection.classList.add('hidden');
+    consultanSection.classList.add('hidden');
+    allmentorSection.classList.remove('hidden');
+    activateButton(allmentorBtn);
   });
-  
+});
+ 
+
 
   
