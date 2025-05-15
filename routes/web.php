@@ -21,7 +21,8 @@ Route::get('/profil_consultan', function () {
 })->name('profil_consultan');
 
 Route::get('/course', function () {
-    return view('course.course');
+    $kategoris = ['Web', 'Mobile', 'UI/UX', 'Data Science', 'DevOps', 'Game', 'AI'];
+    return view('course.course', compact('kategoris'));
 })->name('course');
 
 Route::get('/event', function () {
