@@ -155,16 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
     allmentorSection.classList.remove('hidden');
     activateButton(allmentorBtn);
   });
-
-  // Jika kamu ingin load data mentor di allmentorSection, panggil fungsi loadAllMentors di sini
 });
  
-                   
-//efek fade 
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
 
 
   

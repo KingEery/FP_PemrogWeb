@@ -12,7 +12,7 @@
     </div>
     <div class="w-[630px] h-[380px] bg-primary-dark rounded-xl overflow-hidden mx-auto shadow-lg flex flex-col justify-between pb-4">
       <div class="mt-5 text-center">
-        <img class="w-[576px] h-[324px] mx-auto rounded-xl object-cover" src="image/devfest-stockholm.png" alt="Event Image" />
+        <img class="w-[576px] h-[324px] mx-auto rounded-xl object-cover" src="image/konten.jpeg" alt="Event Image" />
       </div>
       <div class="flex justify-center gap-2.5 mt-4">
         <button type="button" class="w-3 h-3 rounded-full border-2 border-white bg-white" data-slide="1"></button>
@@ -61,9 +61,9 @@
       @endfor
     </div>
 
-    {{-- Consultan Section --}}
 <div id="consultan-section" class="hidden mt-8">
   <div id="consultan-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
+
   <template id="consultan-card-template">
     <a href="/profil_consultan" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <img class="w-full h-48 object-cover rounded-t-xl" src="image/default.jpg" alt="Mentor Photo" />
@@ -77,25 +77,6 @@
           <div class="flex items-center gap-2">
             <span class="mentor-exp text-sm text-gray-700">Pengalaman Mentor</span>
           </div>
-
-<!-- Card Container -->
-<div id="consultan-section" class="hidden">
-<div id="card-container" class="flex flex-wrap gap-6 justify-center" ></div>
-<!-- Card Template -->
-<template id="card-template">
-  <a href="/profil_consultan" class="w-50 bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-    <img class="w-full h-48 object-cover" src="image/default.jpg" alt="Mentor Photo" />
-    <div class="p-4">
-      <p class="text-sm text-gray-500 mb-1">Product Management</p>
-      <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>
-      <div class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
-          <span class="mentor-job">Jabatan Mentor</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
-          <span class="mentor-exp">Pengalaman Mentor</span>
         </div>
       </div>
     </a>

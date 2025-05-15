@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
       nama: "Budi Santoso",
       jabatan: "Project Manager at TechNova",
       pengalaman: "8 Tahun Pengalaman",
-      foto: "image/engas.jpg"
+      foto: "image/kaana.jpg"
     },
     {
       nama: "Siti Aisyah",
@@ -43,18 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       nama: "Dimas Putra Pradana",
-      jabatan: "Software Engineer at DevSpace",
-      pengalaman: "4 Tahun Pengalaman",
-      foto: "image/raihan.jpg"
-    },
-    {
-      nama: "Subrianto",
-      jabatan: "Software Engineer at DevSpace",
-      pengalaman: "4 Tahun Pengalaman",
-      foto: "image/raihan.jpg"
-    },
-    {
-      nama: "Rosa Kalista Dwi",
       jabatan: "Software Engineer at DevSpace",
       pengalaman: "4 Tahun Pengalaman",
       foto: "image/raihan.jpg"
