@@ -42,6 +42,10 @@ Route::get('/course_description', function () {
     return view('course.course_description');
 })->name('course_description');
 
+Route::get('/course_content', function () {
+    return view('course.course_content');
+})->name('course_content');
+
 Route::get('/mentoring_mendaftar', function () {
     return view('mentoring.mentoring_mendaftar');
 })->name('mentoring_mendaftar');
