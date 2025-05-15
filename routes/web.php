@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\UserController;
 
 
 Route::get('/', function () {
@@ -57,10 +58,11 @@ Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->name('dashboard');
 
+Route::get('/explore', function () {
+    return view('explore.explore');
+})->name('explore');
 
-Route::get('/profile', function () {
-    return view('user.profile');
-})->name('dashboard');
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 
 Route::get('/certificate', function () {
     return view('user.certificate');
@@ -72,7 +74,7 @@ Route::get('/certificate/download', [CertificateController::class, 'download'])-
 
 
 // ----------- AUTH ROUTES -------------
-Route::get('/register', [RegisterController::class, 'show'])->name('register.form');
+Route::get('/register', [RegisterController::class, 'show'])->name('register');
 
 // Login routes pakai LoginController
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
