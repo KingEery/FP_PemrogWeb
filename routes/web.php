@@ -56,15 +56,15 @@ Route::get('/dashboard', function () {
     return view('user.dashboard');
 })->name('dashboard');
 
-<<<<<<< HEAD
+
 Route::get('/profile', function () {
     return view('user.profile');
 })->name('dashboard');
-=======
+
 Route::get('/certificate', function () {
     return view('user.certificate');
 })->name('certificate');
->>>>>>> acb0f57ce7ca72b8899534ce73235fbbfbad6a5d
+
 
 
 Route::get('/certificate/download', [CertificateController::class, 'download'])->name('certificate.download');
