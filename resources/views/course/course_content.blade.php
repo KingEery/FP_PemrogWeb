@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="{{ asset('js/course_content.js') }}"></script>
-    <title>Dropdown dengan Icon Boxicons</title>
 </head>
 
 <body>
