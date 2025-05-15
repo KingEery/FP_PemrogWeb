@@ -5,14 +5,16 @@
             <div class="max-w-lg">
                 <h1 class="text-4xl font-bold mb-5 leading-tight">Full Stack Web Developer – Raih Penghasilan dari Proyek Freelance!</h1>
                 <p class="mb-8 opacity-90 text-lg leading-relaxed">Belajar coding dari nol hingga mahir dengan HTML, CSS, dan JavaScript. Bangun website profesional dan temukan peluang freelance dengan bimbingan mentor berpengalaman.</p>
+                <div class="text-2xl font-bold text-green-600 mb-2 py-2">
+                    <del class="text-gray-400 text-2xl mr-2">Rp 8000.000</del> Rp 135.000
+                </div>
                 <div class="flex gap-4">
-                    <button class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
-                    <button class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</button>
+                    <a href="/payment" class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Daftar Sekarang</a>
                 </div>
             </div>
            
             <div class="mt-5 text-center">
-                <img class="w-[576px] h-[324px] mx-auto rounded-xl object-cover" src="image/devfest-stockholm.png" alt="Event Image" />
+                <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover"  src="image/Mentoring-Mendaftar.png" alt="Mentoring Image" />
             </div>
             
         </section>
@@ -100,9 +102,9 @@
                 </div>
                 
                 <div class="bg-white rounded-lg p-6 shadow mb-8">
-                    <h2 class="text-2xl font-bold text-purple-800">Daftar Sekarang</h2>
-                    <p class="mt-4">Tempat terbatas! Kami hanya menerima 10 peserta per batch untuk memastikan kualitas mentoring.</p>
-                    <button class="bg-purple-800 text-white font-bold px-5 py-2 rounded-full mt-4 cursor-pointer hover:bg-purple-900 transition-colors">Daftar Program</button>
+                <h2 class="text-2xl font-bold text-purple-800">Daftar Sekarang</h2>
+                <p class="mt-4">Tempat terbatas! Kami hanya menerima 10 peserta per batch untuk memastikan kualitas mentoring.</p>
+                <a href="/payment" class="bg-purple-800 text-white font-bold px-5 py-2 rounded-full inline-block mt-4 cursor-pointer hover:bg-purple-900 transition-colors">Daftar Program</a>
                 </div>
             </div>
         </section>

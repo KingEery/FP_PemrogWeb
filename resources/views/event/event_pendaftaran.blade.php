@@ -13,7 +13,7 @@
             
                 <div class="md:w-2/3">
                     <div>
-                        <img src="image/devfest-stockholm.png" alt="DevFest Conference" class="w-full h-96 rounded-xl object-cover">
+                        <img src="image/devfest.jpg" alt="DevFest Conference" class="w-full h-96 rounded-xl object-cover">
                         <div class="mt-4 p-3">
                              <span class="inline-block bg-[#564AB1] text-white px-7 py-3 rounded-full text-sm font-medium">Web Programming</span>
                         </div>
