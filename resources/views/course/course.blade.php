@@ -46,11 +46,11 @@
     </section>
 
     <!-- Course Section -->
-    <section id="class" class="py-16 px-6 bg-white">
-        <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-white">Semua Kursus</h3>
+    <section id="class" class="py-11 px-6 bg-white">
+        <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-black">Semua Kursus</h3>
         <div class="grid grid-cols-4 gap-6">
             <!-- Sidebar Kategori -->
-            <div class="col-span-1 bg-white p-4 rounded-xl border border-gray-300 shadow-sm">
+            <div class="col-span-1 bg-white p-4 rounded-xl border border-gray-300 shadow-sm self-start">
                 <h4 class="text-lg font-semibold mb-4 bg-gray-100 p-2 rounded-md text-center">Kategori</h4>
                 <ul class="space-y-2 bg-gray-50 p-3 rounded-md border border-gray-200">
                     <li class="flex items-center space-x-2">

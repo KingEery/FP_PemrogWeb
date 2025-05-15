@@ -63,7 +63,7 @@
 
     {{-- Consultan Section --}}
 <!-- Card Container -->
-<div id="consultan-section" class="hidden"> 
+<div id="consultan-section" class="hidden">
 <div id="card-container" class="flex flex-wrap gap-6 justify-center" ></div>
 <!-- Card Template -->
 <template id="card-template">
@@ -90,5 +90,5 @@
    <!-- Script -->
     <script src="/js/event.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-   
+
 @endsection
