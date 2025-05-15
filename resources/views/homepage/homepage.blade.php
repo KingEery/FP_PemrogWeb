@@ -144,8 +144,10 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
     <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 1" class="rounded-xl mb-3">
       <span class="text-red-500 text-sm font-semibold">16 Hari Lagi</span>
       <h3 class="font-bold mt-1 mb-2">Hasilkan Portofolio Mahal! Bikin Aplikasi Kasir dengan NextJS dalam Hitungan Hari</h3>
@@ -153,7 +155,8 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 2" class="rounded-xl mb-3">
       <span class="text-red-500 text-sm font-semibold">11 Hari Lagi</span>
       <h3 class="font-bold mt-1 mb-2">Step by Step Belajar UI/UX Dari Nol Sampai Bikin Project Sendiri</h3>
@@ -161,7 +164,8 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 3" class="rounded-xl mb-3">
       <span class="text-red-500 text-sm font-semibold">8 Hari Lagi</span>
       <h3 class="font-bold mt-1 mb-2">Kerja Remote, Gaji Dollar: Cara Developer Dapet Project Luar Negeri Tanpa Pindah Negara</h3>
@@ -169,7 +173,8 @@
     </div>
 
     <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 4" class="rounded-xl mb-3">
       <span class="text-red-500 text-sm font-semibold">4 Hari Lagi</span>
       <h3 class="font-bold mt-1 mb-2">Membangun Aplikasi Dating Real-Time dengan Flutter & Firebase</h3>
@@ -187,7 +192,7 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow p-4">
+    <a href="/event_pendaftaran" class="block bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Node.js Event" class="rounded-xl mb-3">
         <span class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded">Best Seller</span>
@@ -196,10 +201,10 @@
       <h3 class="font-semibold mt-2">Memulai Karir FrontEnd dengan PHP</h3>
       <p class="text-yellow-500 text-sm">⭐ 5 (242)</p>
       <p class="text-green-600 font-bold">Rp 50.000</p>
-    </div>
+    </a>
 
     <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow p-4">
+    <a href="/event_pendaftaran" class="block bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Flutter Event" class="rounded-xl mb-3">
         <span class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded">Best Seller</span>
@@ -208,10 +213,10 @@
       <h3 class="font-semibold mt-2">Membangun Aplikasi Mobile Real-Time dengan Flutter & Firebase</h3>
       <p class="text-yellow-500 text-sm">⭐ 5 (405)</p>
       <p class="text-green-600 font-bold">Rp 50.000</p>
-    </div>
+    </a>
 
     <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow p-4">
+    <a href="/event_pendaftaran" class="block bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Data Science Event" class="rounded-xl mb-3">
         <span class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded">Best Seller</span>
@@ -220,10 +225,10 @@
       <h3 class="font-semibold mt-2">Menguasai Dasar-Dasar Data Science dengan Python</h3>
       <p class="text-yellow-500 text-sm">⭐ 5 (226)</p>
       <p class="text-green-600 font-bold">Rp 30.000</p>
-    </div>
+    </a>
 
     <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow p-4">
+    <a href="/event_pendaftaran" class="block bg-white rounded-2xl shadow p-4 hover:shadow-lg transition">
       <div class="relative">
         <img src="{{ asset('image/devfest-stockholm.png') }}" alt="URL Shortener Event" class="rounded-xl mb-3">
         <span class="absolute top-2 left-2 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded">Best Seller</span>
@@ -232,9 +237,10 @@
       <h3 class="font-semibold mt-2">Membangun Aplikasi URL Shortener Sederhana</h3>
       <p class="text-yellow-500 text-sm">⭐ 5 (194)</p>
       <p class="text-green-600 font-bold">Rp 50.000</p>
-    </div>
+    </a>
   </div>
 </section>
+
 
 <!-- page 7 -->
 <section class="event-section" data-aos="fade-up">
@@ -296,14 +302,16 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/course_description" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 1" class="rounded-xl mb-3">
       <h3 class="font-bold mt-1 mb-2">Full Stack Mobile Development</h3>
       <span class="text-green-600 font-semibold">Gratis</span>
     </div>
 
     <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/course_description" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 2" class="rounded-xl mb-3">
       <h3 class="font-bold mt-1 mb-2">Complete Flutter Development :</h3>
       <h4 class="font-bold mt-1 mb-2">Build Event Apps</h4>
@@ -311,14 +319,16 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/course_description" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 3" class="rounded-xl mb-3">
       <h3 class="font-bold mt-1 mb-2">Fundamental ReactJS untuk pemula</h3>
       <span class="text-green-600 font-semibold">Gratis</span>
     </div>
 
     <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4">
+    <a href="/course_description" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
       <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 4" class="rounded-xl mb-3">
       <span class="text-red-500 text-sm font-semibold">4 Hari Lagi</span>
       <h3 class="font-bold mt-1 mb-2">Membangun Aplikasi Dating Real-Time dengan Flutter & Firebase</h3>
