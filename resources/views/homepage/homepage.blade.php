@@ -144,6 +144,7 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
     <!-- Card 1 -->
     <a href="/event_pendaftaran" class="block">
     <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
