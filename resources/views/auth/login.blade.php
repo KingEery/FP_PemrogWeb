@@ -24,6 +24,7 @@
         <!-- Gambar kiri -->
         <div class="hidden md:flex w-1/2 bg-primaryDark items-center justify-center">
             <div class="text-center">
+
                 <dotlottie-player
                 src="https://lottie.host/da3cda18-274e-4907-b0c7-710b6d159bf2/I88cIwlTEp.lottie"
                 background="transparent"

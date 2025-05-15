@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\course\pilih;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CertificateController;
 
 
 Route::get('/', function () {
@@ -56,9 +57,17 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/payment', [PaymentController::class, 'show'])->name('payment.show');
-Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
+Route::get('/profile', function () {
+    return view('user.profile');
+})->name('dashboard');
 
+Route::get('/certificate', function () {
+    return view('user.certificate');
+})->name('certificate');
+
+
+
+Route::get('/certificate/download', [CertificateController::class, 'download'])->name('certificate.download');
 
 
 // ----------- AUTH ROUTES -------------

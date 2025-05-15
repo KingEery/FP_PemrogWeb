@@ -77,6 +77,25 @@
           <div class="flex items-center gap-2">
             <span class="mentor-exp text-sm text-gray-700">Pengalaman Mentor</span>
           </div>
+
+<!-- Card Container -->
+<div id="consultan-section" class="hidden">
+<div id="card-container" class="flex flex-wrap gap-6 justify-center" ></div>
+<!-- Card Template -->
+<template id="card-template">
+  <a href="/profil_consultan" class="w-50 bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <img class="w-full h-48 object-cover" src="image/default.jpg" alt="Mentor Photo" />
+    <div class="p-4">
+      <p class="text-sm text-gray-500 mb-1">Product Management</p>
+      <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>
+      <div class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg text-sm text-gray-700">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
+          <span class="mentor-job">Jabatan Mentor</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-gray-500" ...>...</svg>
+          <span class="mentor-exp">Pengalaman Mentor</span>
         </div>
       </div>
     </a>
@@ -110,5 +129,5 @@
         <script src="/js/mentoring.js"></script>
     <script src="/js/event.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-   
+
 @endsection
