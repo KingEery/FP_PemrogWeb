@@ -136,7 +136,51 @@
   </div>
 </section>
 
+<!-- Upcoming Event Section -->
+<section class="upcoming-event p-10" data-aos="fade-up">
+  <div class="flex justify-between items-center mb-6">
+    <h2 class="text-2xl font-bold">Upcoming Event</h2>
+    <a href="/event" class="text-purple-600 font-semibold hover:underline">Lihat Selengkapnya</a>
+  </div>
 
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Card 1 -->
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 1" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">16 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Hasilkan Portofolio Mahal! Bikin Aplikasi Kasir dengan NextJS dalam Hitungan Hari</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 2 -->
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 2" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">11 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Step by Step Belajar UI/UX Dari Nol Sampai Bikin Project Sendiri</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 3 -->
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 3" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">8 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Kerja Remote, Gaji Dollar: Cara Developer Dapet Project Luar Negeri Tanpa Pindah Negara</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+
+    <!-- Card 4 -->
+    <a href="/event_pendaftaran" class="block">
+    <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">
+      <img src="{{ asset('image/devfest-stockholm.png') }}" alt="Event 4" class="rounded-xl mb-3">
+      <span class="text-red-500 text-sm font-semibold">4 Hari Lagi</span>
+      <h3 class="font-bold mt-1 mb-2">Membangun Aplikasi Dating Real-Time dengan Flutter & Firebase</h3>
+      <span class="text-green-600 font-semibold">Gratis</span>
+    </div>
+  </div>
+</section>
 
 <!-- page 6 - Event Yang Terlewat -->
 <section class="missed-events p-10 bg-white w-full" data-aos="fade-up">
