@@ -7,6 +7,7 @@ use App\Http\Controllers\course\pilih;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/', function () {
@@ -78,9 +79,22 @@ Route::get('/certificate/download', [CertificateController::class, 'download'])-
 
 
 // ----------- AUTH ROUTES -------------
-Route::get('/register', [RegisterController::class, 'show'])->name('register');
-
-// Login routes pakai LoginController
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/tanyamentor', function () {
+    return view('user.tanyamentor');
+})->name('tanyamentor');
+
+Route::get('/reward', function () {
+    return view('user.reward');
+})->name('reward');
+
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::get('/password/change', [ProfileController::class, 'showChangePasswordForm'])->name('password.change');
+Route::post('/password/update', [ProfileController::class, 'updatePassword'])->name('password.update');
+Route::get('/voucher', function () {
+    return view('user.voucher');
+})->name('voucher');

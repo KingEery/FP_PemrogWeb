@@ -135,7 +135,7 @@
       <div class="grid grid-cols-3 gap-4">
         <button class="payment-btn group" data-payment="bsi">
         <div
-          class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border-2 border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+          class="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-lg border border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
           <div class="bg-white p-2 rounded-lg shadow-sm">
           <img src="https://th.bing.com/th/id/OIP.5hsSqVFKAk3aZ1qcmpnj0gAAAA" alt="BSI"
             class="h-8 mx-auto object-contain">
@@ -146,7 +146,7 @@
 
         <button class="payment-btn group" data-payment="bri">
         <div
-          class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border-2 border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+          class="bg-gradient-to-br from-red-50 to-red-100 p-4 rounded-lg border border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
           <div class="bg-white p-2 rounded-lg shadow-sm">
           <img src="https://i.pinimg.com/736x/aa/0e/67/aa0e67d2e759af6d677088e9160784d1.jpg" alt="BRI"
             class="h-8 mx-auto object-contain">
@@ -157,7 +157,7 @@
 
         <button class="payment-btn group" data-payment="BCA">
         <div
-          class="bg-gradient-to-br from-blue-50 to-indigo-100 p-4 rounded-lg border-2 border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
+          class="bg-gradient-to-br from-blue-50 to-indigo-100 p-4 rounded-lg border border-transparent hover:border-indigo-500 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg">
           <div class="bg-white p-2 rounded-lg shadow-sm">
           <img src="image/bca.png" alt="bca" class="h-8 mx-auto object-contain">
           </div>
@@ -209,7 +209,7 @@
       </button>
 
       <!-- Setelah pembayaran berhasil -->
-      <div class="flex flex-col items-center mt-4">
+      <div id="payment-success" class="flex flex-col items-center mt-4 hidden">
       <img src="https://cdn-icons-png.flaticon.com/512/3159/3159066.png" class="w-16 h-16 mb-2" alt="Congrats">
       <span class="text-green-600 font-bold">Selamat! Pembayaran Berhasil 🎉</span>
       </div>
@@ -354,7 +354,7 @@
       // Add selected class to clicked button
       button.classList.add('selected');
 
-      // ... rest of your existing click handler code ...
+      // ... rest of your payment logic ...
     });
     });
 
@@ -401,12 +401,32 @@
 
   <!-- Add this style to your existing styles or in a style tag -->
   <style>
-    .payment-btn.selected div {
-    border: 2px solid rgb(99 102 241);
-    /* border-indigo-500 */
-    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.05);
+    /* Base styles for payment buttons */
+    .payment-btn div {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
     }
 
+    /* Selected state */
+    .payment-btn.selected div {
+    border: 2px solid rgb(99, 102, 241) !important;
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+    }
+
+    /* Hover effects */
+    .payment-btn:hover div {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1);
+    }
+
+    /* Remove unwanted double borders */
+    .payment-btn div.border-2,
+    .payment-btn div.border {
+    border: 2px solid transparent !important;
+    }
+
+    /* Other existing styles */
     .backdrop-blur-sm {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
