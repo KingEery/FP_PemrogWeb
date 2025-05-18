@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Hero Section -->
-    <section id="home" class="bg-indigo-900 text-white py-16 px-6">
+    <section id="home" class="bg-#564AB1-900 text-white py-16 px-6">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <!-- Teks Hero -->
             <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
@@ -25,15 +25,15 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                         <!-- Slide 2 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                         <!-- Slide 3 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/noomore.png') }}" alt="Slide 3" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/learning-illustration.png') }}" alt="Slide 3" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                     </div>
                     <!-- Navigasi -->
