@@ -24,11 +24,6 @@
         <a href="#" class="logo flex items-center">
             <img src="image/logo.png" alt="Logo" class="h-10" />
         </a>
-        <!-- Hamburger Icon -->
-        <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white mb-1"></span>
-            <span class="block w-6 h-0.5 bg-white"></span>
         </button>
         <!-- Navigation Links -->
         <ul id="nav-menu" class="hidden md:flex nav-links flex-col md:flex-row md:items-center md:space-x-6 absolute md:static top-16 left-0 w-full md:w-auto bg-[#564AB1] md:bg-transparent shadow md:shadow-none px-6 md:px-0 py-4 md:py-0 transition-all duration-300">
@@ -74,6 +69,12 @@
                 <button class="signup">Sign Up</button>
             </a>
         </div>
+
+        <!-- Hamburger Icon -->
+        <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">
+            <span class="block w-6 h-0.5 bg-white mb-1"></span>
+            <span class="block w-6 h-0.5 bg-white mb-1"></span>
+            <span class="block w-6 h-0.5 bg-white"></span>
     </div>
 </header>
 

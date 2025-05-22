@@ -55,15 +55,6 @@ header {
   flex: 1; /* Agar berada di tengah */
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-}
-
 
 .nav-links li a {
   color: var(--text-light);
@@ -80,10 +71,6 @@ header {
   color: #ffda44;
 }
 
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-}
 
 .auth-buttons button {
   padding: 8px 16px;
@@ -96,7 +83,7 @@ header {
 
 .login {
   background: #fff;
-  color: var(--bg-color);
+  color: #000;
 }
 
 .login:hover {
@@ -110,23 +97,6 @@ header {
 
 .signup:hover {
   background: #ffd000;
-}
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 5%;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .auth-buttons {
-    margin-top: 10px;
-  }
 }
 
 section {
@@ -153,30 +123,6 @@ section {
 .homepage-text p {
   font-size: 1.2rem;
   max-width: 500px;
-}
-
-@media (max-width: 768px) {
-  .homepage {
-      flex-direction: column-reverse;
-      align-items: center;
-      text-align: center;
-  }
-
-  .homepage-text{
-    margin-bottom: 20px;
-  }
-
-  .homepage-png{
-    justify-content: center;
-  }
-
-  .homepage-text-h1{
-    font-size: 1rem;
-  }
-
-  .homepage-p{
-    font-size: 1.8rem;
-  }
 }
 
 
@@ -262,7 +208,49 @@ section {
       align-items: center;
       text-align: center;
   }
+  .nav-links {
+    display: none;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 5%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .auth-buttons {
+    margin-top: 10px;
+  }
+.homepage {
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+  }
+
+  .homepage-text{
+    margin-bottom: 20px;
+  }
+
+  .homepage-png{
+    justify-content: center;
+  }
+
+  .homepage-text-h1{
+    font-size: 1rem;
+  }
+
+  .homepage-p{
+    font-size: 1.8rem;
+  }
 }
+
 
   .masking-text {
       margin-bottom: 20px;
