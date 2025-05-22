@@ -3,23 +3,24 @@
 @section('content')
 <section class="bg-gray-100 text-textDark leading-relaxed">
     <div class="max-w-screen-xl mx-auto px-4 relative">
-        <div class="flex items-start pt-8">
-            <div class="mr-6">
-                <div class="w-24 h-24 rounded-full border-4 border-white bg-gray-100 overflow-hidden flex items-center justify-center">
-                    <img src="image/user3.png" alt="Adithya Firmansyah Putra" class="w-1/9 h-auto">
+       
+        <div class="flex flex-col sm:flex-row items-start pt-8 gap-4">
+            <div class="flex-shrink-0">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white bg-gray-100 overflow-hidden flex items-center justify-center">
+                    <img src="image/user3.avif" alt="Adithya Firmansyah Putra" class="w-full h-full object-cover">
                 </div>
             </div>
             
-            <div class="flex-1">
-                <div class="flex justify-between items-start">
-                    <div>
-                        <h1 class="text-2xl font-bold mb-1">Adithya Firmansyah Putra</h1>
+            <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                    <div class="flex-1">
+                        <h1 class="text-xl sm:text-2xl font-bold mb-1">Adithya Firmansyah Putra</h1>
                         <p class="text-textLight text-sm">Product Engineer at Zero One Group</p>
                         <div class="inline-block bg-amber-100 text-amber-800 text-xs px-3 py-1 rounded-full mt-2">Product Management</div>
                     </div>
-                    <div class="flex gap-2">
-                        <button class="border border-accent text-accent py-1 px-4 rounded">Share</button>
-                        <div class="flex gap-2">
+                    <div class="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
+                        <button class="border border-accent text-accent py-2 px-4 rounded text-sm">Share</button>
+                        <div class="flex gap-2 justify-center sm:justify-start">
                             <a href="#" aria-label="Instagram" class="w-8 h-8 rounded-full flex items-center justify-center text-primary bg-gray-100 border border-gray-300">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
@@ -37,80 +38,93 @@
         </div>
         
         
-        <div class="mt-8 border-b border-gray-300">
-            <ul class="flex">
-                <li class="mr-6"><a href="#" class="block py-2 text-primary font-medium relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-0.5 after:bg-primary">Overview</a></li>
-                <li class="mr-6"><a href="#" class="block py-2 text-textLight">Course</a></li>
-                <li class="mr-6"><a href="#" class="block py-2 text-textLight">Event</a></li>
-                <li class="mr-6"><a href="#" class="block py-2 text-textLight">Portfolio</a></li>
-                <li class="mr-6"><a href="#" class="block py-2 text-textLight">Certification</a></li>
+        <div class="mt-6 border-b border-gray-300 overflow-x-auto">
+            <ul class="flex whitespace-nowrap">
+                <li class="mr-4 sm:mr-6">
+                    <a href="#" class="block py-2 text-primary font-medium relative after:content-[''] after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-0.5 after:bg-primary text-sm">Overview</a>
+                </li>
+                <li class="mr-4 sm:mr-6">
+                    <a href="#" class="block py-2 text-textLight text-sm">Course</a>
+                </li>
+                <li class="mr-4 sm:mr-6">
+                    <a href="#" class="block py-2 text-textLight text-sm">Event</a>
+                </li>
+                <li class="mr-4 sm:mr-6">
+                    <a href="#" class="block py-2 text-textLight text-sm">Portfolio</a>
+                </li>
+                <li class="mr-4 sm:mr-6">
+                    <a href="#" class="block py-2 text-textLight text-sm">Certification</a>
+                </li>
             </ul>
         </div>
         
-        <div class="py-8">
-            <div class="grid grid-cols-3 gap-8">
-                <div class="col-span-2">
-                    <h2 class="text-lg font-semibold mb-4">About Me</h2>
-                    <p class="mb-6 text-sm leading-relaxed">
-                        Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and 
-                        hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving, 
-                        leadership, and communication. As a freshman at Bina Nusantara University, I am passionate 
-                        about using technology to make a positive impact on society.
-                    </p>
+        
+        <div class="py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+               
+                <div class="lg:col-span-2 order-2 lg:order-1">
+                
+                    <div class="mb-8">
+                        <h2 class="text-lg font-semibold mb-4">About Me</h2>
+                        <p class="mb-6 text-sm leading-relaxed">
+                            Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and 
+                            hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving, 
+                            leadership, and communication. As a freshman at Bina Nusantara University, I am passionate 
+                            about using technology to make a positive impact on society.
+                        </p>
+                    </div>
                     
-                    <div>
-                        <div class="flex justify-between items-center">
-                            <h2 class="text-lg font-semibold mb-4">Experiences</h2>
-                            <div class="text-right">
-                                <a href="#" class="text-accent text-sm">View More</a>
-                            </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-semibold">Experiences</h2>
+                            <a href="#" class="text-accent text-sm">View More</a>
                         </div>
                         
-                        <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
-                            <h3 class="font-semibold mb-1">iOS Developer</h3>
-                            <div class="text-textLight text-sm flex items-center mb-1">
-                                Apple Developer Academy <span class="mx-1 text-gray-300">|</span> Infinite Learning
+                        <div class="space-y-4">
+                            <div class="p-4 border border-gray-300 rounded-lg bg-white">
+                                <h3 class="font-semibold mb-1 text-sm sm:text-base">iOS Developer</h3>
+                                <div class="text-textLight text-sm flex flex-col sm:flex-row sm:items-center mb-1">
+                                    <span>Apple Developer Academy</span>
+                                    <span class="hidden sm:inline mx-1 text-gray-300">|</span>
+                                    <span>Infinite Learning</span>
+                                </div>
+                                <div class="text-textLight text-xs">Feb 2025 - Sekarang</div>
                             </div>
-                            <div class="text-textLight text-xs">Feb 2025 - Sekarang</div>
-                        </div>
-                        
-                        <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
-                            <h3 class="font-semibold mb-1">Chief Technology Officer</h3>
-                            <div class="text-textLight text-sm mb-1">
-                                Jago London
+                            
+                            <div class="p-4 border border-gray-300 rounded-lg bg-white">
+                                <h3 class="font-semibold mb-1 text-sm sm:text-base">Chief Technology Officer</h3>
+                                <div class="text-textLight text-sm mb-1">Jago London</div>
+                                <div class="text-textLight text-xs">Jan 2025 - Sekarang</div>
                             </div>
-                            <div class="text-textLight text-xs">Jan 2025 - Sekarang</div>
-                        </div>
-                        
-                        <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
-                            <h3 class="font-semibold mb-1">Project Manager</h3>
-                            <div class="text-textLight text-sm mb-1">
-                                Sakuten
+                            
+                            <div class="p-4 border border-gray-300 rounded-lg bg-white">
+                                <h3 class="font-semibold mb-1 text-sm sm:text-base">Project Manager</h3>
+                                <div class="text-textLight text-sm mb-1">Sakuten</div>
+                                <div class="text-textLight text-xs">Nov 2024 - Sekarang</div>
                             </div>
-                            <div class="text-textLight text-xs">Nov 2024 - Sekarang</div>
-                        </div>
-                        
-                        <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white">
-                            <h3 class="font-semibold mb-1">Founder</h3>
-                            <div class="text-textLight text-sm mb-1">
-                                Logh
+                            
+                            <div class="p-4 border border-gray-300 rounded-lg bg-white">
+                                <h3 class="font-semibold mb-1 text-sm sm:text-base">Founder</h3>
+                                <div class="text-textLight text-sm mb-1">Logh</div>
+                                <div class="text-textLight text-xs">Okt 2024 - Sekarang</div>
                             </div>
-                            <div class="text-textLight text-xs">Okt 2024 - Sekarang</div>
                         </div>
                     </div>
                     
-                    <div class="mt-8">
+                    
+                    <div>
                         <h2 class="text-lg font-semibold mb-4">Educations</h2>
                         
-                        <div class="p-4 border border-gray-300 rounded-lg mb-4 bg-white flex">
-                            <div class="w-12 h-12 bg-gray-100 flex items-center justify-center mr-4 border border-gray-300">
+                        <div class="p-4 border border-gray-300 rounded-lg bg-white flex">
+                            <div class="w-12 h-12 bg-gray-100 flex items-center justify-center mr-4 border border-gray-300 flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
                                     <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="font-semibold mb-1">BINUS University</h4>
+                                <h2 class="font-semibold mb-1 text-sm sm:text-base">BINUS University</h2>
                                 <p class="text-textLight text-sm mb-1">Computer Science</p>
                                 <div class="text-textLight text-xs">2024 - Sekarang</div>
                             </div>
@@ -118,7 +132,9 @@
                     </div>
                 </div>
                 
-                <div>
+               
+                <div class="order-1 lg:order-2">
+                    
                     <div class="mb-6">
                         <h3 class="text-lg font-semibold mb-4">Location</h3>
                         <div class="flex items-center">
@@ -127,19 +143,22 @@
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
                                 </svg>
                             </div>
-                            <div>Jakarta Timur</div>
+                            <div class="text-sm">Jakarta Timur</div>
                         </div>
                     </div>
 
-                    <div class="bg-accent text-white p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold mb-4">Booking sesi konsultasimu sekarang!</h3>
-                        <p class="text-sm mb-4">Kamu dapat melakukan konsultasi secara 1 on 1 bersama mentor berpengalaman.</p>
-                        <button class="bg-white text-accent font-medium py-3 px-4 rounded w-full mb-2">Booking Sekarang</button>
-                        <button class="bg-transparent border border-white text-white font-medium py-3 px-4 rounded w-full">Coba Gratis</button>
+                   
+                    <div class="bg-[#5E50A1] text-white p-6 rounded-lg">
+                        <h2 class="text-lg font-semibold mb-4">Booking sesi konsultasimu sekarang!</h2>
+                        <p class="text-sm mb-4 leading-relaxed">Kamu dapat melakukan konsultasi secara 1 on 1 bersama mentor berpengalaman.</p>
+                        <div class="space-y-2">
+                            <button class="bg-white text-[#5E50A1] font-medium py-3 px-4 rounded w-full text-sm">Booking Sekarang</button>
+                            <button class="bg-transparent border border-white text-white font-medium py-3 px-4 rounded w-full text-sm">Coba Gratis</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-@endsection 
+@endsection

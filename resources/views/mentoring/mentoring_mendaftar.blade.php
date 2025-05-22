@@ -1,12 +1,12 @@
 @extends('layout.headfoot')
 
 @section('content')
-        <section class="bg-[#7C72C3] text-white px-[5%] py-25 flex justify-between items-center flex-wrap gap-8">
+        <section class="bg-[#3A2F91] text-white px-[5%] py-25 flex justify-between items-center flex-wrap gap-8">
             <div class="max-w-lg">
                 <h1 class="text-4xl font-bold mb-5 leading-tight">Full Stack Web Developer – Raih Penghasilan dari Proyek Freelance!</h1>
                 <p class="mb-8 opacity-90 text-lg leading-relaxed">Belajar coding dari nol hingga mahir dengan HTML, CSS, dan JavaScript. Bangun website profesional dan temukan peluang freelance dengan bimbingan mentor berpengalaman.</p>
-                <div class="text-2xl font-bold text-green-600 mb-2 py-2">
-                    <del class="text-gray-400 text-2xl mr-2">Rp 8000.000</del> Rp 135.000
+                <div class="text-2xl font-bold text-green-300 mb-2 py-2">
+                    <del class="text-gray-300 text-2xl mr-2">Rp 8000.000</del> Rp 135.000
                 </div>
                 <div class="flex gap-4">
                     <a href="/payment" class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Daftar Sekarang</a>
@@ -14,7 +14,7 @@
             </div>
            
             <div class="mt-5 text-center">
-                <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover"  src="image/Mentoring-Mendaftar.png" alt="Mentoring Image" />
+                <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover"  src="image/Mentoring-Mendaftar.avif" alt="Mentoring Image" />
             </div>
             
         </section>
@@ -27,15 +27,15 @@
 
                 <div class="flex flex-col md:flex-row gap-5 mb-10">
                     <div class="bg-white rounded-lg p-5 shadow flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-purple-800 mt-0">Mahasiswa</h3>
+                        <h2 class="text-xl font-bold text-purple-800 mt-0">Mahasiswa</h2>
                         <p class="mt-2">Mahasiswa dengan ilmu komputer, atau bidang terkait yang ingin memperkuat keterampilan fundamental programming dan mengembangkan basis pengetahuan teknis yang dalam.</p>
                     </div>
                     <div class="bg-white rounded-lg p-5 shadow flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-purple-800 mt-0">IT Professional</h3>
+                        <h2 class="text-xl font-bold text-purple-800 mt-0">IT Professional</h2>
                         <p class="mt-2">Profesional dari berbagai bidang pemrograman, manajemen projek, atau peran yang ingin beralih ke pengembangan web atau pembelajaran keterampilan komputasional baru untuk karir.</p>
                     </div>
                     <div class="bg-white rounded-lg p-5 shadow flex-1 flex flex-col">
-                        <h3 class="text-xl font-bold text-purple-800 mt-0">Freelancer</h3>
+                        <h2 class="text-xl font-bold text-purple-800 mt-0">Freelancer</h2>
                         <p class="mt-2">Freelancer pemula yang ingin membangun karir untuk dipromosikan dengan menyajikan portofolio yang menarik dan standar industri.</p>
                     </div>
                 </div>

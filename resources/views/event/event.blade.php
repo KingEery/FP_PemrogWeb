@@ -8,8 +8,8 @@
       <h1 class="text-4xl font-bold mb-5 leading-tight">Cari Bakatmu: Telusuri Event Menarik di Dunia Coding Hari Ini!</h1>
       <p class="mb-8 opacity-90 text-lg leading-relaxed">Temukan event online yang inspiratif dan interaktif! Mulai pelajari event menarik kami dan buka pintu potensimu.</p>
       <div class="flex gap-4">
-      <a class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</a>
-      <a  class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</a>
+      <a href="/register" class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</a>
+      <a href="/learnmore" class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</a>
       </div>
     </div>
     <div class="w-[630px] h-[400px] bg-[#7C72C3] rounded-xl overflow-hidden mx-auto shadow-lg flex flex-col justify-between pb-4">
@@ -224,9 +224,9 @@
   </section>
   <script
   src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-  type="module"></script>
+  type="module" defer></script>
 
-  <script src="/js/event.js"></script>
+  <script src="/js/event.js" defer></script>
 
 @endsection
 

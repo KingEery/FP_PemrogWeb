@@ -22,9 +22,9 @@
     </div>
 
     <div class="flex justify-center gap-2.5 mt-4">
-      <button type="button" class="carousel-btn w-3 h-3 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" data-slide="0"></button>
-      <button type="button" class="carousel-btn w-3 h-3 rounded-full border-2 border-white bg-white" data-slide="1"></button>
-      <button type="button" class="carousel-btn w-3 h-3 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" data-slide="2"></button>
+      <button type="button" class="carousel-btn w-4 h-4 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" aria-label="Go to slide 1" data-slide="0"></button>
+      <button type="button" class="carousel-btn w-4 h-4 rounded-full border-2 border-white bg-white" aria-label="Go to slide 1" data-slide="1"></button>
+      <button type="button" class="carousel-btn w-4 h-4 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" aria-label="Go to slide 3" data-slide="2"></button>
     </div>
   </section>
 
@@ -115,7 +115,7 @@
   </section>
 
    <!-- Script -->
-        <script src="/js/mentoring.js"></script>
+        <script src="/js/mentoring.js" defer></script>
      <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 @endsection

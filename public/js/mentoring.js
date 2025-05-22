@@ -95,13 +95,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   radioButtons.forEach(btn => {
     btn.addEventListener('click', function () {
-      radioButtons.forEach(b => b.classList.remove('bg-white'));
+      radioButtons.forEach(b => {
+        b.classList.remove('bg-white');
+        b.classList.add('bg-transparent', 'hover:scale-110', 'transition-transform');
+      });
+
+      this.classList.remove('bg-transparent', 'hover:scale-110', 'transition-transform');
       this.classList.add('bg-white');
 
       const slideNumber = this.getAttribute('data-slide');
       console.log('Slide yang dipilih:', slideNumber);
     });
   });
+
 
   // ==== HANDLER TOMBOL TABS (Mentoring / Consultan / All Mentor) ====
   const mentoringBtn = document.getElementById('btn-mentoring');

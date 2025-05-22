@@ -20,13 +20,13 @@
                     </div>
                     
                     <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
-                        <h3 class="text-xl font-semibold text-purple-600 mb-4">Overview</h3>
+                        <h2 class="text-xl font-semibold text-purple-600 mb-4">Overview</h2>
                         <p class="mb-3">DevFest adalah konferensi komunitas teknologi yang diselenggarakan oleh Google Developer Groups (GDG) di seluruh dunia. Acara ini menawarkan kesempatan untuk mempelajari teknologi Google terbaru.</p>
                         <p>Bergabunglah dengan kami untuk sesi interaktif yang dipimpin oleh pakar industri, workshop hands-on, dan kesempatan networking.</p>
                     </div>
                     
                     <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
-                        <h3 class="text-xl font-semibold text-purple-600 mb-4">What you'll learn</h3>
+                        <h2 class="text-xl font-semibold text-purple-600 mb-4">What you'll learn</h2>
                         <ul class="list-disc pl-5">
                             <li class="mb-2">Pemrograman web terkini dengan teknologi Google</li>
                             <li class="mb-2">Pengembangan aplikasi Android dengan Kotlin</li>
@@ -36,7 +36,7 @@
                     </div>
                     
                     <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
-                        <h3 class="text-xl font-semibold text-purple-600 mb-4">Term And Condition</h3>
+                        <h2 class="text-xl font-semibold text-purple-600 mb-4">Term And Condition</h2>
                         <p class="mb-3">Dengan mendaftar pada acara ini, peserta menyetujui ketentuan berikut:</p>
                         <ul class="list-disc pl-5">
                             <li class="mb-2">Peserta wajib hadir minimal 15 menit sebelum acara dimulai</li>
@@ -62,7 +62,7 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4 class="text-lg font-medium text-black-900 m-0">Yafa Nanda Putra</h4>
+                                <h3 class="text-lg font-medium text-black-900 m-0">Yafa Nanda Putra</h3>
                                 <p class="text-gray-500 text-sm m-0">Software Engineer</p>
                             </div>
                         </div>
