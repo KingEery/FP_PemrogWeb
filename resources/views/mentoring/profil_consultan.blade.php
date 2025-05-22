@@ -126,11 +126,11 @@
                         </div>
                     </div>
 
-                    <div class="bg-accent text-white p-6 rounded-lg">
+                    <div class="bg-accent text-black #0000 p-6 rounded-lg">
                         <h3 class="text-lg font-semibold mb-4">Booking sesi konsultasimu sekarang!</h3>
                         <p class="text-sm mb-4">Kamu dapat melakukan konsultasi secara 1 on 1 bersama mentor berpengalaman.</p>
                         <button class="bg-white text-accent font-medium py-3 px-4 rounded w-full mb-2">Booking Sekarang</button>
-                        <button class="bg-transparent border border-white text-white font-medium py-3 px-4 rounded w-full">Coba Gratis</button>
+                        <button class="bg-transparent border border-white text-black font-medium py-3 px-4 rounded w-full">Coba Gratis</button>
                     </div>
                 </div>
             </div>

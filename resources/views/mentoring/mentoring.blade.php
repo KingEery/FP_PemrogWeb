@@ -61,9 +61,9 @@
       @endfor
     </div>
 
+  {{-- All Mentor Section --}}
 <div id="consultan-section" class="hidden mt-8">
   <div id="consultan-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
-
   <template id="consultan-card-template">
     <a href="/profil_consultan" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <img class="w-full h-48 object-cover rounded-t-xl" src="image/default.jpg" alt="Mentor Photo" />
