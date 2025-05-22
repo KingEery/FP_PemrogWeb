@@ -96,7 +96,7 @@
       <div id="allmentorcard-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
       <template id="allmentor-card-template">
         <a href="/profil_consultan" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-          <img class="w-full h-48 object-cover rounded-t-xl" src="image/default.jpg" alt="Mentor Photo" />
+          <img class="w-full h-60 object-cover rounded-t-xl" src="image/default.jpg" alt="Mentor Photo" />
           <div class="p-4">
             <p class="text-sm text-gray-500 mb-1">Product Management</p>
             <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>

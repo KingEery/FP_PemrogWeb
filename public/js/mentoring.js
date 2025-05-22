@@ -17,13 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
       nama: "Siti Aisyah",
       jabatan: "UI/UX Designer at CreativeLab",
       pengalaman: "3 Tahun Pengalaman",
-      foto: "image/siti.jpg"
+      foto: "image/coba5.jpg"
     },
     {
       nama: "Wardhana Putra",
       jabatan: "UI/UX Designer at CreativeLab",
       pengalaman: "3 Tahun Pengalaman",
-      foto: "image/siti.jpg"
+      foto: "image/coba7.jpg"
     }
   ];
 
@@ -33,19 +33,19 @@ document.addEventListener("DOMContentLoaded", function () {
       nama: "Yafa Nanda",
       jabatan: "UI/UX Designer at CreativeLab",
       pengalaman: "3 Tahun Pengalaman",
-      foto: "image/yafa.jpg"
+      foto: "image/coba.jpg"
     },
     {
       nama: "Muhammad Raihan Alfarizi",
       jabatan: "Software Engineer at DevSpace",
       pengalaman: "4 Tahun Pengalaman",
-      foto: "image/raihan.jpg"
+      foto: "image/coba2.jpg"
     },
     {
       nama: "Dimas Putra Pradana",
       jabatan: "Software Engineer at DevSpace",
       pengalaman: "4 Tahun Pengalaman",
-      foto: "image/raihan.jpg"
+      foto: "image/coba3.jpg"
     }
   ];
 
