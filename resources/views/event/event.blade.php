@@ -8,12 +8,8 @@
       <h1 class="text-4xl font-bold mb-5 leading-tight">Cari Bakatmu: Telusuri Event Menarik di Dunia Coding Hari Ini!</h1>
       <p class="mb-8 opacity-90 text-lg leading-relaxed">Temukan event online yang inspiratif dan interaktif! Mulai pelajari event menarik kami dan buka pintu potensimu.</p>
       <div class="flex gap-4">
-      <a href="/register">
-        <button class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</button>
-      </a>
-      <a href="/learnmore">
-        <button  class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</button>
-      </a>
+      <a class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Get Started</a>
+      <a  class="px-7 py-3 rounded-md border-2 border-white text-white font-medium transition-all duration-300 hover:bg-white/10">Learn More</a>
       </div>
     </div>
     <div class="w-[630px] h-[400px] bg-[#7C72C3] rounded-xl overflow-hidden mx-auto shadow-lg flex flex-col justify-between pb-4">
@@ -25,11 +21,6 @@
             loop
             autoplay
       ></dotlottie-player>
-      <div class="flex justify-center gap-2.5 mt-4">
-        <button type="button" class="w-3 h-3 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" data-slide="1"></button>
-        <button type="button" class="w-3 h-3 rounded-full border-2 border-white bg-white" data-slide="2"></button>
-        <button type="button" class="w-3 h-3 rounded-full border-2 border-white bg-transparent hover:scale-110 transition-transform" data-slide="3"></button>
-      </div>
     </div>
   </section>
 
@@ -93,7 +84,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -104,7 +95,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -115,7 +106,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -126,19 +117,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
-              <div class="p-5">
-                <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
-                <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
-                <span class="text-purple-600 font-bold text-base">Gratis</span>
-              </div>
-            </div>
-          </a>
-
-
-          <a href="/event_pendaftaran" class="block">
-            <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -150,7 +129,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -162,7 +141,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -174,7 +153,19 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
+              <div class="p-5">
+                <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
+                <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
+                <span class="text-purple-600 font-bold text-base">Gratis</span>
+              </div>
+            </div>
+          </a>
+
+
+          <a href="/event_pendaftaran" class="block">
+            <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -185,7 +176,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -196,7 +187,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -207,7 +198,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>
@@ -218,7 +209,7 @@
 
           <a href="/event_pendaftaran" class="block">
             <div class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" data-category="web-programming">
-              <img src="image/devfest-stockholm.png" alt="DevFest Jakarta" class="w-full h-[180px] object-cover">
+              <img src="image/devfest.jpg" alt="DevFest Jakarta" class="w-full h-[150px] object-cover">
               <div class="p-5">
                 <h3 class="text-xl font-semibold mb-2 text-gray-800">DevFest Jakarta</h3>
                 <p class="text-sm text-gray-600 mb-4">1 Oktober 2023 • Jakarta</p>

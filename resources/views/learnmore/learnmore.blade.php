@@ -160,8 +160,7 @@
                 </p>
                 <div class="mt-8 flex items-center justify-end gap-3">
                     <div class="w-10 h-10 rounded-full overflow-hidden">
-                        <img src="{{ asset('image/stredows.jpg') }}" alt="Stredows"
-                            class="w-full h-full object-cover">
+                        <img src="{{ asset('image/stredows.jpg') }}" alt="Stredows" class="w-full h-full object-cover">
                     </div>
                     <div class="text-right">
                         <p class="font-bold text-red-500">Stredows</p>

@@ -3,17 +3,17 @@
 @section('content')
 
     <!-- Hero Section -->
-    <section id="bg-primary-light text-white px-[5%] py-25 flex justify-between items-center flex-wrap gap-8">
+    <section id="home" class="bg-#564AB1-900 text-white py-16 px-6">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <!-- Teks Hero -->
             <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
-                <h2 class="text-4xl font-bold mb-5 leading-tight text-white" >Buka Potensimu!</h2>
-                <p class="mb-8 opacity-90 text-lg leading-relaxed text-white">Telusuri kursus menarik dan interaktif bersama kami.</p>
+                <h2 class="text-4xl font-bold mb-4 leading-tight">Buka Potensimu!</h2>
+                <p class="mb-6 text-lg text-gray-300">Telusuri kursus menarik dan interaktif bersama kami.</p>
                 <div class="space-x-4">
                     <a href="/register" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
                         Get Started
                     </a>
-                    <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition text-white">
+                    <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
                         Learn More
                     </a>
                 </div>
@@ -25,15 +25,15 @@
                     <div class="swiper-wrapper">
                         <!-- Slide 1 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                         <!-- Slide 2 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                         <!-- Slide 3 -->
                         <div class="swiper-slide">
-                            <img src="{{ asset('image/ahmad.jpeg') }}" alt="Slide 3" class="rounded-xl w-full h-auto object-cover">
+                            <img src="{{ asset('image/learning-illustration.png') }}" alt="Slide 3" class="rounded-xl w-full h-[500px] object-cover">
                         </div>
                     </div>
                     <!-- Navigasi -->
@@ -46,8 +46,8 @@
     </section>
 
     <!-- Course Section -->
-    <section id="class" class="py-11 px-6 bg-white">
-    <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-black">Semua Kursus</h3>
+    <section id="class" class="py-16 px-6">
+        <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-black">Semua Kursus</h3>
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!-- Sidebar Kategori -->
         <div class="lg:col-span-1 mb-6 lg:mb-0 bg-white p-4 rounded-xl border border-gray-300 shadow-sm self-start">
@@ -71,20 +71,21 @@
                 </li>
             </ul>
         </div>
-        <!-- Kartu Kursus -->
-        <div class="lg:col-span-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            @for ($i = 0; $i < 6; $i++)
-                @include('course.card_sell', [
-                    'title' => 'Laravel 12 Mastery',
-                    'instructor' => 'Mbah Bregas',
-                    'duration' => '4 jam 30 menit • 23 video',
-                    'original' => '300.000',
-                    'price' => '99.000'
-                ])
-            @endfor
+
+            <!-- Kartu Kursus -->
+            <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+                @for ($i = 0; $i < 6; $i++)
+                    @include('course.card_sell', [
+                        'title' => 'Laravel 12 Mastery',
+                        'instructor' => 'Mbah Bregas',
+                        'duration' => '4 jam 30 menit • 23 video',
+                        'original' => '300.000',
+                        'price' => '99.000'
+                    ])
+                @endfor
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="/js/coursejs.js"></script>

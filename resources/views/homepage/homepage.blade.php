@@ -76,27 +76,27 @@
   </div>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
     <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold mb-2">Mentoring Web Development</h2>
-      <p class="text-gray-600 mb-4">Belajar HTML, CSS, dan JavaScript dari dasar hingga mahir.</p>
-      <p class="text-lg font-semibold text-green-600 mb-4">Rp 100.000</p>
+      <h2 class="text-xl font-bold mb-2">Program Full Stack Web Development</h2>
+      <p class="text-gray-600 mb-4">Pengenalan Web & HTML Dasar, Struktur Halaman HTML, dan Elemen Multimedia dalam HTML</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 135.000</p>
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
     </div>
     <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold mb-2">Mentoring UI/UX Design</h2>
-      <p class="text-gray-600 mb-4">Pelajari prinsip desain, Figma, dan user research.</p>
-      <p class="text-lg font-semibold text-green-600 mb-4">Rp 120.000</p>
+      <h2 class="text-xl font-bold mb-2">Program Full Stack Web Development</h2>
+      <p class="text-gray-600 mb-4">Pengenalan Web & HTML Dasar, Struktur Halaman HTML, dan Elemen Multimedia dalam HTML</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 135.000</p>
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
     </div>
     <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold mb-2">Mentoring Data Science</h2>
-      <p class="text-gray-600 mb-4">Mulai dari analisis data hingga machine learning dengan Python.</p>
-      <p class="text-lg font-semibold text-green-600 mb-4">Rp 150.000</p>
+      <h2 class="text-xl font-bold mb-2">Program Full Stack Web Development</h2>
+      <p class="text-gray-600 mb-4">Pengenalan Web & HTML Dasar, Struktur Halaman HTML, dan Elemen Multimedia dalam HTML</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 135.000</p>
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
     </div>
     <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold mb-2">Mentoring Mobile App</h2>
-      <p class="text-gray-600 mb-4">Bangun aplikasi Android/iOS menggunakan Flutter.</p>
-      <p class="text-lg font-semibold text-green-600 mb-4">Rp 130.000</p>
+      <h2 class="text-xl font-bold mb-2">Program Full Stack Web Development</h2>
+      <p class="text-gray-600 mb-4">Pengenalan Web & HTML Dasar, Struktur Halaman HTML, dan Elemen Multimedia dalam HTML</p>
+      <p class="text-lg font-semibold text-green-600 mb-4">Rp 135.000</p>
       <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Daftar Sekarang</button>
     </div>
   </div>
@@ -144,6 +144,7 @@
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    
     <!-- Card 1 -->
     <a href="/event_pendaftaran" class="block">
     <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-4 h-full flex flex-col">

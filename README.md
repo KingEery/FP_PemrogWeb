@@ -7,4 +7,4 @@ Anggota :
 4. 23.11.5542 - Unzurna Zahira Wiyanda 
 6. 23.11.5543 - Rizqy Zulmiasta Albar
 7. 23.11.5548 - Muhammad Raihan Alfarizi
-8. 23.11.5555 - Zotaro Yafa Samueletoo
+8. 23.11.5555 - Yafa Nanda Putra
