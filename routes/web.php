@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
 
 
+
 Route::get('/', function () {
     return view('homepage.homepage');
 });
