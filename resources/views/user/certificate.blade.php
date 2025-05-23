@@ -8,14 +8,23 @@
             <div class="certificate-inner-border absolute inset-4 border border-purple-400 rounded-lg"></div>
             <div class="certificate-content relative z-10 text-center">
                 <div class="certificate-header flex flex-col items-center mb-10">
-                    <div class="logo-container flex flex-col items-center">
-                        <img src="{{ asset('image/logo.png') }}" alt="Logo ITQOM" class="logo w-24 h-24 mb-1 mx-auto">
-                        <div class="logo-text text-center mt-1">
-                            <p class="text-2xl font-bold text-purple-800 leading-tight tracking-widest">ITQOM</p>
-                            <p class="text-sm text-gray-600 -mt-1 tracking-widest">EDUCATION</p>
-                        </div>
+
+                    <div class="logo-text text-center">
+                        <p class="text-3xl font-bold text-purple-800 leading-tight tracking-widest">ITQOM</p>
+                        <p class="text-sm text-gray-600 tracking-widest">EDUCATION</p>
                     </div>
-                    <div class="certificate-title text-center mt-4">
+
+                    <!-- OR Option 2: Make logo smaller and more symmetrical -->
+                    {{-- <div class="logo-container flex flex-col items-center">
+                        <img src="{{ asset('image/logo.png') }}" alt="Logo ITQOM"
+                            class="w-16 h-16 mb-2 mx-auto object-contain"> <!-- Reduced size -->
+                        <div class="logo-text text-center">
+                            <p class="text-2xl font-bold text-purple-800 leading-tight tracking-widest">ITQOM</p>
+                            <p class="text-sm text-gray-600 tracking-widest">EDUCATION</p>
+                        </div>
+                    </div> --}}
+
+                    <div class="certificate-title text-center mt-6">
                         <h1 class="text-3xl font-bold text-purple-800">SERTIFIKAT KOMPETENSI</h1>
                         <h2 class="text-lg text-gray-600">Professional Digital Technology</h2>
                     </div>

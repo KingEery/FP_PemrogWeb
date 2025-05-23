@@ -2,18 +2,18 @@
 
 @section('content')
     <div class="container mx-auto px-4 py-20 text-center max-w-3xl">
-        <p class="text-sm uppercase text-purple-360 tracking-widest font-semibold">Learning Ecosystem</p>
-        <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-2 mb-6 text-gray-800">
+        <p class="text-sm uppercase text-purple-360 tracking-widest font-semibold text-white">Learning Ecosystem</p>
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight mt-2 mb-6 text-white">
             Buka Potensimu Bersama Kursus Interaktif ITQOM
         </h1>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Temukan <span class="text-purple-800 font-semibold">kursus interaktif</span> yang dirancang untuk membangun
-            keahlian praktismu—mulai dari <span class="text-purple-800 font-semibold">pemula</span> hingga <span
-                class="text-purple-800 font-semibold">tingkat lanjutan</span>. Dipandu oleh mentor profesional dan materi
+        <p class="text-lg text-white mb-8 leading-relaxed">
+            Temukan <span class="text-purple-200 font-semibold">kursus interaktif</span> yang dirancang untuk membangun
+            keahlian praktismu—mulai dari <span class="text-purple-200 font-semibold">pemula</span> hingga <span
+                class="text-purple-200 font-semibold">tingkat lanjutan</span>. Dipandu oleh mentor profesional dan materi
             yang selalu diperbarui, setiap kursus memberi pengalaman belajar yang <span
-                class="text-purple-800 font-semibold">fleksibel</span>, <span
-                class="text-purple-800 font-semibold">terstruktur</span>, dan <span
-                class="text-purple-800 font-semibold">relevan</span> dengan dunia kerja saat ini.
+                class="text-purple-200 font-semibold">fleksibel</span>, <span
+                class="text-purple-200 font-semibold">terstruktur</span>, dan <span
+                class="text-purple-200 font-semibold">relevan</span> dengan dunia kerja saat ini.
         </p>
         <div class="flex justify-center gap-4">
             <a href="/register"
