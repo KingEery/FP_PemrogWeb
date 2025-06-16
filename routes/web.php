@@ -11,7 +11,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventsDescriptionController;
 use App\Http\Controllers\MentoringController;
-
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseDescriptionController;
 
 
 
@@ -106,9 +107,7 @@ Route::get('/voucher', function () {
 
 
 Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring.index');
-// Route::get('/mentoring/{slug}', [MentoringController::class, 'show']);
-// Route::get('/event', [EventController::class, 'index'])->name('events.index');
-// Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
+
 Route::prefix('event')->group(function() {
     // List events - /events
     Route::get('/', [EventController::class, 'index'])->name('events.index');
@@ -120,4 +119,6 @@ Route::prefix('event')->group(function() {
 
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
+Route::get('/course_description', [CourseDescriptionController::class,'index']);
+Route::get('/course', [CourseController::class, 'index']);
 

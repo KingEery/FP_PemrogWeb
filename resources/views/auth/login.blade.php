@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,13 +27,12 @@
             <div class="text-center">
 
                 <dotlottie-player
-                src="https://lottie.host/da3cda18-274e-4907-b0c7-710b6d159bf2/I88cIwlTEp.lottie"
-                background="transparent"
-                speed="1"
-                style="width: 450px; height: 450px"
-                loop
-                autoplay
-              ></dotlottie-player>
+                    src="https://lottie.host/da3cda18-274e-4907-b0c7-710b6d159bf2/I88cIwlTEp.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="width: 450px; height: 450px"
+                    loop
+                    autoplay></dotlottie-player>
                 <p class="mt-4 text-white font-semibold">Welcome Back!</p>
             </div>
         </div>
@@ -59,6 +59,12 @@
                     class="w-full bg-primaryDark hover:bg-primaryLight text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
                     Login
                 </button>
+                @if ($errors->any())
+                <div class="mt-4 text-red-600 text-sm text-center">
+                    {{ $errors->first() }}
+                </div>
+                @endif
+
             </form>
 
             <p class="text-center text-sm text-gray-600 mt-6">
@@ -68,8 +74,8 @@
         </div>
     </div>
     <script
-  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-  type="module"
-></script>
+        src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+        type="module"></script>
 </body>
+
 </html>

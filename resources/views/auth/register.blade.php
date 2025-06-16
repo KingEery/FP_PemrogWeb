@@ -78,8 +78,7 @@
           speed="1"
           style="width: 350px; height: 350px"
           loop
-          autoplay
-        ></dotlottie-player>
+          autoplay></dotlottie-player>
         <p class="mt-4 text-primaryDark font-semibold">Welcome to Our Community!</p>
       </div>
     </div>

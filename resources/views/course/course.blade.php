@@ -2,52 +2,52 @@
 
 @section('content')
 
-    <!-- Hero Section -->
-    <section id="home" class="bg-#564AB1-900 text-white py-16 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <!-- Teks Hero -->
-            <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
-                <h2 class="text-4xl font-bold mb-4 leading-tight">Buka Potensimu!</h2>
-                <p class="mb-6 text-lg text-gray-300">Telusuri kursus menarik dan interaktif bersama kami.</p>
-                <div class="space-x-4">
-                    <a href="/register" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                        Get Started
-                    </a>
-                    <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
-                        Learn More
-                    </a>
-                </div>
-            </div>
-
-            <!-- Slider Gambar -->
-            <div class="md:w-1/2 flex justify-center mt-12">
-                <div class="swiper mySwiper w-full max-w-md md:max-w-lg">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-[500px] object-cover">
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="swiper-slide">
-                            <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-[500px] object-cover">
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <img src="{{ asset('image/learning-illustration.png') }}" alt="Slide 3" class="rounded-xl w-full h-[500px] object-cover">
-                        </div>
-                    </div>
-                    <!-- Navigasi -->
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
+<!-- Hero Section -->
+<section id="home" class="bg-#564AB1-900 text-white py-16 px-6">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <!-- Teks Hero -->
+        <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+            <h2 class="text-4xl font-bold mb-4 leading-tight">Buka Potensimu!</h2>
+            <p class="mb-6 text-lg text-gray-300">Telusuri kursus menarik dan interaktif bersama kami.</p>
+            <div class="space-x-4">
+                <a href="/register" class="bg-white text-indigo-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Get Started
+                </a>
+                <a href="/learnmore" class="border border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-indigo-800 transition">
+                    Learn More
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Course Section -->
-    <section id="class" class="py-16 px-6">
-        <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-black">Semua Kursus</h3>
+        <!-- Slider Gambar -->
+        <div class="md:w-1/2 flex justify-center mt-12">
+            <div class="swiper mySwiper w-full max-w-md md:max-w-lg">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="{{ asset('image/buildwebsite.png') }}" alt="Slide 1" class="rounded-xl w-full h-[500px] object-cover">
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <img src="{{ asset('image/creative.png') }}" alt="Slide 2" class="rounded-xl w-full h-[500px] object-cover">
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <img src="{{ asset('image/learning-illustration.png') }}" alt="Slide 3" class="rounded-xl w-full h-[500px] object-cover">
+                    </div>
+                </div>
+                <!-- Navigasi -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Course Section -->
+<section id="class" class="py-16 px-6">
+    <h3 id="judulcourse" class="text-2xl font-semibold mb-8 text-center text-black">Semua Kursus</h3>
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <!-- Sidebar Kategori -->
         <div class="lg:col-span-1 mb-6 lg:mb-0 bg-white p-4 rounded-xl border border-gray-300 shadow-sm self-start">
@@ -72,43 +72,44 @@
             </ul>
         </div>
 
-            <!-- Kartu Kursus -->
-            <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                @for ($i = 0; $i < 6; $i++)
-                    @include('course.card_sell', [
-                        'title' => 'Laravel 12 Mastery',
-                        'instructor' => 'Mbah Bregas',
-                        'duration' => '4 jam 30 menit • 23 video',
-                        'original' => '300.000',
-                        'price' => '99.000'
-                    ])
-                @endfor
-            </div>
-        </div>
-    </section>
+        <!-- Kartu Kursus -->
+        <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+            @foreach ($courses as $course)
+            @include('course.card_sell', [
+            'title' => $course->title,
+            'instructor' => $course->instructor,
+            'duration' => floor($course->duration / 60) . ' jam ' . ($course->duration % 60) . ' menit • ' . $course->video_count . ' video',
+            'original' => number_format($course->original_price, 0, ',', '.'),
+            'price' => number_format($course->price, 0, ',', '.'),
+            ])
+            @endforeach
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="/js/coursejs.js"></script>
-    <script>
-        const swiper = new Swiper('.mySwiper', {
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true,
-            },
-        });
-    </script>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="/js/coursejs.js"></script>
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+    });
+</script>
 
 @endsection
