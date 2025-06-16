@@ -26,8 +26,28 @@
     <div class="w-full md:w-1/2 p-8">
       <h2 class="text-3xl font-bold text-center mb-6 text-primaryDark">Buat Akun ITQOM</h2>
 
-      <form action="{{ url('/register') }}" method="POST" class="space-y-5">
-        @csrf
+     <form action="{{ url('/register') }}" method="POST" class="space-y-5">
+  @csrf
+
+  {{-- Menampilkan pesan error validasi --}}
+  @if ($errors->any())
+    <div class="bg-red-100 text-red-800 px-4 py-2 rounded-lg text-sm">
+      <ul class="list-disc pl-4">
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endif
+
+  {{-- Menampilkan pesan sukses --}}
+  @if (session('success'))
+    <div class="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm">
+      {{ session('success') }}
+    </div>
+  @endif
+
+
         <!-- Nama -->
         <div>
           <label for="name" class="block mb-1 text-sm font-medium text-gray-700">Full Name</label>

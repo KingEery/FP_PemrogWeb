@@ -109,3 +109,4 @@ Route::get('/voucher', function () {
 
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index']);
+

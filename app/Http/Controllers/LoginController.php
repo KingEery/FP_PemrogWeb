@@ -9,30 +9,34 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
+    // Menampilkan form login
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
+    // Proses login
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard'); // ganti sesuai halaman tujuan
+            return redirect()->intended('/'); // halaman tujuan setelah login
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+            'email' => 'Email atau password salah.',
+        ])->onlyInput('email');
     }
 
+    // Menampilkan form register
     public function showRegisterForm()
     {
         return view('auth.register');
     }
 
+    // Proses register
     public function register(Request $request)
     {
         $request->validate([
@@ -49,9 +53,10 @@ class LoginController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard'); // ganti sesuai halaman tujuan
+        return redirect('/dashboard'); // halaman tujuan setelah register
     }
 
+    // Logout
     public function logout(Request $request)
     {
         Auth::logout();
