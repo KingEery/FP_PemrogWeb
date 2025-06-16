@@ -8,8 +8,13 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CourseDescriptionController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventsDescriptionController;
+use App\Http\Controllers\MentoringController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\CourseDescriptionController;
+
+
 
 Route::get('/', function () {
     return view('homepage.homepage');
@@ -28,17 +33,17 @@ Route::get('/course', function () {
     return view('course.course', compact('kategoris'));
 })->name('course');
 
-Route::get('/event', function () {
-    return view('event.event');
-})->name('event');
+// Route::get('/event', function () {
+//     return view('event.event');
+// })->name('event');
 
-Route::get('/event_pendaftaran', function () {
-    return view('event.event_pendaftaran');
-})->name('event_pendaftaran');
+// Route::get('/event_pendaftaran', function () {
+//     return view('event.event_pendaftaran');
+// })->name('event_pendaftaran');
 
-Route::get('/mentoring', function () {
-    return view('mentoring.mentoring');
-})->name('mentoring');
+// Route::get('/mentoring', function () {
+//     return view('mentoring.mentoring');
+// })->name('mentoring');
 
 Route::get('/course_description', function () {
     return view('course.course_description');
@@ -48,9 +53,9 @@ Route::get('/course_content', function () {
     return view('course.course_content');
 })->name('course_content');
 
-Route::get('/mentoring_mendaftar', function () {
-    return view('mentoring.mentoring_mendaftar');
-})->name('mentoring_mendaftar');
+// Route::get('/mentoring_mendaftar', function () {
+//     return view('mentoring.mentoring_mendaftar');
+// })->name('mentoring_mendaftar');
 
 Route::get('/payment', function() {
     return view('payment.payment');
@@ -80,17 +85,10 @@ Route::get('/certificate/download', [CertificateController::class, 'download'])-
 
 
 // ----------- AUTH ROUTES -------------
-// Register routes
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
-
-// Login routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
-
-// Logout route
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 
 Route::get('/tanyamentor', function () {
     return view('user.tanyamentor');
@@ -106,6 +104,20 @@ Route::post('/password/update', [ProfileController::class, 'updatePassword'])->n
 Route::get('/voucher', function () {
     return view('user.voucher');
 })->name('voucher');
+
+
+Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring.index');
+
+Route::prefix('event')->group(function() {
+    // List events - /events
+    Route::get('/', [EventController::class, 'index'])->name('events.index');
+    
+    // Show single event - /events/1
+    Route::get('/{id}', [EventController::class, 'show'])->name('event.show');
+    
+});
+
+Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index']);

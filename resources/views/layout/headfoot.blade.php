@@ -7,7 +7,7 @@
     <title>ITQOM header-footer</title>
     {{-- tailwind --}}
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css1/home.css" />
+    <link rel="stylesheet" href="{{ asset('css1/home.css') }}" />
     {{-- aos --}}
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <!-- Swiper.js CSS -->
@@ -22,7 +22,7 @@
     <header class="bg-[#564AB1] shadow-md fixed top-0 left-0 w-full z-50">
     <div class="container mx-auto flex items-center justify-between px-4 py-3">
         <a href="#" class="logo flex items-center">
-            <img src="image/logo.png" alt="Logo" class="h-10" />
+            <img src="{{ asset('image/logo.png') }}" alt="Logo" class="h-10" />
         </a>
         </button>
         <!-- Navigation Links -->
