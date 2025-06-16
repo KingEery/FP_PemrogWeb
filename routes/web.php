@@ -8,8 +8,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfileController;
-
-
+use App\Http\Controllers\CourseDescriptionController;
+use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('homepage.homepage');
@@ -80,10 +80,17 @@ Route::get('/certificate/download', [CertificateController::class, 'download'])-
 
 
 // ----------- AUTH ROUTES -------------
+// Register routes
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
+
+// Login routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+// Logout route
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 Route::get('/tanyamentor', function () {
     return view('user.tanyamentor');
@@ -99,3 +106,6 @@ Route::post('/password/update', [ProfileController::class, 'updatePassword'])->n
 Route::get('/voucher', function () {
     return view('user.voucher');
 })->name('voucher');
+
+Route::get('/course_description', [CourseDescriptionController::class,'index']);
+Route::get('/course', [CourseController::class, 'index']);
