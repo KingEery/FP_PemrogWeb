@@ -15,7 +15,7 @@ class MentoringSeeder extends Seeder
 
         Mentoring::create([
             'title' => 'Program Full Stack Web Development',
-            'image' => 'images/Mentoring-Images.jpg',
+            'image' => 'image/Mentoring-Images.jpg',
             'description' => $description,
             'price_normal' => 8000000,
             'price_discount' => 135000,
@@ -25,7 +25,7 @@ class MentoringSeeder extends Seeder
         // Data tambahan contoh
         Mentoring::create([
             'title' => 'Program Mobile App Development',
-            'image' => 'images/Mobile-App-Images.jpg',
+            'image' => 'image/mobile-app.webp',
             'description' => "✔ Chapter 1: Pengenalan Flutter\n✔ Chapter 2: Widget Dasar\n✔ Chapter 3: State Management",
             'price_normal' => 7500000,
             'price_discount' => 150000,
@@ -34,7 +34,7 @@ class MentoringSeeder extends Seeder
 
         Mentoring::create([
             'title' => 'Program Data Science',
-            'image' => 'images/Data-Science-Images.jpg',
+            'image' => 'image/Data-Science-Images.webp',
             'description' => "✔ Chapter 1: Python untuk Data Science\n✔ Chapter 2: Pandas dan Numpy\n✔ Chapter 3: Visualisasi Data",
             'price_normal' => 9000000,
             'price_discount' => 200000,

@@ -11,6 +11,30 @@ class EventSeeder extends Seeder
     {
         DB::table('events')->insert([
             [
+                'title' => 'DevFest Jakarta',
+                'location' => 'Jakarta',
+                'date' => '2025-11-20',
+                'category' => 'web-programming',
+                'price' => 'Gratis',
+                'image' => 'image/devfest.jpg',
+            ],
+            [
+                'title' => 'Mobile Hackathon',
+                'location' => 'Bandung',
+                'date' => '2025-11-25',
+                'category' => 'mobile-programming',
+                'price' => 'Rp100.000',
+                'image' => 'image/hackathon.webp',
+            ],
+            [
+                'title' => 'UI/UX Design Workshop',
+                'location' => 'Surabaya',
+                'date' => '2025-12-17',
+                'category' => 'ui-ux',
+                'price' => 'Rp150.000',
+                'image' => 'image/design-workshop.webp',
+            ],
+            [
                 'title' => 'DevFest Yogyakarta',
                 'location' => 'Yogyakarta',
                 'date' => '2025-12-05',

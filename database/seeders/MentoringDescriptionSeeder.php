@@ -11,14 +11,14 @@ class MentoringDescriptionSeeder extends Seeder
     public function run()
     {
 
-        MentoringDescription::create([
+         MentoringDescription::create([
             'mentoring_id' => 1,
             'title' => 'Full Stack Web Developer – Raih Penghasilan dari Proyek Freelance!',
             'short_description' => 'Belajar coding dari nol hingga mahir dengan HTML, CSS, dan JavaScript.',
             'long_description' => 'Program Exclusive Mentoring dari Dunia Coding menawarkan mentoring one-to-one yang dirancang khusus untuk kamu yang kesulitan belajar di lingkungan formal atau mandiri.',
             'original_price' => 8000000,
             'discounted_price' => 135000,
-            'image_path' => 'images/Mentoring-Mendaftar.avif',
+            'image_path' => 'image/Mentoring-Mendaftar.avif',
             'target_audience' => [
                 ['title' => 'Mahasiswa', 'description' => 'Mahasiswa dengan ilmu komputer yang ingin memperkuat keterampilan fundamental programming.'],
                 ['title' => 'IT Professional', 'description' => 'Profesional yang ingin beralih ke pengembangan web.'],
@@ -98,6 +98,51 @@ class MentoringDescriptionSeeder extends Seeder
             ],
             'max_participants' => 8,
             'slug' => 'flutter-mobile-development',
+            'is_active' => true,
+            'duration_months' => 4
+        ]);
+        MentoringDescription::create([
+            'mentoring_id' => 3, 
+            'title' => 'Program Data Science',
+            'short_description' => 'Pelajari data science dari dasar hingga mahir dengan Python, Pandas, dan visualisasi data.',
+            'long_description' => 'Mentoring intensif selama 4 bulan yang membahas seluruh fondasi data science. Mulai dari Python dasar, manipulasi data dengan Pandas dan Numpy, hingga visualisasi dan analisis data yang mendalam.',
+            'original_price' => 9000000,
+            'discounted_price' => 200000,
+            'image_path' => 'image/Data-Science-Images.jpg',
+            'target_audience' => [
+                ['title' => 'Mahasiswa', 'description' => 'Mahasiswa yang ingin memperdalam ilmu data science untuk karir masa depan.'],
+                ['title' => 'Career Switcher', 'description' => 'Profesional yang ingin beralih ke bidang data dan analitik.'],
+                ['title' => 'Entrepreneur', 'description' => 'Pebisnis yang ingin memahami data untuk pengambilan keputusan.']
+            ],
+            'about_program' => 'Mentoring berbasis proyek yang dirancang untuk membentuk keterampilan analisis data, pemrograman Python, dan visualisasi yang relevan di dunia kerja.',
+            'basic_materials' => [
+                'Dasar Python untuk Data Science',
+                'Struktur Data Python',
+                'Pengenalan Jupyter Notebook',
+                'Pandas & Numpy dasar'
+            ],
+            'intermediate_materials' => [
+                'Manipulasi Data Lanjut dengan Pandas',
+                'Data Cleaning dan Preprocessing',
+                'Visualisasi dengan Matplotlib & Seaborn',
+                'Studi Kasus Industri'
+            ],
+            'advanced_materials' => [
+                'Machine Learning Dasar (scikit-learn)',
+                'Model Evaluation & Validation',
+                'Mini Project: Data Analysis',
+                'Deploy Model ke Cloud (Streamlit/Gradio)'
+            ],
+            'benefits' => [
+                'Akses materi seumur hidup',
+                'Mentoring privat mingguan',
+                'Studi kasus real-world',
+                'Umpan balik langsung dari mentor',
+                'Sertifikat penyelesaian',
+                'Persiapan portfolio karir'
+            ],
+            'max_participants' => 10,
+            'slug' => 'data-science',
             'is_active' => true,
             'duration_months' => 4
         ]);

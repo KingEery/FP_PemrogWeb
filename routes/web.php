@@ -121,5 +121,5 @@ Route::prefix('event')->group(function() {
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
-Route::get('/course', [CourseController::class, 'index']);
+Route::get('/course', [CourseController::class, 'index'])->name('courses');
 

@@ -15,7 +15,7 @@
             </div>
            
             <div class="mt-5 text-center">
-                <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover"  src="{{ asset($mentoring->mentoringDescription->image_path) }}" alt="Mentoring Image" />
+                <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover"  src="{{ asset($mentoring->image) }}" alt="Mentoring Image" />
             </div>
             
         </section>

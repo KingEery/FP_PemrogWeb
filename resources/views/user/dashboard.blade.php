@@ -146,7 +146,7 @@
                 </div>
             </div>
             <div class="grid md:grid-cols-3 gap-6 mb-10">
-                <a href="{{ route('course') }}"
+                <a href="{{ route('courses') }}"
                     class="bg-white shadow rounded-lg p-6 flex flex-col items-center hover:scale-105 transition group">
                     <span class="text-3xl mb-2 group-hover:animate-bounce">📚</span>
                     <span class="font-bold text-purple-700">Kursus</span>
