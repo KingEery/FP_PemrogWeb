@@ -86,6 +86,7 @@ Route::get('/certificate/download', [CertificateController::class, 'download'])-
 
 // ----------- AUTH ROUTES -------------
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [LoginController::class, 'register'])->name('register.submit');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -111,10 +112,10 @@ Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring
 Route::prefix('event')->group(function() {
     // List events - /events
     Route::get('/', [EventController::class, 'index'])->name('events.index');
-    
+
     // Show single event - /events/1
     Route::get('/{id}', [EventController::class, 'show'])->name('event.show');
-    
+
 });
 
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
