@@ -1,0 +1,18 @@
+/* resources/css/custom.css */
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.overflow-x-auto::-webkit-scrollbar {
+  height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 3px;
+}

@@ -43,32 +43,37 @@
       </div>
     </div>
 
-    <div id="mentoring-section" class="flex flex-wrap md:flex-nowrap gap-8">
+   <div id="mentoring-section" class="flex flex-wrap md:flex-nowrap gap-8">
       <div class="flex-1">
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-            {{-- Salin semua blok mentoring kamu di sini --}}
-            {{-- ...potongan mentoring program yang sudah kamu punya... --}}
-            {{-- Misalnya: --}}
-            @for ($i = 0; $i < 6; $i++)
-              <a href="/mentoring_mendaftar" class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block" data-category="web-programming">
-                <img src="image/Mentoring-Images.jpg" alt="Full Stack Web Development" class="w-full h-[230px] object-cover">
+            @foreach($mentorings as $mentoring)
+              <a href="{{ route('mentoring.show', $mentoring->id)}}" class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block" data-category="web-programming">
+                <img src="{{ asset($mentoring->image) }}" alt="{{ $mentoring->title }}" class="w-full h-[230px] object-cover">
 
                 <div class="p-5">
-                  <h2 class="text-xl font-semibold mb-2 text-gray-800">Program Full Stack Web Development</h2>
-                  <p class="text-sm text-gray-600 mb-4">✔ Chapter 1: Pengenalan Web & HTML Dasar</p>
-                  <p class="text-sm text-gray-600 mb-4">✔ Chapter 2: Struktur Halaman HTML</p>
-                  <p class="text-sm text-gray-600 mb-4">✔ Chapter 3: Elemen Multimedia dalam HTML</p>
+                  <h2 class="text-xl font-semibold mb-2 text-gray-800">{{ $mentoring->title }}</h2>
+                  
+                  @foreach(explode("\n", $mentoring->description) as $chapter)
+                    @if(trim($chapter))
+                      <p class="text-sm text-gray-600 mb-4">{{ $chapter }}</p>
+                    @endif
+                  @endforeach
+                  
                   <h3 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h3>
-                  <p class="text-sm text-gray-600 mb-4 line-through">Rp. 8.000.000</p>
-                  <p class="text-sm text-[#1A5F2A] mb-4 font-medium">Rp. 135.000</p>
+                  @if($mentoring->price_normal)
+                    <p class="text-sm text-gray-600 mb-4 line-through">Rp. {{ number_format($mentoring->price_normal, 0, ',', '.') }}</p>
+                  @endif
+                  @if($mentoring->price_discount)
+                    <p class="text-sm text-[#1A5F2A] mb-4 font-medium">Rp. {{ number_format($mentoring->price_discount, 0, ',', '.') }}</p>
+                  @endif
                   <p class="text-purple-600 font-bold text-base inline-block py-1.5">Lihat Detail</p>
                 </div>
               </a>
-           @endfor
+            @endforeach
           </div>
         </div>
       </div>
-   </dev> 
+    </div>
 
     <div id="consultan-section" class="hidden mt-8">
       <div id="consultan-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
