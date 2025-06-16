@@ -26,7 +26,7 @@
     <div class="w-full md:w-1/2 p-8">
       <h2 class="text-3xl font-bold text-center mb-6 text-primaryDark">Buat Akun ITQOM</h2>
 
-     <form action="{{ route('/register') }}" method="POST" class="space-y-5">
+     <form action="{{ route('register.submit') }}" method="POST" class="space-y-5">
   @csrf
 
   {{-- Menampilkan pesan error validasi --}}
