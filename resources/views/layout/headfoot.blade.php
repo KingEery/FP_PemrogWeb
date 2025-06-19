@@ -54,14 +54,6 @@
                     Event
                 </a>
             </li>
-            <li class="md:hidden flex flex-col space-y-2 mt-2">
-                <a href="/login">
-                    <button class="login w-full">Login</button>
-                </a>
-                <a href="/register">
-                    <button class="signup w-full">Sign Up</button>
-                </a>
-            </li>
             @guest
     <li class="md:hidden flex flex-col space-y-2 mt-2">
         <a href="/login">
@@ -72,7 +64,6 @@
         </a>
     </li>
 @endguest
-
 @auth
     <li class="md:hidden flex flex-col space-y-2 mt-2">
         <div class="flex items-center space-x-2">
