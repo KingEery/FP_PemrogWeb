@@ -13,7 +13,14 @@ use App\Http\Controllers\EventsDescriptionController;
 use App\Http\Controllers\MentoringController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseDescriptionController;
-use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\ConsultanController;
+use App\Http\Controllers\FreeTrialController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\DashboardConsultanController;
+
+
+
+
 
 
 
@@ -125,24 +132,68 @@ Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mento
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index'])->name('courses');
 
-Route::middleware('auth')->prefix('admin')->group(function () {
-    Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
-    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
-    Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
-    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
-    Route::put('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
-    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+
+// Session keep alive route (for CSRF token refresh)
+Route::post('/session/keep-alive', function () {
+    return response()->json(['status' => 'alive']);
+})->name('session.keep_alive');
+
+
+
+// ----------- BOOKING ROUTES (Global - Diperlukan untuk form) -------------
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::post('/consultan/free-trial', [FreeTrialController::class, 'store'])->name('consultan.Free-Trial.store');
+
+// ----------- CONSULTANT DASHBOARD ROUTES -------------
+Route::get('/dashboard_consultant', [DashboardConsultanController::class, 'dashboard'])->name('dashboard_consultant');
+
+// Dashboard API Routes
+Route::prefix('dashboard_consultant/api')->name('dashboard_consultant.')->group(function () {
+    Route::get('/chart-data', [DashboardConsultanController::class, 'chartData'])->name('chart_data');
+    Route::get('/upcoming-bookings', [DashboardConsultanController::class, 'upcomingBookings'])->name('upcoming_bookings');
+    Route::get('/stats', [DashboardConsultanController::class, 'getStats'])->name('stats');
+    Route::get('/bookings', [DashboardConsultanController::class, 'getBookings'])->name('bookings');
+    Route::get('/free-trials', [DashboardConsultanController::class, 'getFreeTrials'])->name('free_trials');
 });
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-Route::resource('/users', App\Http\Controllers\Admin\UserManagementController::class);
+// Consultant Management Routes
+Route::prefix('consultant')->name('consultant.')->group(function () {
+    // Booking Management
+    Route::prefix('booking')->name('booking.')->group(function () {
+        Route::get('/', [BookingController::class, 'index'])->name('index');
+        Route::get('/{id}', [BookingController::class, 'show'])->name('show');
+        Route::put('/{id}', [BookingController::class, 'update'])->name('update');
+        Route::put('/{id}/status', [BookingController::class, 'updateStatus'])->name('update_status');
+        Route::delete('/{id}', [BookingController::class, 'destroy'])->name('destroy');
+        Route::get('/export/csv', [BookingController::class, 'exportCsv'])->name('export_csv');
+    });
+
+    // Free Trial Management
+    Route::prefix('free-trials')->name('free_trials.')->group(function () {
+        Route::get('/', [FreeTrialController::class, 'index'])->name('index');
+        Route::post('/', [FreeTrialController::class, 'save'])->name('save');
+        Route::get('/{id}', [FreeTrialController::class, 'show'])->name('show');
+        Route::put('/{id}', [FreeTrialController::class, 'update'])->name('update');
+        Route::delete('/{id}', [FreeTrialController::class, 'destroy'])->name('destroy');
+        Route::post('/{id}/toggle-status', [FreeTrialController::class, 'toggleStatus'])->name('toggle_status');
+        Route::post('/{id}/duplicate', [FreeTrialController::class, 'duplicate'])->name('duplicate');
+        Route::get('/{id}/participants', [FreeTrialController::class, 'getParticipants'])->name('participants');
+        Route::get('/{id}/export-participants', [FreeTrialController::class, 'exportParticipants'])->name('export_participants');
+        Route::get('/{id}/available-slots', [FreeTrialController::class, 'getAvailableSlots'])->name('available_slots');
+        Route::get('/statistics', [FreeTrialController::class, 'getStatistics'])->name('statistics');
+    });
+
+    // Profile Management
+    Route::prefix('profile')->name('profile.')->group(function () {
+        Route::get('/', [ConsultanController::class, 'show'])->name('show');
+        Route::put('/', [ConsultanController::class, 'update'])->name('update');
+    });
 });
 
-Route::prefix('admin')->group(function () {
-    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
-    Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create');
-    Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
-    Route::get('/users/{id}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
-    Route::put('/users/{id}', [AdminUserController::class, 'update'])->name('admin.users.update');
-    Route::delete('/users/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+// ----------- API ROUTES -------------
+Route::prefix('api/public')->name('api.public.')->group(function () {
+    Route::get('/consultants', [ConsultanController::class, 'index'])->name('consultants.index');
+    Route::get('/consultants/{id}', [ConsultanController::class, 'show'])->name('consultants.show');
+    Route::get('/free-trials', [FreeTrialController::class, 'index'])->name('free_trials.index');
+    Route::get('/free-trials/{id}', [FreeTrialController::class, 'show'])->name('free_trials.show');
 });

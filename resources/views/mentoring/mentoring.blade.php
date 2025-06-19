@@ -52,13 +52,13 @@
 
                 <div class="p-5">
                   <h2 class="text-xl font-semibold mb-2 text-gray-800">{{ $mentoring->title }}</h2>
-                  
+
                   @foreach(explode("\n", $mentoring->description) as $chapter)
                     @if(trim($chapter))
                       <p class="text-sm text-gray-600 mb-4">{{ $chapter }}</p>
                     @endif
                   @endforeach
-                  
+
                   <h3 class="text-xl font-semibold mb-2 text-gray-800">Investasi Murah</h3>
                   @if($mentoring->price_normal)
                     <p class="text-sm text-gray-600 mb-4 line-through">Rp. {{ number_format($mentoring->price_normal, 0, ',', '.') }}</p>
@@ -75,6 +75,8 @@
       </div>
     </div>
 
+
+  <!-- Section for Consultan and All Mentor -->
     <div id="consultan-section" class="hidden mt-8">
       <div id="consultan-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
 
@@ -96,7 +98,7 @@
         </a>
       </template>
     </div>
-    {{-- All Mentor Section --}}
+    
     <div id="allmentor-section" class="hidden mt-8">
       <div id="allmentorcard-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
       <template id="allmentor-card-template">

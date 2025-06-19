@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ITQOM header-footer</title>
@@ -12,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <!-- Swiper.js CSS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 
 </head>
@@ -59,16 +62,60 @@
                     <button class="signup w-full">Sign Up</button>
                 </a>
             </li>
+            @guest
+    <li class="md:hidden flex flex-col space-y-2 mt-2">
+        <a href="/login">
+            <button class="login w-full">Login</button>
+        </a>
+        <a href="/register">
+            <button class="signup w-full">Sign Up</button>
+        </a>
+    </li>
+@endguest
+
+@auth
+    <li class="md:hidden flex flex-col space-y-2 mt-2">
+        <div class="flex items-center space-x-2">
+            <a href="{{ Auth::user()->role === 'admin' ? '/dashboard_consultant' : '/dashboard' }}">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center cursor-pointer hover:bg-purple-700 transition">
+                    <i class="fas fa-user text-white text-sm"></i>
+                </div>
+            </a>
+            <span class="text-sm text-gray-900">{{ Auth::user()->name }}</span>
+        </div>
+        <form action="{{ route('logout') }}" method="POST" class="mt-2">
+            @csrf
+            <button type="submit" class="w-full px-3 py-2 rounded bg-red-500 text-white text-sm hover:bg-red-600 transition">Logout</button>
+        </form>
+    </li>
+@endauth
         </ul>
         <!-- Auth Buttons Desktop -->
-        <div class="auth-buttons hidden md:flex space-x-3">
-            <a href="/login">
-                <button class="login">Login</button>
-            </a>
-            <a href="/register">
-                <button class="signup">Sign Up</button>
-            </a>
+@guest
+    <div class="auth-buttons hidden md:flex space-x-3">
+        <a href="/login">
+            <button class="login">Login</button>
+        </a>
+        <a href="/register">
+            <button class="signup">Sign Up</button>
+        </a>
+    </div>
+@endguest
+
+@auth
+    <div class="hidden md:flex items-center space-x-4">
+        <span class="text-sm text-gray-100">Selamat datang, {{ Auth::user()->name }}</span>
+        <a href="{{ Auth::user()->role === 'admin' ? '/dashboard_consultant' : '/dashboard' }}">
+            <div class="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center">
+            <i class="fas fa-user text-white text-sm"></i>
         </div>
+        </a>
+        <form action="{{ route('logout') }}" method="POST" class="inline">
+            @csrf
+            <button type="submit" class="ml-2 px-3 py-1 rounded bg-red-500 text-white text-sm hover:bg-red-600 transition">Logout</button>
+        </form>
+    </div>
+@endauth
 
         <!-- Hamburger Icon -->
         <button id="hamburger" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">

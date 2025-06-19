@@ -22,7 +22,11 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/'); // halaman tujuan setelah login
+            // Redirect sesuai role
+            if (Auth::user()->role === 'admin') {
+                return redirect('/dashboard_consultant');
+            }
+            return redirect('/');
         }
 
         return back()->withErrors([
@@ -49,21 +53,20 @@ class LoginController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'user', // pastikan default user
         ]);
 
         Auth::login($user);
 
-            return redirect()->route('login.form')->with('success', 'Registrasi berhasil. Silakan login.');
-}
+        return redirect('/'); // langsung ke homepage setelah register
+    }
 
     // Logout
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
-        return redirect('/login');
+        return redirect('/');
     }
 }
