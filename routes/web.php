@@ -13,6 +13,8 @@ use App\Http\Controllers\EventsDescriptionController;
 use App\Http\Controllers\MentoringController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseDescriptionController;
+use App\Http\Controllers\AdminUserController;
+
 
 
 
@@ -123,3 +125,24 @@ Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mento
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index'])->name('courses');
 
+Route::middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/users', [UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('admin.users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
+});
+
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+    Route::resource('/users', App\Http\Controllers\Admin\UserManagementController::class);
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('/users', [AdminUserController::class, 'index'])->name('admin.users.index');
+    Route::get('/users/create', [AdminUserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users', [AdminUserController::class, 'store'])->name('admin.users.store');
+    Route::get('/users/{id}/edit', [AdminUserController::class, 'edit'])->name('admin.users.edit');
+    Route::put('/users/{id}', [AdminUserController::class, 'update'])->name('admin.users.update');
+    Route::delete('/users/{id}', [AdminUserController::class, 'destroy'])->name('admin.users.destroy');
+});
