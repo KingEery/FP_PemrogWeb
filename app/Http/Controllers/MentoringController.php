@@ -10,10 +10,9 @@ class MentoringController extends Controller
 {
     public function index()
     {
-        $mentorings = Mentoring::all();
-
-        
+        $mentorings = Mentoring::all();        
         return view('mentoring.mentoring', compact('mentorings'));
+        
     }
 
     // app/Http/Controllers/MentoringController.php

@@ -3,14 +3,14 @@
 @section('content')
 <section class="bg-gray-100 text-textDark leading-relaxed">
     <div class="max-w-screen-xl mx-auto px-4 relative">
-       
+
         <div class="flex flex-col sm:flex-row items-start pt-8 gap-4">
             <div class="flex-shrink-0">
                 <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-white bg-gray-100 overflow-hidden flex items-center justify-center">
                     <img src="image/user3.avif" alt="Adithya Firmansyah Putra" class="w-full h-full object-cover">
                 </div>
             </div>
-            
+
             <div class="flex-1 w-full">
                 <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
                     <div class="flex-1">
@@ -36,8 +36,7 @@
                 </div>
             </div>
         </div>
-        
-        
+
         <div class="mt-6 border-b border-gray-300 overflow-x-auto">
             <ul class="flex whitespace-nowrap">
                 <li class="mr-4 sm:mr-6">
@@ -57,30 +56,26 @@
                 </li>
             </ul>
         </div>
-        
-        
+
         <div class="py-6">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-               
                 <div class="lg:col-span-2 order-2 lg:order-1">
-                
                     <div class="mb-8">
                         <h2 class="text-lg font-semibold mb-4">About Me</h2>
                         <p class="mb-6 text-sm leading-relaxed">
-                            Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and 
-                            hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving, 
-                            leadership, and communication. As a freshman at Bina Nusantara University, I am passionate 
+                            Product Engineer with 5+ years of experience developing apps for finance, e-commerce, and
+                            hotel & travel sectors. Skilled in Flutter, Dart, and Kotlin. I excel in teamwork, problem-solving,
+                            leadership, and communication. As a freshman at Bina Nusantara University, I am passionate
                             about using technology to make a positive impact on society.
                         </p>
                     </div>
-                    
-                    
+
                     <div class="mb-8">
                         <div class="flex justify-between items-center mb-4">
                             <h2 class="text-lg font-semibold">Experiences</h2>
                             <a href="#" class="text-accent text-sm">View More</a>
                         </div>
-                        
+
                         <div class="space-y-4">
                             <div class="p-4 border border-gray-300 rounded-lg bg-white">
                                 <h3 class="font-semibold mb-1 text-sm sm:text-base">iOS Developer</h3>
@@ -91,19 +86,19 @@
                                 </div>
                                 <div class="text-textLight text-xs">Feb 2025 - Sekarang</div>
                             </div>
-                            
+
                             <div class="p-4 border border-gray-300 rounded-lg bg-white">
                                 <h3 class="font-semibold mb-1 text-sm sm:text-base">Chief Technology Officer</h3>
                                 <div class="text-textLight text-sm mb-1">Jago London</div>
                                 <div class="text-textLight text-xs">Jan 2025 - Sekarang</div>
                             </div>
-                            
+
                             <div class="p-4 border border-gray-300 rounded-lg bg-white">
                                 <h3 class="font-semibold mb-1 text-sm sm:text-base">Project Manager</h3>
                                 <div class="text-textLight text-sm mb-1">Sakuten</div>
                                 <div class="text-textLight text-xs">Nov 2024 - Sekarang</div>
                             </div>
-                            
+
                             <div class="p-4 border border-gray-300 rounded-lg bg-white">
                                 <h3 class="font-semibold mb-1 text-sm sm:text-base">Founder</h3>
                                 <div class="text-textLight text-sm mb-1">Logh</div>
@@ -111,11 +106,9 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
+
                     <div>
                         <h2 class="text-lg font-semibold mb-4">Educations</h2>
-                        
                         <div class="p-4 border border-gray-300 rounded-lg bg-white flex">
                             <div class="w-12 h-12 bg-gray-100 flex items-center justify-center mr-4 border border-gray-300 flex-shrink-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -131,10 +124,8 @@
                         </div>
                     </div>
                 </div>
-                
-               
+
                 <div class="order-1 lg:order-2">
-                    
                     <div class="mb-6">
                         <h3 class="text-lg font-semibold mb-4">Location</h3>
                         <div class="flex items-center">
@@ -147,13 +138,12 @@
                         </div>
                     </div>
 
-                   
                     <div class="bg-[#5E50A1] text-white p-6 rounded-lg">
                         <h2 class="text-lg font-semibold mb-4">Booking sesi konsultasimu sekarang!</h2>
                         <p class="text-sm mb-4 leading-relaxed">Kamu dapat melakukan konsultasi secara 1 on 1 bersama mentor berpengalaman.</p>
                         <div class="space-y-2">
-                            <button class="bg-white text-[#5E50A1] font-medium py-3 px-4 rounded w-full text-sm">Booking Sekarang</button>
-                            <button class="bg-transparent border border-white text-white font-medium py-3 px-4 rounded w-full text-sm">Coba Gratis</button>
+                            <button id="bookingBtn" class="bg-white text-[#5E50A1] font-medium py-3 px-4 rounded w-full text-sm">Booking Sekarang</button>
+                            <button id="freeTrialBtn" class="bg-transparent border border-white text-white font-medium py-3 px-4 rounded w-full text-sm">Coba Gratis</button>
                         </div>
                     </div>
                 </div>
@@ -161,4 +151,396 @@
         </div>
     </div>
 </section>
+
+<!-- Modal untuk Booking Sekarang -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Booking Konsultasi</h3>
+                <button type="button" id="closeBookingBtn" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <form action="{{ route('booking.store') }}" method="POST">
+                @csrf
+                <!-- Biodata Section -->
+                <div class="mb-6">
+                    <h4 class="font-medium mb-3 text-gray-900">Biodata Peserta</h4>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
+                            <input type="text" name="full_name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">No. Telepon *</label>
+                            <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Topik Konsultasi</label>
+                            <select name="topic" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                                <option value="">Pilih Topik</option>
+                                <option value="product_management">Product Management</option>
+                                <option value="mobile_development">Mobile Development</option>
+                                <option value="career_guidance">Career Guidance</option>
+                                <option value="Back_End">Back-End</option>
+                                <option value="Full_Stack">Full Stack</option>
+                                <option value="UI/UX">UI/UX</option>
+                                <option value="Front_End">Front-End</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jadwal Section -->
+                <div class="mb-6">
+                    <h4 class="font-medium mb-3 text-gray-900">Pilih Jadwal</h4>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal *</label>
+                            <input type="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Waktu *</label>
+                            <select name="time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                                <option value="">Pilih Waktu</option>
+                                <option value="09:00">09:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="11:00">11:00 - 12:00</option>
+                                <option value="13:00">13:00 - 14:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                                <option value="16:00">16:00 - 17:00</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Durasi</label>
+                            <select name="duration" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                                <option value="60">1 Jam (Rp 150.000)</option>
+                                <option value="90">1.5 Jam (Rp 200.000)</option>
+                                <option value="120">2 Jam (Rp 250.000)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harga Section -->
+                <div class="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <h4 class="font-medium mb-2 text-gray-900">Detail Harga</h4>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Konsultasi 1 Jam</span>
+                            <span>Rp 150.000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Platform Fee</span>
+                            <span>Rp 5.000</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="flex justify-between font-semibold">
+                            <span>Total</span>
+                            <span id="totalPrice">Rp 155.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Catatan -->
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Catatan Tambahan</label>
+                    <textarea name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Jelaskan hal yang ingin dikonsultasikan..."></textarea>
+                </div>
+
+                <input type="hidden" name="mentor_id" value="1">
+                <input type="hidden" name="type" value="paid">
+
+                <div class="flex gap-3">
+                    <button type="button" id="cancelBookingBtn" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+                        Batal
+                    </button>
+                    <button type="submit" class="flex-1 px-4 py-2 bg-[#5E50A1] text-white rounded-md hover:bg-[#4A3D8A]">
+                        Booking Sekarang
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal untuk Free Trial -->
+<div id="freeTrialModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold">Free Trial Konsultasi</h3>
+                <button type="button" id="closeFreeTrialBtn" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+                <p class="text-sm text-green-800">💡 Dapatkan konsultasi gratis 30 menit untuk mengenal lebih dekat!</p>
+            </div>
+
+            <form action="{{ route('consultan.Free-Trial.store') }}" method="POST">
+                @csrf
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
+                        <input type="text" name="full_name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">No. Telepon *</label>
+                        <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Tanggal *</label>
+                        <input type="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Waktu *</label>
+                        <select name="time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                            <option value="">Pilih Waktu</option>
+                            <option value="09:00">09:00 - 09:30</option>
+                            <option value="10:00">10:00 - 10:30</option>
+                            <option value="11:00">11:00 - 11:30</option>
+                            <option value="13:00">13:00 - 13:30</option>
+                            <option value="14:00">14:00 - 14:30</option>
+                            <option value="15:00">15:00 - 15:30</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Ceritakan tentang dirimu</label>
+                        <textarea name="notes" rows="3" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Ceritakan background dan tujuan konsultasi..."></textarea>
+                    </div>
+                </div>
+
+                <input type="hidden" name="mentor_id" value="1">
+                <input type="hidden" name="duration" value="30">
+                <input type="hidden" name="type" value="free">
+
+                <div class="flex gap-3 mt-6">
+                    <button type="button" id="cancelFreeTrialBtn" class="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50">
+                        Batal
+                    </button>
+                    <button type="submit" class="flex-1 px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+                        Daftar Free Trial
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+        input.min = today;
+    });
+
+    // Modal elements
+    const bookingModal = document.getElementById('bookingModal');
+    const freeTrialModal = document.getElementById('freeTrialModal');
+
+    // Button elements
+    const bookingBtn = document.getElementById('bookingBtn');
+    const freeTrialBtn = document.getElementById('freeTrialBtn');
+
+    // Close button elements
+    const closeBookingBtn = document.getElementById('closeBookingBtn');
+    const closeFreeTrialBtn = document.getElementById('closeFreeTrialBtn');
+    const cancelBookingBtn = document.getElementById('cancelBookingBtn');
+    const cancelFreeTrialBtn = document.getElementById('cancelFreeTrialBtn');
+
+    // Open booking modal
+    bookingBtn.addEventListener('click', function() {
+        bookingModal.classList.remove('hidden');
+    });
+
+    // Open free trial modal
+    freeTrialBtn.addEventListener('click', function() {
+        freeTrialModal.classList.remove('hidden');
+    });
+
+    // Close booking modal
+    closeBookingBtn.addEventListener('click', function() {
+        bookingModal.classList.add('hidden');
+    });
+
+    cancelBookingBtn.addEventListener('click', function() {
+        bookingModal.classList.add('hidden');
+    });
+
+    // Close free trial modal
+    closeFreeTrialBtn.addEventListener('click', function() {
+        freeTrialModal.classList.add('hidden');
+    });
+
+    cancelFreeTrialBtn.addEventListener('click', function() {
+        freeTrialModal.classList.add('hidden');
+    });
+
+    // Close modal when clicking outside
+    bookingModal.addEventListener('click', function(e) {
+        if (e.target === bookingModal) {
+            bookingModal.classList.add('hidden');
+        }
+    });
+
+    freeTrialModal.addEventListener('click', function(e) {
+        if (e.target === freeTrialModal) {
+            freeTrialModal.classList.add('hidden');
+        }
+    });
+
+    // Price calculation for booking modal
+    const durationSelect = document.querySelector('select[name="duration"]');
+    const totalPriceElement = document.getElementById('totalPrice');
+
+    if (durationSelect && totalPriceElement) {
+        durationSelect.addEventListener('change', function() {
+            const duration = parseInt(this.value);
+            const platformFee = 5000;
+            let basePrice = 0;
+
+            switch(duration) {
+                case 60:
+                    basePrice = 150000;
+                    break;
+                case 90:
+                    basePrice = 200000;
+                    break;
+                case 120:
+                    basePrice = 250000;
+                    break;
+                default:
+                    basePrice = 150000;
+            }
+
+            const total = basePrice + platformFee;
+            totalPriceElement.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+        });
+    }
+
+    // Update price detail section when duration changes
+    durationSelect?.addEventListener('change', function() {
+        const duration = parseInt(this.value);
+        const priceDetailSection = document.querySelector('.bg-gray-50');
+
+        if (priceDetailSection) {
+            let basePrice = 0;
+            let durationText = '';
+
+            switch(duration) {
+                case 60:
+                    basePrice = 150000;
+                    durationText = 'Konsultasi 1 Jam';
+                    break;
+                case 90:
+                    basePrice = 200000;
+                    durationText = 'Konsultasi 1.5 Jam';
+                    break;
+                case 120:
+                    basePrice = 250000;
+                    durationText = 'Konsultasi 2 Jam';
+                    break;
+                default:
+                    basePrice = 150000;
+                    durationText = 'Konsultasi 1 Jam';
+            }
+
+            const platformFee = 5000;
+            const total = basePrice + platformFee;
+
+            priceDetailSection.innerHTML = `
+                <h4 class="font-medium mb-2 text-gray-900">Detail Harga</h4>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                        <span>${durationText}</span>
+                        <span>Rp ${basePrice.toLocaleString('id-ID')}</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Platform Fee</span>
+                        <span>Rp 5.000</span>
+                    </div>
+                    <hr class="my-2">
+                    <div class="flex justify-between font-semibold">
+                        <span>Total</span>
+                        <span id="totalPrice">Rp ${total.toLocaleString('id-ID')}</span>
+                    </div>
+                </div>
+            `;
+        }
+    });
+
+    // Form validation
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('border-red-500');
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!isValid) {
+                e.preventDefault();
+                alert('Mohon lengkapi semua field yang wajib diisi.');
+            }
+        });
+    });
+
+    // Add escape key listener to close modals
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (!bookingModal.classList.contains('hidden')) {
+                bookingModal.classList.add('hidden');
+            }
+            if (!freeTrialModal.classList.contains('hidden')) {
+                freeTrialModal.classList.add('hidden');
+            }
+        }
+    });
+
+    // Function to keep the session alive to prevent 419 errors
+    async function keepSessionAlive() {
+        try {
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            await fetch("{{ route('session.keep_alive') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                }
+            });
+        } catch (error) {
+            console.error('Failed to keep session alive:', error);
+        }
+    }
+
+    // Call keepSessionAlive every 5 minutes (300000 milliseconds)
+    setInterval(keepSessionAlive, 300000);
+});
+</script>
 @endsection
