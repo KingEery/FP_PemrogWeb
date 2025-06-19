@@ -135,7 +135,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 });
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-    Route::resource('/users', App\Http\Controllers\Admin\UserManagementController::class);
+Route::resource('/users', App\Http\Controllers\Admin\UserManagementController::class);
 });
 
 Route::prefix('admin')->group(function () {
