@@ -47,12 +47,10 @@ class EventsDescription extends Model
         parent::boot();
 
         static::created(function ($eventsDescription) {
-            // Automatically create Event record when EventsDescription is created
             $eventsDescription->createEvent();
         });
 
         static::updated(function ($eventsDescription) {
-            // Update Event record when EventsDescription is updated
             if ($eventsDescription->event) {
                 $eventsDescription->updateEvent();
             } else {
@@ -61,9 +59,6 @@ class EventsDescription extends Model
         });
     }
 
-    /**
-     * Create Event record based on EventsDescription data
-     */
     public function createEvent()
     {
         return Event::create([
@@ -77,9 +72,6 @@ class EventsDescription extends Model
         ]);
     }
 
-    /**
-     * Update Event record based on EventsDescription data
-     */
     public function updateEvent()
     {
         if ($this->event) {
@@ -94,9 +86,6 @@ class EventsDescription extends Model
         }
     }
 
-    /**
-     * Get first date from dates array
-     */
     private function getFirstDate()
     {
         if (is_array($this->dates) && !empty($this->dates)) {
@@ -106,7 +95,10 @@ class EventsDescription extends Model
         return now()->format('Y-m-d');
     }
 
-    // Accessors for JSON fields
+    // HAPUS atau COMMENT accessor methods yang bermasalah
+    // Biarkan Filament menggunakan data langsung dari cast array
+    
+    /*
     public function getWhatYoullLearnAttribute($value)
     {
         $data = is_array($value) ? $value : json_decode($value, true);
@@ -162,25 +154,77 @@ class EventsDescription extends Model
         
         return [];
     }
+    */
+    
+    // Method untuk display yang tidak menggunakan accessor (untuk keperluan lain)
+    public function getDisplayWhatYoullLearn()
+    {
+        $data = is_array($this->what_youll_learn) ? $this->what_youll_learn : json_decode($this->what_youll_learn, true);
+        
+        if (isset($data[0])) {
+            if (is_array($data[0])) {
+                return array_column($data, 'item');
+            }
+            return $data;
+        }
+        
+        return [];
+    }
+
+    public function getDisplayTermsConditions()
+    {
+        $data = is_array($this->terms_conditions) ? $this->terms_conditions : json_decode($this->terms_conditions, true);
+        
+        if (isset($data[0])) {
+            if (is_array($data[0])) {
+                return array_column($data, 'term');
+            }
+            return $data;
+        }
+        
+        return [];
+    }
+
+    public function getDisplayDates()
+    {
+        $data = is_array($this->dates) ? $this->dates : json_decode($this->dates, true);
+        
+        if (isset($data[0])) {
+            if (is_array($data[0])) {
+                return array_column($data, 'date');
+            }
+            return $data;
+        }
+        
+        return [];
+    }
+
+    public function getDisplayIncludes()
+    {
+        $data = is_array($this->includes) ? $this->includes : json_decode($this->includes, true);
+        
+        if (isset($data[0])) {
+            if (is_array($data[0])) {
+                return array_column($data, 'item');
+            }
+            return $data;
+        }
+        
+        return [];
+    }
 
     public function getFormattedDatesAttribute()
     {
-        return collect($this->dates)->map(function ($date) {
+        return collect($this->getDisplayDates())->map(function ($date) {
             return \Carbon\Carbon::parse($date)->format('d M Y');
         })->implode(', ');
     }
 
-    /**
-     * Accessor untuk harga final
-     */
     public function getFinalPriceAttribute()
     {
         return $this->price_discounted ?? $this->price_original ?? '0';
     }
 
-    /**
-     * Get final price for Event table
-     */
     public function getFinalPrice()
     {
         return $this->price_discounted ?? $this->price_original ?? '0';

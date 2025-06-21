@@ -8,14 +8,14 @@
             <nav class="text-sm text-gray-600 mb-4">
                 <a href="{{ route('events.index') }}" class="hover:text-purple-600">Events</a>
                 <span class="mx-2">></span>
-                <span class="text-gray-800">{{ $event->description ? $event->description->title : $event->title }}</span>
+                <span class="text-gray-800">{{ $event->description->title ?? $event->title }}</span>
             </nav>
         </div>
 
         <!-- Page Title -->
         <div class="mb-5">
             <h1 class="text-3xl md:text-4xl font-bold text-black-900 mb-5">
-                {{ $event->description ? $event->description->title : $event->title }}
+                {{ $event->description->title ?? $event->title }}
             </h1>
         </div>
 
@@ -24,7 +24,7 @@
             <div class="md:w-2/3">
                 <!-- Event Image -->
                 <div>
-                    <img src="{{ $event->description && $event->description->image ? asset('storage/' . $event->description->image) : ($event->image ? asset('storage/' . $event->image) : asset('images/default-event.jpg')) }}" 
+                    <img src="{{ $event->description->image ? asset('storage/' . $event->description->image) : ($event->image ? asset('storage/' . $event->image) : asset('images/default-event.jpg')) }}" 
                         alt="Event Image" class="w-full h-96 rounded-xl object-cover">
                     <div class="mt-4 p-3">
                         <span class="inline-block bg-[#564AB1] text-white px-7 py-3 rounded-full text-sm font-medium">
@@ -43,24 +43,24 @@
                     @endif
 
                     <!-- What You'll Learn -->
-                    @if($event->description->what_youll_learn && count($event->description->what_youll_learn) > 0)
+                    @if(!empty($event->description->what_youll_learn))
                     <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
                         <h2 class="text-xl font-semibold text-purple-600 mb-4">What you'll learn</h2>
                         <ul class="list-disc pl-5">
-                            @foreach ($event->description->what_youll_learn as $topic)
-                                <li class="mb-2">{{ $topic }}</li>
+                            @foreach ($event->description->what_youll_learn as $item)
+                                <li class="mb-2">{{ is_array($item) ? $item['item'] ?? $item['term'] ?? $item['date'] ?? $item : $item }}</li>
                             @endforeach
                         </ul>
                     </div>
                     @endif
 
                     <!-- Terms and Conditions -->
-                    @if($event->description->terms_conditions && count($event->description->terms_conditions) > 0)
+                    @if(!empty($event->description->terms_conditions))
                     <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
-                        <h2 class="text-xl font-semibold text-purple-600 mb-4">Terms and Conditions</h2>
+                        <h2 class="text-xl font-semibold text-purple-600 mb-4">Terms & Conditions</h2>
                         <ul class="list-disc pl-5">
                             @foreach ($event->description->terms_conditions as $term)
-                                <li class="mb-2">{{ $term }}</li>
+                                <li class="mb-2">{{ is_array($term) ? $term['term'] ?? $term['item'] ?? $term['date'] ?? $term : $term }}</li>
                             @endforeach
                         </ul>
                     </div>
@@ -73,7 +73,7 @@
                 <!-- Price and Registration -->
                 <div class="bg-white rounded-lg p-5 border border-gray-200">
                     <h2 class="text-2xl font-bold text-black-900 mb-1">
-                        {{ $event->formatted_price }}
+                        Rp {{ number_format($event->description->final_price ?? $event->price ?? 0) }}
                     </h2>
                     @if($event->description && $event->description->price_original && $event->description->price_discounted)
                         <p class="text-gray-500 line-through text-base mb-4">
@@ -113,11 +113,15 @@
                     <!-- Date -->
                     <div class="ps-6 mb-4">
                         <h4 class="text-base font-medium text-[#564AB1] mb-2">Tanggal</h4>
-                        <p class="text-gray-500">{{ $event->formatted_date }}</p>
-                        @if($event->description && $event->description->dates && count($event->description->dates) > 1)
-                            @foreach (array_slice($event->description->dates, 1) as $additionalDate)
-                                <p class="text-gray-500">{{ \Carbon\Carbon::parse($additionalDate)->format('d M Y') }}</p>
+                        @if(!empty($event->description->dates))
+                            @foreach ($event->description->dates as $date)
+                                @php
+                                    $dateValue = is_array($date) ? ($date['date'] ?? reset($date)) : $date;
+                                @endphp
+                                <p class="text-gray-500">{{ \Carbon\Carbon::parse($dateValue)->format('d M Y') }}</p>
                             @endforeach
+                        @else
+                            <p class="text-gray-500">{{ $event->formatted_date }}</p>
                         @endif
                     </div>
 
@@ -132,17 +136,19 @@
                     <!-- Location -->
                     <div class="ps-6 mb-4">
                         <h4 class="text-base font-medium text-[#564AB1] mb-2">Lokasi</h4>
-                        <p class="text-gray-500">{{ $event->location }}</p>
+                        <p class="text-gray-500">{{ $event->description->location ?? $event->location }}</p>
                     </div>
                 </div>
 
                 <!-- Event Includes -->
-                @if($event->description && $event->description->includes && count($event->description->includes) > 0)
+                @if(!empty($event->description->includes))
                 <div class="bg-white rounded-lg p-5 border border-gray-200 mt-5">
                     <h3 class="text-xl font-semibold text-[#564AB1] mb-4">This Event Includes</h3>
-                    @foreach ($event->description->includes as $include)
-                        <div class="ps-6 mb-3 font-medium text-[#564AB1]">{{ $include }}</div>
-                    @endforeach
+                    <ul class="list-disc pl-5">
+                        @foreach ($event->description->includes as $include)
+                            <li class="mb-2">{{ is_array($include) ? $include['item'] ?? reset($include) : $include }}</li>
+                        @endforeach
+                    </ul>
                 </div>
                 @endif
             </div>

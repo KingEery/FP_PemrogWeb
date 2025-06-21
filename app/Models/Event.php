@@ -69,13 +69,21 @@ class Event extends Model
         return $this->date->format('d M Y');
     }
 
-    public function getFormattedPriceAttribute()
+   public function getFormattedPriceAttribute()
     {
         if ($this->price == '0' || empty($this->price)) {
             return 'Free';
         }
-        return 'Rp ' . number_format($this->price);
+
+        // Pastikan harga valid sebelum diformat
+        if (is_numeric($this->price)) {
+            return 'Rp ' . number_format((float) $this->price, 0, ',', '.');
+        }
+
+        // Jika bukan angka, beri fallback (misal Rp 0 atau Free)
+        return 'Rp 0';
     }
+
 
     public function getIsUpcomingAttribute()
     {

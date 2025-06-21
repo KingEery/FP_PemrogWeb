@@ -16,7 +16,7 @@ class EventsDescriptionResource extends Resource
 {
     protected static ?string $model = EventsDescription::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-calendar-days';
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     protected static ?string $navigationLabel = 'Events';
 
@@ -24,13 +24,10 @@ class EventsDescriptionResource extends Resource
 
     protected static ?string $pluralModelLabel = 'Events';
 
-    protected static ?string $navigationGroup = 'Event Management';
-
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                // Basic Information Section
                 Forms\Components\Section::make('Basic Information')
                     ->schema([
                         Forms\Components\TextInput::make('title')
@@ -49,7 +46,6 @@ class EventsDescriptionResource extends Resource
                             ->columnSpan(1),
                     ])->columns(2),
 
-                // Event Details Section  
                 Forms\Components\Section::make('Event Details')
                     ->schema([
                         Forms\Components\Textarea::make('overview')
@@ -78,7 +74,7 @@ class EventsDescriptionResource extends Resource
                             ->columnSpanFull(),
                     ]),
 
-                // Pricing Section
+                
                 Forms\Components\Section::make('Pricing')
                     ->schema([
                         Forms\Components\TextInput::make('price_original')
@@ -94,7 +90,6 @@ class EventsDescriptionResource extends Resource
                             ->placeholder('75000'),
                     ])->columns(2),
 
-                // Speaker Information Section
                 Forms\Components\Section::make('Speaker Information')
                     ->schema([
                         Forms\Components\TextInput::make('speaker_name')
@@ -108,7 +103,6 @@ class EventsDescriptionResource extends Resource
                             ->placeholder('Senior Developer at Company'),
                     ])->columns(2),
 
-                // Schedule Section
                 Forms\Components\Section::make('Schedule & Location')
                     ->schema([
                         Forms\Components\Repeater::make('dates')
@@ -134,7 +128,6 @@ class EventsDescriptionResource extends Resource
                             ->columnSpan(1),
                     ])->columns(2),
 
-                // Event Includes Section
                 Forms\Components\Section::make('Event Includes')
                     ->schema([
                         Forms\Components\Repeater::make('includes')
@@ -183,10 +176,12 @@ class EventsDescriptionResource extends Resource
                 
                 Tables\Columns\TextColumn::make('dates')
                     ->label('Event Dates')
-                    ->formatStateUsing(function ($state) {
+                    ->formatStateUsing(function ($state, EventsDescription $record) {
                         if (empty($state)) return '-';
-                        $dates = is_string($state) ? json_decode($state, true) : $state;
-                        return collect($dates)->pluck('date')->implode(', ');
+                        
+                        // Gunakan method display untuk menampilkan tanggal
+                        $dates = $record->getDisplayDates();
+                        return collect($dates)->implode(', ');
                     })
                     ->wrap(),
 
@@ -229,14 +224,15 @@ class EventsDescriptionResource extends Resource
                     ->color('success')
                     ->visible(fn (EventsDescription $record): bool => !$record->event()->exists())
                     ->action(function (EventsDescription $record) {
-                        // Create event automatically based on description
+                        // Gunakan method display untuk mendapatkan tanggal pertama
+                        $dates = $record->getDisplayDates();
+                        $firstDate = !empty($dates) ? $dates[0] : now()->format('Y-m-d');
+                        
                         Event::create([
                             'events_description_id' => $record->id,
                             'title' => $record->title,
                             'location' => $record->location,
-                            'date' => is_array($record->dates) && !empty($record->dates) 
-                                ? (is_array($record->dates[0]) ? $record->dates[0]['date'] : $record->dates[0])
-                                : now()->format('Y-m-d'),
+                            'date' => $firstDate,
                             'category' => $record->category,
                             'price' => $record->price_discounted ?? $record->price_original ?? '0',
                             'image' => $record->image ?? '',
@@ -256,7 +252,6 @@ class EventsDescriptionResource extends Resource
     public static function getRelations(): array
     {
         return [
-            // Add relation manager if needed for the Event
         ];
     }
 
@@ -269,13 +264,11 @@ class EventsDescriptionResource extends Resource
         ];
     }
 
-    // Optional: Customize navigation badge
     public static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
     }
 
-    // Optional: Add global search
     public static function getGloballySearchableAttributes(): array
     {
         return ['title', 'category', 'speaker_name'];
