@@ -11,4 +11,9 @@ class CourseDescriptionController extends Controller
         $course_description = CourseDescription::with('course')->get();
         return view('course.course_description', compact('course_description'));
     }
+    public function show($id)
+    {
+        $course_description = CourseDescription::with('course')->findOrFail($id);
+        return view('course.course_description', compact('course_description'));
+    }
 }

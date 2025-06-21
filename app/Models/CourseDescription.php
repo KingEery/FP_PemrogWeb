@@ -15,6 +15,7 @@ class CourseDescription extends Model
     // Kolom-kolom yang dapat diisi secara massal
     protected $fillable = [
         'course_id',
+        'title',
         'tag',
         'overview',
         'price',
@@ -26,7 +27,7 @@ class CourseDescription extends Model
         'features',
         'image_url',
         'instructor_image_url',
-    ];
+    ];    
     public function course()
     {
         return $this->belongsTo(Course::class);

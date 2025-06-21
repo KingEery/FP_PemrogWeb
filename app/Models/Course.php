@@ -25,4 +25,10 @@ class Course extends Model
     {
         return $this->hasOne(CourseDescription::class);
     }
+
+    public function index()
+{
+    $courses = Course::with('description')->get(); // ← penting!
+    return view('course.course', compact('courses'));
+}
 }

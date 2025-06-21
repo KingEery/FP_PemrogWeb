@@ -51,18 +51,19 @@
         <!-- Kartu Kursus -->
         <div class="bg-white rounded-2xl shadow-lg p-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             @foreach ($courses as $course)
-            <a href="/course_description" class="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition transform hover:scale-105 active:scale-95">
-                <img src="{{ $course->thumbnail }}" alt="Course Thumbnail"
+            <a href="/course_description/{{ $course->id }}" class="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition transform hover:scale-105 active:scale-95">
+                <img src="{{ $course->image_url ?? $course->thumbnail }}" alt="Course Thumbnail"
                     class="rounded-lg mb-3 object-cover w-full aspect-video" />
                 <h3 class="font-semibold text-lg">{{ $course->title }}</h3>
-                <p class="text-sm text-gray-600 mb-1">Instruktur: {{ $course->instructor }}</p>
+                <p class="text-sm text-gray-600 mb-1">Instruktur: {{ $course->instructor_name }}</p>
                 <p class="text-sm text-gray-600 mb-1">
-                    {{ floor($course->duration / 60) }} jam {{ $course->duration % 60 }} menit • {{ $course->video_count }} video
+                    {{ ($course->duration / 60) }} Jam • {{ $course->video_count }} video
                 </p>
-                <p class="text-sm text-red-500 line-through">Rp. {{ number_format($course->original_price, 0, ',', '.') }}</p>
+                <p class="text-sm text-red-500 line-through">Rp. {{ number_format($course->price_discount, 0, ',', '.') }}</p>
                 <p class="text-blue-700 font-bold text-lg">Rp. {{ number_format($course->price, 0, ',', '.') }}</p>
             </a>
             @endforeach
+
         </div>
     </div>
 </section>

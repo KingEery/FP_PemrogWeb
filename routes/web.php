@@ -127,11 +127,13 @@ Route::prefix('event')->group(function() {
 
 });
 
+
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
+//Course
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index'])->name('courses');
-
+Route::get('/course_description/{id}', [CourseDescriptionController::class, 'show']);
 
 // Session keep alive route (for CSRF token refresh)
 Route::post('/session/keep-alive', function () {
