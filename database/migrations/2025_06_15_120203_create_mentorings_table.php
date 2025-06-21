@@ -6,34 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('mentorings_description', function (Blueprint $table) {
+        Schema::create('mentoring', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mentoring_id');
-            $table->foreign('mentoring_id')->references('id')->on('mentoring')->onDelete('cascade');
+            $table->unsignedBigInteger('mentoring_description_id')->nullable();
             $table->string('title');
-            $table->text('short_description');
-            $table->text('long_description');
-            $table->decimal('original_price', 10, 2);
-            $table->decimal('discounted_price', 10, 2);
-            $table->string('image_path');
-            $table->json('target_audience')->nullable();
-            $table->text('about_program');
-            $table->json('basic_materials')->nullable();
-            $table->json('intermediate_materials')->nullable();
-            $table->json('advanced_materials')->nullable();
-            $table->json('benefits')->nullable();
-            $table->integer('max_participants')->default(10);
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
+            $table->decimal('price_normal', 12, 2)->nullable();
+            $table->decimal('price_discount', 12, 2)->nullable();
             $table->string('slug')->unique();
-            $table->boolean('is_active')->default(true);
-            $table->integer('duration_months')->default(3);
             $table->timestamps();
+
+            // Tambahkan foreign key constraint 
+            $table->foreign('mentoring_description_id')
+                  ->references('id')
+                  ->on('mentorings_description')
+                  ->onDelete('cascade');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('mentorings_description');
+        Schema::dropIfExists('mentoring');
     }
 };
+

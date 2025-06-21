@@ -12,13 +12,13 @@ class MentoringDescription extends Model
     protected $table = 'mentorings_description';
 
     protected $fillable = [
-        'mentoring_id',
         'title',
         'short_description',
         'long_description',
-        'target_audience',
         'original_price',
         'discounted_price',
+        'image_path',
+        'target_audience',
         'about_program',
         'basic_materials',
         'intermediate_materials',
@@ -27,7 +27,7 @@ class MentoringDescription extends Model
         'max_participants',
         'slug',
         'is_active',
-        'duration_months',
+        'duration_months'
     ];
 
     protected $casts = [
@@ -39,15 +39,6 @@ class MentoringDescription extends Model
         'is_active' => 'boolean',
     ];
 
-
-    // Define the inverse relationship to Mentoring
-    // public function description(): HasOne
-    // {
-    //     return $this->hasOne(MentoringDescription::class, 'mentoring_id');
-    // }
-    
-
+    // Tidak perlu auto-create mentoring lagi
+    // Semua data sudah ada di MentoringDescription
 }
-
-    
-

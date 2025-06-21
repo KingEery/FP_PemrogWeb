@@ -1,5 +1,7 @@
 <?php
 
+
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -9,27 +11,24 @@ class Mentoring extends Model
 {
     use HasFactory;
     
-    protected $table = 'mentoring';
+    protected $table = 'mentoring'; 
 
     protected $fillable = [
-        'title', 
-        'image', 
-        'description', 
-        'price_normal', 
+        'mentoring_description_id',
+        'title',
+        'image',
+        'description',
+        'price_normal',
         'price_discount',
         'slug'
     ];
 
-
-
-    // Alias untuk backward compatibility jika ada kode lain yang menggunakan descriptionData
-    public function mentoringDescription()
+    public function description()
     {
-        return $this->hasOne(MentoringDescription::class, 'mentoring_id');
+        return $this->belongsTo(MentoringDescription::class, 'mentoring_description_id');
     }
 
-
-    // ==================== ACCESSOR ====================
+    // Accessors
     public function getFormattedNormalPriceAttribute()
     {
         return 'Rp ' . number_format($this->price_normal, 0, ',', '.');
@@ -39,15 +38,6 @@ class Mentoring extends Model
     {
         return 'Rp ' . number_format($this->price_discount, 0, ',', '.');
     }
-
-    public function getHasDiscountAttribute()
-    {
-        return $this->price_discount < $this->price_normal;
-    }
-
-    public function getChaptersAttribute()
-    {
-        if (!$this->description) return [];
-        return array_filter(explode("\n", $this->description));
-    }
 }
+
+

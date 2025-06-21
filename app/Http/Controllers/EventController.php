@@ -8,19 +8,15 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    /**
-     * Display a listing of events
-     */
+    
     public function index(Request $request)
     {
         $query = Event::with('description');
 
-        // Filter by category if provided
         if ($request->has('category') && $request->category !== 'all') {
             $query->byCategory($request->category);
         }
 
-        // Only show upcoming events by default
         $events = $query->upcoming()
                        ->orderBy('date', 'asc')
                        ->get();
@@ -28,14 +24,11 @@ class EventController extends Controller
         return view('event.event', compact('events'));
     }
 
-    /**
-     * Display the specified event
-     */
+   
     public function show($id)
     {
         $event = Event::with('description')->findOrFail($id);
         
-        // If event doesn't have description, redirect or show error
         if (!$event->description) {
             abort(404, 'Event details not found');
         }
@@ -43,9 +36,7 @@ class EventController extends Controller
         return view('event.event_description', compact('event'));
     }
 
-    /**
-     * Get events by category (API endpoint)
-     */
+    
     public function getByCategory(Request $request)
     {
         $category = $request->get('category', 'all');
@@ -63,9 +54,7 @@ class EventController extends Controller
         return response()->json($events);
     }
 
-    /**
-     * Get upcoming events
-     */
+    
     public function getUpcoming()
     {
         $events = Event::with('description')
@@ -77,9 +66,7 @@ class EventController extends Controller
         return response()->json($events);
     }
 
-    /**
-     * Search events
-     */
+  
     public function search(Request $request)
     {
         $query = $request->get('q');

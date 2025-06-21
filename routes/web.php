@@ -112,7 +112,6 @@ Route::get('/voucher', function () {
 })->name('voucher');
 
 
-Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring.index');
 
 Route::prefix('event')->group(function() {
     // List events - /events
@@ -123,7 +122,7 @@ Route::prefix('event')->group(function() {
 
 });
 
-
+Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring.index');
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
 //Course
