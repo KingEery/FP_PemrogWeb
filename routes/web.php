@@ -21,10 +21,6 @@ use App\Http\Controllers\DashboardConsultanController;
 
 
 
-
-
-
-
 Route::get('/', function () {
     return view('homepage.homepage');
 });

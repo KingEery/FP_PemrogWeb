@@ -39,10 +39,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('user123'), // ganti password sesuai kebutuhan
             'role' => 'user',
         ]);
-
-        $this->call([
-            EventSeeder::class,
-        ]);
          $this->call([
             EventDescriptionSeeder::class,
         ]);

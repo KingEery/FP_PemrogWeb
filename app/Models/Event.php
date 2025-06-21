@@ -14,6 +14,7 @@ class Event extends Model
 
     // Field yang bisa diisi (mass assignment)
     protected $fillable = [
+        'events_description_id',
         'title',
         'location',
         'date',
@@ -21,8 +22,63 @@ class Event extends Model
         'price',
         'image',
     ];
+
+    protected $casts = [
+        'date' => 'date',
+    ];
+
+    // Relation to EventsDescription (belongs to)
     public function description()
     {
-        return $this->hasOne(EventsDescription::class, 'event_id');
+        return $this->belongsTo(EventsDescription::class, 'events_description_id');
+    }
+
+    // Boot method to prevent manual Event creation (optional)
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Optional: Add validation or constraints
+        static::creating(function ($event) {
+            // Ensure events_description_id is present
+            if (!$event->events_description_id) {
+                throw new \Exception('Event must be associated with an EventsDescription');
+            }
+        });
+    }
+
+    // Scopes for filtering
+    public function scopeByCategory($query, $category)
+    {
+        return $query->where('category', $category);
+    }
+
+    public function scopeUpcoming($query)
+    {
+        return $query->where('date', '>=', now()->toDateString());
+    }
+
+    public function scopePast($query)
+    {
+        return $query->where('date', '<', now()->toDateString());
+    }
+
+    // Accessors
+    public function getFormattedDateAttribute()
+    {
+        return $this->date->format('d M Y');
+    }
+
+    public function getFormattedPriceAttribute()
+    {
+        if ($this->price == '0' || empty($this->price)) {
+            return 'Free';
+        }
+        return 'Rp ' . number_format($this->price);
+    }
+
+    public function getIsUpcomingAttribute()
+    {
+        return $this->date >= now()->toDateString();
     }
 }

@@ -21,3 +21,5 @@ class EventsDescriptionController extends Controller
         return view('event.event_description', compact('events_description')); // Use the existing view
     }
 }
+
+
