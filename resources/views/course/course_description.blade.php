@@ -27,7 +27,7 @@
             <div class="border rounded-md p-6 flex flex-col items-center gap-4">
                 <div class="w-full aspect-video mb-2">
                     <img class="w-full h-full object-cover rounded-lg"
-                        src="{{ $course_description->image_url ?? $course_description->thumbnail }}" alt="Course image" />
+                        src="{{ asset('storage/' . ($course_description->image_url ?? $course_description->thumbnail)) }}" alt="Course image" />
                 </div>
                 <div class="w-full">
                     <p class="text-[17px] font-semibold">
@@ -47,7 +47,8 @@
 
             <!-- Instructor -->
             <div class="border rounded-md p-4 flex items-center gap-4 text-[13px]">
-                <img class="w-12 h-12 rounded-full object-cover" src="{{ $course_description->instructor_image_url }}" />
+                <img class="w-12 h-12 rounded-full object-cover"
+                    src="{{ asset('storage/' . $course_description->instructor_image_url) }}" alt="Instructor Photo" />
                 <div class="flex flex-col">
                     <span class="font-semibold text-[14px]">{{ $course_description->instructor_name }}</span>
                     <span class="text-[#6b7280]">{{ $course_description->instructor_position }}</span>

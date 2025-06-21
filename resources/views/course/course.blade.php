@@ -52,7 +52,7 @@
         <div class="bg-white rounded-2xl shadow-lg p-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
             @foreach ($courses as $course)
             <a href="/course_description/{{ $course->id }}" class="block bg-white rounded-xl shadow p-4 hover:shadow-lg transition transform hover:scale-105 active:scale-95">
-                <img src="{{ $course->image_url ?? $course->thumbnail }}" alt="Course Thumbnail"
+                <img src="{{ asset('storage/' . ($course->image_url ?? $course->thumbnail)) }}" alt="Course Thumbnail"
                     class="rounded-lg mb-3 object-cover w-full aspect-video" />
                 <h3 class="font-semibold text-lg">{{ $course->title }}</h3>
                 <p class="text-sm text-gray-600 mb-1">Instruktur: {{ $course->instructor_name }}</p>
