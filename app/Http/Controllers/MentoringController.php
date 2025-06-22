@@ -25,3 +25,4 @@ class MentoringController extends Controller
         return view('mentoring.mentoring_mendaftar', compact('mentoring'));
     }
 }
+

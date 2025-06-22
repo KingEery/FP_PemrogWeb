@@ -42,9 +42,7 @@ class DatabaseSeeder extends Seeder
          $this->call([
             EventDescriptionSeeder::class,
         ]);
-        $this->call([
-            MentoringSeeder::class,
-        ]);
+       
         $this->call([
             MentoringDescriptionSeeder::class,
         ]);

@@ -42,3 +42,4 @@ class MentoringDescription extends Model
     // Tidak perlu auto-create mentoring lagi
     // Semua data sudah ada di MentoringDescription
 }
+

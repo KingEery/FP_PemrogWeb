@@ -26,59 +26,7 @@
   <section class="bg-white px-[5%] py-12 flex-1">
     <div class="flex flex-wrap md:flex-nowrap gap-8">
       <!-- Category Filter Sidebar -->
-      <div class="w-full md:w-[280px] mb-6 md:mb-0">
-        <div class="w-full md:w-[280px] rounded-lg overflow-hidden shadow-sm bg-white transition-all duration-300" id="kategoriDropdown">
-          <div class="bg-purple-50 p-5 cursor-pointer font-semibold text-lg flex justify-between items-center text-purple-700 transition-all duration-300" onclick="toggleDropdown()">
-            <span>Kategori</span>
-            <div class="flex items-center justify-center w-6 h-6 transition-transform duration-300" id="dropdownIcon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6 9L12 15L18 9" stroke="#6B46C1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="overflow-hidden transition-all duration-500 max-h-0" id="dropdownContent">
-            <div class="py-2">
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="all" value="all" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0" checked>
-                  <span class="ml-3 text-gray-800">Semua Kategori</span>
-                </label>
-              </div>
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="web-programming" value="web-programming" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0">
-                  <span class="ml-3 text-gray-800">Web Programming</span>
-                </label>
-              </div>
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="mobile-programming" value="mobile-programming" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0">
-                  <span class="ml-3 text-gray-800">Mobile Programming</span>
-                </label>
-              </div>
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="fullstack" value="fullstack" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0">
-                  <span class="ml-3 text-gray-800">Fullstack Development</span>
-                </label>
-              </div>
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="backend" value="backend" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0">
-                  <span class="ml-3 text-gray-800">Backend Development</span>
-                </label>
-              </div>
-              <div class="py-1 px-5">
-                <label class="flex items-center py-1">
-                  <input type="radio" name="category" id="ui-ux" value="ui-ux" class="w-5 h-5 border border-gray-300 rounded-full text-purple-600 focus:ring-0 focus:ring-offset-0">
-                  <span class="ml-3 text-gray-800">UI / UX</span>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    
 
       <!-- Events Grid -->
       <div class="flex-1">

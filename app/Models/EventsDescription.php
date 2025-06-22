@@ -95,66 +95,7 @@ class EventsDescription extends Model
         return now()->format('Y-m-d');
     }
 
-    // HAPUS atau COMMENT accessor methods yang bermasalah
-    // Biarkan Filament menggunakan data langsung dari cast array
-    
-    /*
-    public function getWhatYoullLearnAttribute($value)
-    {
-        $data = is_array($value) ? $value : json_decode($value, true);
-        
-        if (isset($data[0])) {
-            if (is_array($data[0])) {
-                return array_column($data, 'item');
-            }
-            return $data;
-        }
-        
-        return [];
-    }
-
-    public function getTermsConditionsAttribute($value)
-    {
-        $data = is_array($value) ? $value : json_decode($value, true);
-        
-        if (isset($data[0])) {
-            if (is_array($data[0])) {
-                return array_column($data, 'term');
-            }
-            return $data;
-        }
-        
-        return [];
-    }
-
-    public function getDatesAttribute($value)
-    {
-        $data = is_array($value) ? $value : json_decode($value, true);
-        
-        if (isset($data[0])) {
-            if (is_array($data[0])) {
-                return array_column($data, 'date');
-            }
-            return $data;
-        }
-        
-        return [];
-    }
-
-    public function getIncludesAttribute($value)
-    {
-        $data = is_array($value) ? $value : json_decode($value, true);
-        
-        if (isset($data[0])) {
-            if (is_array($data[0])) {
-                return array_column($data, 'item');
-            }
-            return $data;
-        }
-        
-        return [];
-    }
-    */
+  
     
     // Method untuk display yang tidak menggunakan accessor (untuk keperluan lain)
     public function getDisplayWhatYoullLearn()
