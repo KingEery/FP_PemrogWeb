@@ -22,9 +22,9 @@ class Course extends Model
     ];
 
     public function description()
-    {
-        return $this->hasOne(CourseDescription::class);
-    }
+{
+    return $this->hasOne(CourseDescription::class, 'course_id');
+}
 
     public function index()
 {

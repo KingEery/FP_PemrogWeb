@@ -7,6 +7,7 @@ use App\Filament\Resources\CourseDescriptionResource\RelationManagers;
 use App\Models\CourseDescription;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -34,15 +35,32 @@ class CourseDescriptionResource extends Resource
                     ->hidden(),
 
                 TextInput::make('title')->required(),
-                TextInput::make('tag')->required(),
-                Textarea::make('overview')->required(),
-                TextInput::make('price')->numeric()->required(),
-                TextInput::make('price_discount')->numeric(),
+                TextInput::make('tag')->required()->placeholder('Web Development, dll'),
+                Forms\Components\RichEditor::make('overview')->required()->columnSpanFull(),
+                TextInput::make('price')
+                    ->label('Original Price')
+                    ->prefix('Rp')
+                    ->numeric()
+                    ->required()
+                    ->placeholder('100000'),
+
+                TextInput::make('price_discount')
+                    ->label('Discounted Price')
+                    ->prefix('Rp')
+                    ->numeric()
+                    ->required()
+                    ->placeholder('250000'),
+
                 TextInput::make('instructor_name'),
                 TextInput::make('instructor_position'),
                 TextInput::make('video_count')->numeric(),
                 TextInput::make('duration')->numeric(),
-                Textarea::make('features')->label('Features (JSON format, contoh: ["PDF","Video"])'),
+                Repeater::make('features')
+    ->schema([
+        Forms\Components\TextInput::make('value')->label('Feature')->required(),
+    ])
+    ->label('Features')
+    ->default([]),
                 FileUpload::make('image_url')
                     ->label('Course Image') // bisa diganti sesuai kebutuhan
                     ->image() // ini wajib untuk validasi image/*
@@ -53,39 +71,46 @@ class CourseDescriptionResource extends Resource
                     ->downloadable()
                     ->required(),
 
-                    FileUpload::make('instructor_image_url')
+                FileUpload::make('instructor_image_url')
                     ->label('Instructor Photo')
                     ->image()
                     ->directory('instructors')
                     ->preserveFilenames()
                     ->imagePreviewHeight('150')
-                    ->required(),                
+                    ->required(),
             ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
-        ->columns([
-            Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
-            Tables\Columns\TextColumn::make('tag')->searchable(),
-            Tables\Columns\TextColumn::make('price')->money('IDR', true)->sortable(),
-            Tables\Columns\TextColumn::make('price_discount')->money('IDR', true),
-            Tables\Columns\TextColumn::make('instructor_name'),
-            Tables\Columns\TextColumn::make('duration')->label('Durasi (menit)'),
-            Tables\Columns\TextColumn::make('created_at')->dateTime()->label('Dibuat'),
-        ])
-        ->filters([
-            //
-        ])
-        ->actions([
-            Tables\Actions\EditAction::make(),
-        ])
-        ->bulkActions([
-            Tables\Actions\BulkActionGroup::make([
-                Tables\Actions\DeleteBulkAction::make(),
-            ]),
-        ]);
+            ->columns([
+                Tables\Columns\TextColumn::make('title')->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('tag')->searchable(),
+                Tables\Columns\TextColumn::make('price')
+                    ->label('Harga')
+                    ->sortable()
+                    ->formatStateUsing(fn($state) => 'Rp ' . number_format($state, 0, ',', '.')),
+
+                Tables\Columns\TextColumn::make('price_discount')
+                    ->label('Diskon')
+                    ->formatStateUsing(fn($state) => $state ? 'Rp ' . number_format($state, 0, ',', '.') : '-'),
+
+                Tables\Columns\TextColumn::make('instructor_name'),
+                Tables\Columns\TextColumn::make('duration')->label('Durasi (menit)'),
+                Tables\Columns\TextColumn::make('created_at')->dateTime()->label('Dibuat'),
+            ])
+            ->filters([
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getRelations(): array

@@ -27,9 +27,9 @@ class CourseDescription extends Model
         'features',
         'image_url',
         'instructor_image_url',
-    ];    
+    ];
     public function course()
     {
-        return $this->belongsTo(Course::class);
+        return $this->belongsTo(Course::class,'course_id');
     }
 }
