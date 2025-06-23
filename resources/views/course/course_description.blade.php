@@ -65,7 +65,12 @@
                     </li>
                     <li class="flex items-center gap-2">
                         <i class="far fa-clock text-[#5c4ac7]"></i>
-                        {{ $course_description->duration /60 }} Jam
+                        @php
+    $minutes = intval($course_description->duration);
+    $jam = floor($minutes / 60);
+    $menit = $minutes % 60;
+@endphp
+{{ $jam }} jam {{ $menit }} menit
                     </li>
                     @if ($course_description->features)
                     @foreach (json_decode($course_description->features) as $feature)
