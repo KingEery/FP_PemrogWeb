@@ -13,7 +13,7 @@ class FreeTrial extends Model
     use HasFactory;
 
     protected $fillable = [
-        'consultan_id',
+        'consultant_id',
         'title',
         'description',
         'duration',
@@ -39,9 +39,9 @@ class FreeTrial extends Model
     ];
 
     // Relationships
-    public function consultan(): BelongsTo
+    public function consultant(): BelongsTo
     {
-        return $this->belongsTo(Consultan::class);
+        return $this->belongsTo(Consultant::class);
     }
 
     public function bookings(): HasMany

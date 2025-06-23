@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Facade;
+
 return [
 
     /*
@@ -12,8 +14,6 @@ return [
     | other UI elements where an application name needs to be displayed.
     |
     */
-        App\Providers\Filament\AdminPanelProvider::class,
-
 
     'name' => env('APP_NAME', 'Laravel'),
 
@@ -125,5 +125,90 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Autoloaded Service Providers
+    |--------------------------------------------------------------------------
+    |
+    | The service providers listed here will be automatically loaded on the
+    | request to your application. Feel free to add your own services to
+    | this array to grant expanded functionality to your applications.
+    |
+    */
+
+    'providers' => [
+        /*
+         * Laravel Framework Service Providers...
+         */
+        Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        Illuminate\Bus\BusServiceProvider::class,
+        Illuminate\Cache\CacheServiceProvider::class,
+        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
+        Illuminate\Concurrency\ConcurrencyServiceProvider::class,
+        Illuminate\Cookie\CookieServiceProvider::class,
+        Illuminate\Database\DatabaseServiceProvider::class,
+        Illuminate\Encryption\EncryptionServiceProvider::class,
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
+        Illuminate\Hashing\HashServiceProvider::class,
+        Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
+        Illuminate\Pagination\PaginationServiceProvider::class,
+        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
+        Illuminate\Pipeline\PipelineServiceProvider::class,
+        Illuminate\Queue\QueueServiceProvider::class,
+        Illuminate\Redis\RedisServiceProvider::class,
+        Illuminate\Session\SessionServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
+        Illuminate\Validation\ValidationServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+
+        /*
+         * Package Service Providers...
+         */
+        Barryvdh\DomPDF\ServiceProvider::class,
+        BladeUI\Heroicons\BladeHeroiconsServiceProvider::class,
+        BladeUI\Icons\BladeIconsServiceProvider::class,
+        Filament\Actions\ActionsServiceProvider::class,
+        Filament\FilamentServiceProvider::class,
+        Filament\Forms\FormsServiceProvider::class,
+        Filament\Infolists\InfolistsServiceProvider::class,
+        Filament\Notifications\NotificationsServiceProvider::class,
+        Filament\Support\SupportServiceProvider::class,
+        Filament\Tables\TablesServiceProvider::class,
+        Filament\Widgets\WidgetsServiceProvider::class,
+        Kirschbaum\PowerJoins\PowerJoinsServiceProvider::class,
+        Laravel\Breeze\BreezeServiceProvider::class,
+        Laravel\Pail\PailServiceProvider::class,
+        Laravel\Sail\SailServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
+        Livewire\LivewireServiceProvider::class,
+        Carbon\Laravel\ServiceProvider::class,
+        NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider::class,
+        Termwind\Laravel\TermwindServiceProvider::class,
+        RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider::class,
+
+        /*
+         * Application Service Providers...
+         */
+        App\Providers\AppServiceProvider::class,
+        App\Providers\RouteServiceProvider::class, // Ini akan memuat rute Anda
+        App\Providers\Filament\AdminPanelProvider::class, // Ini adalah penyedia Filament Anda
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Class Aliases
+    |--------------------------------------------------------------------------
+    |
+    | This array of class aliases will be registered when this application
+    | is started. However, feel free to register any aliases that you
+    | don't want to lazy load as they are always loaded regardless of
+    | whether they are actually used or not.
+    |
+    */
+
+    'aliases' => Facade::defaultAliases()->toArray(),
 
 ];

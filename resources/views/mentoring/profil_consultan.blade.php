@@ -1,8 +1,33 @@
+{{-- resources/views/profil_consultan.blade.php - UPDATED dengan dynamic data --}}
+
 @extends('layout.headfoot')
 
 @section('content')
 <section class="bg-gray-100 text-textDark leading-relaxed">
     <div class="max-w-screen-xl mx-auto px-4 relative">
+
+        {{-- Success/Error Messages --}}
+        @if(session('success'))
+            <div class="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                {{ session('error') }}
+            </div>
+        @endif
+
+        @if($errors->any())
+            <div class="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+                <ul class="list-disc list-inside">
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 
         <div class="flex flex-col sm:flex-row items-start pt-8 gap-4">
             <div class="flex-shrink-0">
@@ -152,7 +177,8 @@
     </div>
 </section>
 
-<!-- Modal untuk Booking Sekarang -->
+
+{{-- Modal untuk Booking Sekarang --}}
 <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div class="p-6">
@@ -165,79 +191,79 @@
                 </button>
             </div>
 
-            <form action="{{ route('booking.store') }}" method="POST">
+            <form action="{{ route('bookings.store') }}" method="POST">
                 @csrf
-                <!-- Biodata Section -->
+                {{-- Biodata Section --}}
                 <div class="mb-6">
                     <h4 class="font-medium mb-3 text-gray-900">Biodata Peserta</h4>
                     <div class="space-y-4">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
-                            <input type="text" name="full_name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                            <input type="text" name="full_name" required value="{{ old('full_name') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                            <input type="email" name="email" required value="{{ old('email') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">No. Telepon *</label>
-                            <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                            <input type="tel" name="phone" required value="{{ old('phone') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Topik Konsultasi</label>
                             <select name="topic" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                                 <option value="">Pilih Topik</option>
-                                <option value="product_management">Product Management</option>
-                                <option value="mobile_development">Mobile Development</option>
-                                <option value="career_guidance">Career Guidance</option>
-                                <option value="Back_End">Back-End</option>
-                                <option value="Full_Stack">Full Stack</option>
-                                <option value="UI/UX">UI/UX</option>
-                                <option value="Front_End">Front-End</option>
+                                <option value="product_management" {{ old('topic') == 'product_management' ? 'selected' : '' }}>Product Management</option>
+                                <option value="mobile_development" {{ old('topic') == 'mobile_development' ? 'selected' : '' }}>Mobile Development</option>
+                                <option value="career_guidance" {{ old('topic') == 'career_guidance' ? 'selected' : '' }}>Career Guidance</option>
+                                <option value="Back_End" {{ old('topic') == 'Back_End' ? 'selected' : '' }}>Back-End</option>
+                                <option value="Full_Stack" {{ old('topic') == 'Full_Stack' ? 'selected' : '' }}>Full Stack</option>
+                                <option value="UI/UX" {{ old('topic') == 'UI/UX' ? 'selected' : '' }}>UI/UX</option>
+                                <option value="Front_End" {{ old('topic') == 'Front_End' ? 'selected' : '' }}>Front-End</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <!-- Jadwal Section -->
+                {{-- Jadwal Section --}}
                 <div class="mb-6">
                     <h4 class="font-medium mb-3 text-gray-900">Pilih Jadwal</h4>
                     <div class="space-y-3">
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal *</label>
-                            <input type="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="">
+                            <input type="date" name="date" required value="{{ old('date') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="{{ date('Y-m-d') }}">
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Waktu *</label>
                             <select name="time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                                 <option value="">Pilih Waktu</option>
-                                <option value="09:00">09:00 - 10:00</option>
-                                <option value="10:00">10:00 - 11:00</option>
-                                <option value="11:00">11:00 - 12:00</option>
-                                <option value="13:00">13:00 - 14:00</option>
-                                <option value="14:00">14:00 - 15:00</option>
-                                <option value="15:00">15:00 - 16:00</option>
-                                <option value="16:00">16:00 - 17:00</option>
+                                <option value="09:00" {{ old('time') == '09:00' ? 'selected' : '' }}>09:00 - 10:00</option>
+                                <option value="10:00" {{ old('time') == '10:00' ? 'selected' : '' }}>10:00 - 11:00</option>
+                                <option value="11:00" {{ old('time') == '11:00' ? 'selected' : '' }}>11:00 - 12:00</option>
+                                <option value="13:00" {{ old('time') == '13:00' ? 'selected' : '' }}>13:00 - 14:00</option>
+                                <option value="14:00" {{ old('time') == '14:00' ? 'selected' : '' }}>14:00 - 15:00</option>
+                                <option value="15:00" {{ old('time') == '15:00' ? 'selected' : '' }}>15:00 - 16:00</option>
+                                <option value="16:00" {{ old('time') == '16:00' ? 'selected' : '' }}>16:00 - 17:00</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-sm font-medium text-gray-700 mb-1">Durasi</label>
                             <select name="duration" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
-                                <option value="60">1 Jam (Rp 150.000)</option>
-                                <option value="90">1.5 Jam (Rp 200.000)</option>
-                                <option value="120">2 Jam (Rp 250.000)</option>
+                                <option value="60" {{ old('duration') == '60' ? 'selected' : '' }}>1 Jam (Rp {{ number_format($consultant->hourly_rate ?? 150000) }})</option>
+                                <option value="90" {{ old('duration') == '90' ? 'selected' : '' }}>1.5 Jam (Rp {{ number_format(($consultant->hourly_rate ?? 150000) * 1.5) }})</option>
+                                <option value="120" {{ old('duration') == '120' ? 'selected' : '' }}>2 Jam (Rp {{ number_format(($consultant->hourly_rate ?? 150000) * 2) }})</option>
                             </select>
                         </div>
                     </div>
                 </div>
 
-                <!-- Harga Section -->
+                {{-- Harga Section --}}
                 <div class="mb-6 p-4 bg-gray-50 rounded-lg">
                     <h4 class="font-medium mb-2 text-gray-900">Detail Harga</h4>
                     <div class="space-y-2 text-sm">
                         <div class="flex justify-between">
                             <span>Konsultasi 1 Jam</span>
-                            <span>Rp 150.000</span>
+                            <span>Rp {{ number_format($consultant->hourly_rate ?? 150000) }}</span>
                         </div>
                         <div class="flex justify-between">
                             <span>Platform Fee</span>
@@ -246,18 +272,18 @@
                         <hr class="my-2">
                         <div class="flex justify-between font-semibold">
                             <span>Total</span>
-                            <span id="totalPrice">Rp 155.000</span>
+                            <span id="totalPrice">Rp {{ number_format(($consultant->hourly_rate ?? 150000) + 5000) }}</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Catatan -->
+                {{-- Catatan --}}
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-gray-700 mb-1">Catatan Tambahan</label>
-                    <textarea name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Jelaskan hal yang ingin dikonsultasikan..."></textarea>
+                    <textarea name="notes" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Jelaskan hal yang ingin dikonsultasikan...">{{ old('notes') }}</textarea>
                 </div>
 
-                <input type="hidden" name="mentor_id" value="1">
+                <input type="hidden" name="mentor_id" value="{{ $consultant->id ?? 1 }}">
                 <input type="hidden" name="type" value="paid">
 
                 <div class="flex gap-3">
@@ -273,7 +299,7 @@
     </div>
 </div>
 
-<!-- Modal untuk Free Trial -->
+{{-- Modal untuk Free Trial --}}
 <div id="freeTrialModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
     <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div class="p-6">
@@ -290,44 +316,44 @@
                 <p class="text-sm text-green-800">💡 Dapatkan konsultasi gratis 30 menit untuk mengenal lebih dekat!</p>
             </div>
 
-            <form action="{{ route('consultan.Free-Trial.store') }}" method="POST">
+            <form action="{{ route('free-trials.store') }}" method="POST">
                 @csrf
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap *</label>
-                        <input type="text" name="full_name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        <input type="text" name="full_name" required value="{{ old('full_name') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                        <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        <input type="email" name="email" required value="{{ old('email') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">No. Telepon *</label>
-                        <input type="tel" name="phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
+                        <input type="tel" name="phone" required value="{{ old('phone') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Tanggal *</label>
-                        <input type="date" name="date" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="">
+                        <input type="date" name="date" required value="{{ old('date') }}" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" min="{{ date('Y-m-d') }}">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Pilih Waktu *</label>
                         <select name="time" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent">
                             <option value="">Pilih Waktu</option>
-                            <option value="09:00">09:00 - 09:30</option>
-                            <option value="10:00">10:00 - 10:30</option>
-                            <option value="11:00">11:00 - 11:30</option>
-                            <option value="13:00">13:00 - 13:30</option>
-                            <option value="14:00">14:00 - 14:30</option>
-                            <option value="15:00">15:00 - 15:30</option>
+                            <option value="09:00" {{ old('time') == '09:00' ? 'selected' : '' }}>09:00 - 09:30</option>
+                            <option value="10:00" {{ old('time') == '10:00' ? 'selected' : '' }}>10:00 - 10:30</option>
+                            <option value="11:00" {{ old('time') == '11:00' ? 'selected' : '' }}>11:00 - 11:30</option>
+                            <option value="13:00" {{ old('time') == '13:00' ? 'selected' : '' }}>13:00 - 13:30</option>
+                            <option value="14:00" {{ old('time') == '14:00' ? 'selected' : '' }}>14:00 - 14:30</option>
+                            <option value="15:00" {{ old('time') == '15:00' ? 'selected' : '' }}>15:00 - 15:30</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Ceritakan tentang dirimu</label>
-                        <textarea name="notes" rows="3" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Ceritakan background dan tujuan konsultasi..."></textarea>
+                        <textarea name="notes" rows="3" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#5E50A1] focus:border-transparent" placeholder="Ceritakan background dan tujuan konsultasi...">{{ old('notes') }}</textarea>
                     </div>
                 </div>
 
-                <input type="hidden" name="mentor_id" value="1">
+                <input type="hidden" name="mentor_id" value="{{ $consultant->id ?? 1 }}">
                 <input type="hidden" name="duration" value="30">
                 <input type="hidden" name="type" value="free">
 
@@ -343,204 +369,5 @@
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Set minimum date to today
-    const today = new Date().toISOString().split('T')[0];
-    document.querySelectorAll('input[type="date"]').forEach(input => {
-        input.min = today;
-    });
-
-    // Modal elements
-    const bookingModal = document.getElementById('bookingModal');
-    const freeTrialModal = document.getElementById('freeTrialModal');
-
-    // Button elements
-    const bookingBtn = document.getElementById('bookingBtn');
-    const freeTrialBtn = document.getElementById('freeTrialBtn');
-
-    // Close button elements
-    const closeBookingBtn = document.getElementById('closeBookingBtn');
-    const closeFreeTrialBtn = document.getElementById('closeFreeTrialBtn');
-    const cancelBookingBtn = document.getElementById('cancelBookingBtn');
-    const cancelFreeTrialBtn = document.getElementById('cancelFreeTrialBtn');
-
-    // Open booking modal
-    bookingBtn.addEventListener('click', function() {
-        bookingModal.classList.remove('hidden');
-    });
-
-    // Open free trial modal
-    freeTrialBtn.addEventListener('click', function() {
-        freeTrialModal.classList.remove('hidden');
-    });
-
-    // Close booking modal
-    closeBookingBtn.addEventListener('click', function() {
-        bookingModal.classList.add('hidden');
-    });
-
-    cancelBookingBtn.addEventListener('click', function() {
-        bookingModal.classList.add('hidden');
-    });
-
-    // Close free trial modal
-    closeFreeTrialBtn.addEventListener('click', function() {
-        freeTrialModal.classList.add('hidden');
-    });
-
-    cancelFreeTrialBtn.addEventListener('click', function() {
-        freeTrialModal.classList.add('hidden');
-    });
-
-    // Close modal when clicking outside
-    bookingModal.addEventListener('click', function(e) {
-        if (e.target === bookingModal) {
-            bookingModal.classList.add('hidden');
-        }
-    });
-
-    freeTrialModal.addEventListener('click', function(e) {
-        if (e.target === freeTrialModal) {
-            freeTrialModal.classList.add('hidden');
-        }
-    });
-
-    // Price calculation for booking modal
-    const durationSelect = document.querySelector('select[name="duration"]');
-    const totalPriceElement = document.getElementById('totalPrice');
-
-    if (durationSelect && totalPriceElement) {
-        durationSelect.addEventListener('change', function() {
-            const duration = parseInt(this.value);
-            const platformFee = 5000;
-            let basePrice = 0;
-
-            switch(duration) {
-                case 60:
-                    basePrice = 150000;
-                    break;
-                case 90:
-                    basePrice = 200000;
-                    break;
-                case 120:
-                    basePrice = 250000;
-                    break;
-                default:
-                    basePrice = 150000;
-            }
-
-            const total = basePrice + platformFee;
-            totalPriceElement.textContent = `Rp ${total.toLocaleString('id-ID')}`;
-        });
-    }
-
-    // Update price detail section when duration changes
-    durationSelect?.addEventListener('change', function() {
-        const duration = parseInt(this.value);
-        const priceDetailSection = document.querySelector('.bg-gray-50');
-
-        if (priceDetailSection) {
-            let basePrice = 0;
-            let durationText = '';
-
-            switch(duration) {
-                case 60:
-                    basePrice = 150000;
-                    durationText = 'Konsultasi 1 Jam';
-                    break;
-                case 90:
-                    basePrice = 200000;
-                    durationText = 'Konsultasi 1.5 Jam';
-                    break;
-                case 120:
-                    basePrice = 250000;
-                    durationText = 'Konsultasi 2 Jam';
-                    break;
-                default:
-                    basePrice = 150000;
-                    durationText = 'Konsultasi 1 Jam';
-            }
-
-            const platformFee = 5000;
-            const total = basePrice + platformFee;
-
-            priceDetailSection.innerHTML = `
-                <h4 class="font-medium mb-2 text-gray-900">Detail Harga</h4>
-                <div class="space-y-2 text-sm">
-                    <div class="flex justify-between">
-                        <span>${durationText}</span>
-                        <span>Rp ${basePrice.toLocaleString('id-ID')}</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span>Platform Fee</span>
-                        <span>Rp 5.000</span>
-                    </div>
-                    <hr class="my-2">
-                    <div class="flex justify-between font-semibold">
-                        <span>Total</span>
-                        <span id="totalPrice">Rp ${total.toLocaleString('id-ID')}</span>
-                    </div>
-                </div>
-            `;
-        }
-    });
-
-    // Form validation
-    const forms = document.querySelectorAll('form');
-    forms.forEach(form => {
-        form.addEventListener('submit', function(e) {
-            const requiredFields = form.querySelectorAll('[required]');
-            let isValid = true;
-
-            requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    isValid = false;
-                    field.classList.add('border-red-500');
-                } else {
-                    field.classList.remove('border-red-500');
-                }
-            });
-
-            if (!isValid) {
-                e.preventDefault();
-                alert('Mohon lengkapi semua field yang wajib diisi.');
-            }
-        });
-    });
-
-    // Add escape key listener to close modals
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            if (!bookingModal.classList.contains('hidden')) {
-                bookingModal.classList.add('hidden');
-            }
-            if (!freeTrialModal.classList.contains('hidden')) {
-                freeTrialModal.classList.add('hidden');
-            }
-        }
-    });
-
-    // Function to keep the session alive to prevent 419 errors
-    async function keepSessionAlive() {
-        try {
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-            await fetch("{{ route('session.keep_alive') }}", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': csrfToken
-                }
-            });
-        } catch (error) {
-            console.error('Failed to keep session alive:', error);
-        }
-    }
-
-    // Call keepSessionAlive every 5 minutes (300000 milliseconds)
-    setInterval(keepSessionAlive, 300000);
-});
-</script>
+<script src="/js/profilconsultant.js" defer></script>
 @endsection
