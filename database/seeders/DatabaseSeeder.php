@@ -51,5 +51,8 @@ User::firstOrCreate(
             MentoringDescriptionSeeder::class,
         ]);
 
+        $this->call(TeamMemberSeeder::class);
+
+
     }
 }
