@@ -54,6 +54,12 @@
                     Event
                 </a>
             </li>
+            <li>
+                <a href="/about" class="flex items-center gap-2 {{ Request::is('about') ? 'text-yellow-300 font-semibold active' : 'text-white' }} hover:text-yellow-300">
+                    <svg class="w-5 h-5 md:hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h8M12 8v8"></path></svg>
+                    About Us
+                </a>
+            </li>
             @guest
     <li class="md:hidden flex flex-col space-y-2 mt-2">
         <a href="/login">

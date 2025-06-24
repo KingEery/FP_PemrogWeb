@@ -25,20 +25,24 @@ class DatabaseSeeder extends Seeder
         ]);
 
 
-        User::create([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('admin123'), // ganti password sesuai kebutuhan
-            'role' => 'admin',
-        ]);
+        User::firstOrCreate(
+    ['email' => 'admin@example.com'],
+    [
+        'name' => 'Admin',
+        'password' => Hash::make('admin123'),
+        'role' => 'admin',
+    ]
+);
 
+User::firstOrCreate(
+    ['email' => 'user@example.com'],
+    [
+        'name' => 'User Biasa',
+        'password' => Hash::make('user123'),
+        'role' => 'user',
+    ]
+);
 
-        User::create([
-            'name' => 'User Biasa',
-            'email' => 'user@example.com',
-            'password' => Hash::make('user123'), // ganti password sesuai kebutuhan
-            'role' => 'user',
-        ]);
          $this->call([
             EventDescriptionSeeder::class,
         ]);
