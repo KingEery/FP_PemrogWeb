@@ -22,13 +22,13 @@ class Course extends Model
     ];
 
     public function description()
-{
-    return $this->hasOne(CourseDescription::class, 'course_id');
-}
+    {
+        return $this->hasOne(CourseDescription::class);
+    }
 
     public function index()
-{
-    $courses = Course::with('description')->get(); // ← penting!
-    return view('course.course', compact('courses'));
-}
+    {
+        $courses = Course::with('description')->get(); // ← penting!
+        return view('course.course', compact('courses'));
+    }
 }

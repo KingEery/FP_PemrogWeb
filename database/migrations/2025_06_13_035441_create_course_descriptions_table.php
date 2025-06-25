@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('course_description', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('course_id');
+            $table->string('title');
             $table->string('tag');
             $table->text('overview');
             $table->integer('price');
@@ -26,8 +27,6 @@ return new class extends Migration
             $table->string('image_url')->nullable();
             $table->string('instructor_image_url')->nullable();
             $table->timestamps();
-
-
         });
     }
 

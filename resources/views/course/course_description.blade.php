@@ -62,23 +62,19 @@
                     <li class="flex items-center gap-2">
                         <i class="far fa-file-video text-[#5c4ac7]"></i>
                         {{ $course_description->video_count }} Video
-                    </li>
+                    </li>Add commentMore actions
                     <li class="flex items-center gap-2">
                         <i class="far fa-clock text-[#5c4ac7]"></i>
-                        @php
-    $minutes = intval($course_description->duration);
-    $jam = floor($minutes / 60);
-    $menit = $minutes % 60;
-@endphp
-{{ $jam }} jam {{ $menit }} menit
+                        {{ $course->course->duration ?? 'N/A' }}
+                        {{ $course_description->duration /60 }} Jam
                     </li>
                     @if ($course_description->features)
-                    @foreach (json_decode($course_description->features) as $feature)
+                   @foreach (json_decode($course_description->features) as $feature)
                     <li class="flex items-center gap-2">
                         <i class="far fa-check-circle text-[#5c4ac7]"></i>
                         {{ $feature }}
                     </li>
-                    @endforeach
+                    @endforeach
                     @endif
                 </ul>
             </div>
