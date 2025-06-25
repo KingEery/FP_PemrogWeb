@@ -13,7 +13,7 @@ use App\Http\Controllers\EventsDescriptionController;
 use App\Http\Controllers\MentoringController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseDescriptionController;
-use App\Http\Controllers\ConsultanController;
+use App\Http\Controllers\ConsultantController;
 use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\DashboardConsultanController;
@@ -121,7 +121,18 @@ Route::prefix('event')->group(function() {
     Route::get('/{id}', [EventController::class, 'show'])->name('event.show');
 
 });
+Route::get('/profil_consultan/{id}', [ConsultantController::class, 'show'])->name('profil_consultan');
 
+// API routes untuk AJAX (optional)
+Route::get('/api/consultants', [MentoringController::class, 'getConsultants'])->name('api.consultants');
+
+
+
+// Perbaiki (BENAR)
+// Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 Route::get('/mentoring', [MentoringController::class, 'index'])->name('mentoring.index');
 Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mentoring.show');
 
@@ -137,23 +148,23 @@ Route::post('/session/keep-alive', function () {
 
 
 
-Route::get('/dashboard_consultant', [DashboardConsultanController::class, 'dashboard'])->name('dashboard_consultant');
-// ✅ Web routes untuk form submission dari profil consultant
-Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
-Route::post('/free-trials', [FreeTrialController::class, 'store'])->name('free-trials.store');
+//  Route::get('/dashboard_consultant', [DashboardConsultanController::class, 'dashboard'])->name('dashboard_consultant');
+// // // ✅ Web routes untuk form submission dari profil consultant
+// Route::post('/bookings', [BookingController::class, 'store'])->name('bookings.store');
+// Route::post('/free-trials', [FreeTrialController::class, 'store'])->name('free-trials.store');
 
-// ✅ Dashboard routes
-Route::get('/dashboard', [DashboardConsultanController::class, 'index'])->name('dashboard');
-Route::get('/dashboard/consultant', [DashboardConsultanController::class, 'index'])->name('dashboard.consultant');
-// Dashboard Consultan Routes - REAL-TIME ENABLED
-Route::prefix('dashboard-consultan')->group(function () {
-    Route::get('/', [DashboardConsultanController::class, 'dashboard'])->name('dashboard.consultan');
+// // // ✅ Dashboard routes
+// Route::get('/dashboard', [DashboardConsultanController::class, 'index'])->name('dashboard');
+// Route::get('/dashboard/consultant', [DashboardConsultanController::class, 'index'])->name('dashboard.consultant');
+// // // Dashboard Consultan Routes - REAL-TIME ENABLED
+// Route::prefix('dashboard-consultan')->group(function () {
+//     Route::get('/', [DashboardConsultanController::class, 'dashboard'])->name('dashboard.consultan');
     
-    // API Routes untuk Real-time Dashboard
-    Route::get('/stats', [DashboardConsultanController::class, 'getStats'])->name('dashboard.consultan.stats');
-    Route::get('/bookings', [DashboardConsultanController::class, 'apiBookings'])->name('dashboard.consultan.bookings');
-    Route::get('/booking/{id}', [DashboardConsultanController::class, 'getBookingDetail'])->name('dashboard.consultan.booking.detail');
-    Route::put('/booking/{id}/status', [DashboardConsultanController::class, 'updateBookingStatus'])->name('dashboard.consultan.booking.status');
-    Route::get('/chart-data', [DashboardConsultanController::class, 'chartData'])->name('dashboard.consultan.chart');
-});
+//     // API Routes untuk Real-time Dashboard
+//     Route::get('/stats', [DashboardConsultanController::class, 'getStats'])->name('dashboard.consultan.stats');
+//     Route::get('/bookings', [DashboardConsultanController::class, 'apiBookings'])->name('dashboard.consultan.bookings');
+//     Route::get('/booking/{id}', [DashboardConsultanController::class, 'getBookingDetail'])->name('dashboard.consultan.booking.detail');
+//     Route::put('/booking/{id}/status', [DashboardConsultanController::class, 'updateBookingStatus'])->name('dashboard.consultan.booking.status');
+//     Route::get('/chart-data', [DashboardConsultanController::class, 'chartData'])->name('dashboard.consultan.chart');
+// });
 

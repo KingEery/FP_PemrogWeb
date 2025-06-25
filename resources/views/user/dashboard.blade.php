@@ -56,7 +56,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('profile') }}" class="flex items-center gap-2 py-2 hover:text-purple-700">
+                                <a href="{{ route('profile.show') }}" class="flex items-center gap-2 py-2 hover:text-purple-700">
                                     <span>🧑‍💼</span> Profile Saya
                                 </a>
                             </li>
@@ -87,7 +87,7 @@
             <div class="grid md:grid-cols-3 gap-6 mb-10">
                 <div class="bg-white shadow rounded-lg p-6">
                     <h3 class="text-lg font-semibold text-purple-700 flex items-center gap-2">🔥 Program Aktif</h3>
-                    <p class="text-2xl font-bold text-purple-800 mt-2">Full Stack Web Development</p>
+                    <a href='/course_content' class="text-2xl font-bold text-purple-800 mt-2">Belajar Laravel & ReactJS</a>
                     <p class="text-sm text-gray-500 mt-1">Dimulai: 1 Mei 2025</p>
                     <span class="inline-block mt-2 bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded-full">On
                         Fire!</span>

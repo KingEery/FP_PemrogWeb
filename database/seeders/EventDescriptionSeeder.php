@@ -23,7 +23,7 @@ class EventDescriptionSeeder extends Seeder
         $events = [
             [
                 'title' => 'Google I/O Extended',
-                'image' => 'events/hackathon.webp',
+                'image' => 'image/hackathon.webp',
                 'category' => 'Mobile & Cloud',
                 'overview' => 'Update teknologi dari Google langsung!',
                 'what_youll_learn' => [
@@ -52,7 +52,7 @@ class EventDescriptionSeeder extends Seeder
             ],
             [
                 'title' => 'UI/UX Design Workshop',
-                'image' => 'events/design-workshop.webp',
+                'image' => 'image/design-workshop.webp',
                 'category' => 'UI/UX',
                 'overview' => 'Workshop intensif UI/UX untuk mendalami proses desain antarmuka dan pengalaman pengguna.',
                 'what_youll_learn' => [
@@ -83,7 +83,7 @@ class EventDescriptionSeeder extends Seeder
             ],
             [
                 'title' => 'DevFest Indonesia 2025',
-                'image' => 'events/devfest.jpg',
+                'image' => 'image/devfest.jpg',
                 'category' => 'Web Programming',
                 'overview' => 'Konferensi komunitas teknologi Google di Indonesia.',
                 'what_youll_learn' => [
@@ -114,7 +114,7 @@ class EventDescriptionSeeder extends Seeder
             ],
             [
                 'title' => 'Full Stack Developer Day: From Zero to Hero',
-                'image' => 'events/Full-Stack-Developer.webp',
+                'image' => 'image/Full-Stack-Developer.webp',
                 'category' => 'Fullstack',
                 'overview' => 'Workshop intensif membangun aplikasi web lengkap dari frontend ke backend.',
                 'what_youll_learn' => [
@@ -145,7 +145,7 @@ class EventDescriptionSeeder extends Seeder
             ],
             [
                 'title' => 'Mastering the Back-End: From API to Database',
-                'image' => 'events/Back-End.webp',
+                'image' => 'image/Back-End.webp',
                 'category' => 'Back-End',
                 'overview' => 'Pelatihan teknis membangun API RESTful dan sistem database dari dasar hingga siap produksi.',
                 'what_youll_learn' => [
@@ -176,7 +176,7 @@ class EventDescriptionSeeder extends Seeder
             ],
             [
                 'title' => 'Intro to Data Science Bootcamp',
-                'image' => 'events/Data-Science-Images.webp',
+                'image' => 'image/Data-Science-Images.webp',
                 'category' => 'Data Science',
                 'overview' => 'Pelatihan intensif untuk pemula yang ingin masuk ke dunia data science.',
                 'what_youll_learn' => [

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ProfileUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -13,15 +14,27 @@ class ProfileController extends Controller
     public function show()
     {
         $user = Auth::user();
+        
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Silakan login terlebih dahulu');
+        }
+        
+        // Cari atau buat profile user
         $profile = ProfileUser::where('user_id', $user->id)->first();
         
         if (!$profile) {
-            $profile = new ProfileUser([
+            // Buat profile baru jika belum ada
+            $profile = ProfileUser::create([
                 'user_id' => $user->id,
                 'fullname' => $user->name,
                 'email' => $user->email,
+                'username' => $user->username ?? '', // Pastikan field username ada di tabel users
                 'level' => 1,
-                'progress' => 0
+                'progress' => 0,
+                'bio' => '',
+                'hobbies' => json_encode([]),
+                'dob' => null,
+                'avatar' => null
             ]);
         }
 
@@ -31,7 +44,6 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         try {
-            // Log semua request data untuk debugging
             Log::info('Profile update request received', [
                 'user_id' => Auth::id(),
                 'request_data' => $request->all(),
@@ -39,6 +51,13 @@ class ProfileController extends Controller
             ]);
 
             $user = Auth::user();
+            
+            if (!$user) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User tidak ditemukan'
+                ], 401);
+            }
             
             // Cek apakah profile sudah ada
             $existingProfile = ProfileUser::where('user_id', $user->id)->first();
@@ -58,7 +77,6 @@ class ProfileController extends Controller
             Log::info('Validation passed', ['validated_data' => $validated]);
 
             // Handle file upload
-            $avatarPath = null;
             if ($request->hasFile('avatar')) {
                 $avatarPath = $request->file('avatar')->store('avatars', 'public');
                 $validated['avatar'] = $avatarPath;
@@ -77,12 +95,18 @@ class ProfileController extends Controller
                 $validated
             );
 
+            // Update juga data di tabel users jika diperlukan
+            $user->update([
+                'name' => $validated['fullname'],
+                'email' => $validated['email']
+            ]);
+
             Log::info('Profile updated/created successfully', ['profile_id' => $profile->id]);
 
             return response()->json([
                 'success' => true,
                 'message' => 'Profil berhasil diperbarui!',
-                'avatar_url' => $avatarPath ? asset('storage/'.$avatarPath) : null
+                'avatar_url' => isset($avatarPath) ? asset('storage/'.$avatarPath) : null
             ]);
 
         } catch (ValidationException $e) {

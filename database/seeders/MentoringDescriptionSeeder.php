@@ -15,7 +15,7 @@ class MentoringDescriptionSeeder extends Seeder
             'long_description' => 'Program Exclusive Mentoring dari Dunia Coding menawarkan mentoring one-to-one yang dirancang khusus untuk kamu yang kesulitan belajar di lingkungan formal atau mandiri.',
             'original_price' => 8000000,
             'discounted_price' => 135000,
-            'image_path' => 'mentoring-descriptions/Mentoring-Mendaftar.avif',
+            'image_path' => 'image/Mentoring-Mendaftar.avif',
             'target_audience' => [
                 ['item' => 'Mahasiswa', 'description' => 'Mahasiswa dengan ilmu komputer yang ingin memperkuat keterampilan fundamental programming.'],
                 ['item' => 'IT Professional', 'description' => 'Profesional yang ingin beralih ke pengembangan web.'],
@@ -58,7 +58,7 @@ class MentoringDescriptionSeeder extends Seeder
             'long_description' => 'Program mentoring Flutter yang komprehensif untuk membangun aplikasi mobile cross-platform. Dari dasar hingga deployment ke App Store dan Google Play.',
             'original_price' => 7500000,
             'discounted_price' => 150000,
-            'image_path' => 'mentoring-descriptions/mobile-app.webp',
+            'image_path' => 'image/mobile-app.webp',
             'target_audience' => [
                 ['item' => 'Web Developer', 'description' => 'Web developer yang ingin ekspansi ke mobile development.'],
                 ['item' => 'Fresh Graduate', 'description' => 'Lulusan baru yang ingin berkarir di mobile development.'],
@@ -103,7 +103,7 @@ class MentoringDescriptionSeeder extends Seeder
             'long_description' => 'Mentoring intensif selama 4 bulan yang membahas seluruh fondasi data science. Mulai dari Python dasar, manipulasi data dengan Pandas dan Numpy, hingga visualisasi dan analisis data yang mendalam.',
             'original_price' => 9000000,
             'discounted_price' => 200000,
-            'image_path' => 'mentoring-descriptions/Data-Science-Images.webp',
+            'image_path' => 'image/Data-Science-Images.webp',
             'target_audience' => [
                 ['item' => 'Mahasiswa', 'description' => 'Mahasiswa yang ingin memperdalam ilmu data science untuk karir masa depan.'],
                 ['item' => 'Career Switcher', 'description' => 'Profesional yang ingin beralih ke bidang data dan analitik.'],

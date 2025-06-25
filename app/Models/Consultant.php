@@ -1,6 +1,5 @@
 <?php
-// app/Models/Consultant.php - FIXED VERSION
-
+// app/Models/Consultant.php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,17 +12,24 @@ class Consultant extends Model
 
     protected $table = 'consultants';
 
-    // PERBAIKAN: Fillable sesuai dengan kolom database yang ada
     protected $fillable = [
         'name',
         'email',
         'phone',
         'bio',
+        'position',
+        'company',
         'specialty',
+        'location',
         'rating',
         'total_reviews',
         'hourly_rate',
         'profile_image',
+        'instagram_url',
+        'linkedin_url',
+        'experiences',
+        'educations',
+        'skills',
         'is_active'
     ];
 
@@ -31,19 +37,16 @@ class Consultant extends Model
         'rating' => 'decimal:2',
         'hourly_rate' => 'decimal:2',
         'is_active' => 'boolean',
-        'total_reviews' => 'integer'
+        'total_reviews' => 'integer',
+        'experiences' => 'array',
+        'educations' => 'array',
+        'skills' => 'array'
     ];
 
     // Relasi ke booking
     public function bookings(): HasMany
     {
         return $this->hasMany(Booking::class, 'consultant_id');
-    }
-
-    // Relasi ke free trials
-    public function freeTrials(): HasMany
-    {
-        return $this->hasMany(FreeTrial::class, 'consultant_id');
     }
 
     // Scope untuk consultant aktif
@@ -81,9 +84,36 @@ class Consultant extends Model
         return $this->is_active;
     }
 
-    // PERBAIKAN: Accessor untuk backward compatibility
+    // Accessor untuk backward compatibility
     public function getPricePerHourAttribute()
     {
         return $this->hourly_rate;
+    }
+
+    // Get profile image URL
+    public function getProfileImageUrlAttribute()
+    {
+        if ($this->profile_image) {
+            if (str_starts_with($this->profile_image, 'image/')) {
+                return asset($this->profile_image);
+            }
+            return asset('storage/' . $this->profile_image);
+        }
+        return asset('image/default-avatar.jpg');
+    }
+
+    // Format rating untuk display
+    public function getFormattedRatingAttribute()
+    {
+        return number_format($this->rating, 1);
+    }
+
+    // Get full position display
+    public function getFullPositionAttribute()
+    {
+        if ($this->position && $this->company) {
+            return $this->position . ' at ' . $this->company;
+        }
+        return $this->position ?: 'Consultant';
     }
 }

@@ -37,51 +37,5 @@ class EventController extends Controller
     }
 
     
-    public function getByCategory(Request $request)
-    {
-        $category = $request->get('category', 'all');
-        
-        $query = Event::with('description');
-        
-        if ($category !== 'all') {
-            $query->byCategory($category);
-        }
-        
-        $events = $query->upcoming()
-                       ->orderBy('date', 'asc')
-                       ->get();
-
-        return response()->json($events);
-    }
-
-    
-    public function getUpcoming()
-    {
-        $events = Event::with('description')
-                      ->upcoming()
-                      ->orderBy('date', 'asc')
-                      ->take(6)
-                      ->get();
-
-        return response()->json($events);
-    }
-
-  
-    public function search(Request $request)
-    {
-        $query = $request->get('q');
-        
-        $events = Event::with('description')
-                      ->where('title', 'LIKE', "%{$query}%")
-                      ->orWhereHas('description', function($q) use ($query) {
-                          $q->where('title', 'LIKE', "%{$query}%")
-                            ->orWhere('speaker_name', 'LIKE', "%{$query}%");
-                      })
-                      ->upcoming()
-                      ->orderBy('date', 'asc')
-                      ->get();
-
-        return response()->json($events);
-    }
 }
 

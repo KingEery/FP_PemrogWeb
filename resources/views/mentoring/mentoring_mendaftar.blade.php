@@ -14,12 +14,19 @@
             @endif
         </div>
         <div class="flex gap-4">
-            <a href="/payment/{{ $mentoring->id }}" class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Daftar Sekarang</a>
+            <a href='/payment' class="px-7 py-3 rounded-md bg-white text-[#564AB1] font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Daftar Sekarang</a>
         </div>
     </div>
    
     <div class="mt-5 text-center">
-        <img class="w-[576px] h-[280px] mx-auto rounded-xl object-cover" src="{{ asset('storage/'.$mentoring->image_path) }}" alt="Mentoring Image" />
+       <img 
+  class="w-[576px] h-[280px] mx-auto rounded-xl object-cover" 
+  src="{{ Str::startsWith($mentoring->image_path, 'image/') 
+            ? asset($mentoring->image_path) 
+            : asset('storage/' . $mentoring->image_path) }}" 
+  alt="Mentoring Image" 
+/>
+
     </div>
 </section>
 

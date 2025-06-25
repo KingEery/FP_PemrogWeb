@@ -44,12 +44,18 @@
         </div>
     </div>
 
+    <!-- Mentoring Section -->
     <div id="mentoring-section" class="flex flex-wrap md:flex-nowrap gap-8">
         <div class="flex-1">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
                 @foreach($mentorings as $mentoring)
                 <a href="{{ route('mentoring.show', $mentoring->id) }}" class="w-full bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg block" data-category="web-programming">
-                    <img src="{{ asset('storage/'.$mentoring->image_path) }}" alt="{{ $mentoring->title }}" class="w-full h-[230px] object-cover">
+                    <img 
+                    src="{{ Str::startsWith($mentoring->image_path, 'image/') 
+                                ? asset($mentoring->image_path) 
+                                : asset('storage/'.$mentoring->image_path) }}" 
+                    alt="{{ $mentoring->title }}" 
+                    class="w-full h-[230px] object-cover">
 
                     <div class="p-5">
                         <h2 class="text-xl font-semibold mb-2 text-gray-800">{{ $mentoring->title }}</h2>
@@ -70,51 +76,151 @@
         </div>
     </div>
 
-    <!-- Section for Consultan and All Mentor -->
+    <!-- Consultan Section -->
     <div id="consultan-section" class="hidden mt-8">
-        <div id="consultan-card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
-        <template id="consultan-card-template">
-            <a href="/profil_consultan" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <img class="w-full h-48 object-cover rounded-t-xl" src="{{ asset('image/default.jpg') }}" alt="Mentor Photo" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+            @foreach($consultants as $consultant)
+            <a href="{{ route('profil_consultan', $consultant->id) }}" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <img class="w-full h-48 object-cover rounded-t-xl" 
+                     src="{{ $consultant->profile_image ? asset($consultant->profile_image) : asset('image/default.jpg') }}" 
+                     alt="{{ $consultant->name }}" />
                 <div class="p-4">
-                    <p class="text-sm text-gray-500 mb-1">Product Management</p>
-                    <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>
+                    <p class="text-sm text-gray-500 mb-1">{{ $consultant->specialty ?? 'Consultant' }}</p>
+                    <h3 class="text-lg font-semibold text-gray-800">{{ $consultant->name }}</h3>
                     <div class="mt-3 space-y-2">
                         <div class="flex items-center gap-2">
-                            <span class="mentor-job text-sm text-gray-700">Jabatan Mentor</span>
+                            <span class="text-sm text-gray-700">{{ $consultant->position }} at {{ $consultant->company }}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="mentor-exp text-sm text-gray-700">Pengalaman Mentor</span>
+                            <span class="text-sm text-gray-700">📍 {{ $consultant->location }}</span>
+                        </div>
+                        @if($consultant->total_reviews > 0)
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-yellow-500">⭐ {{ number_format($consultant->rating, 1) }}</span>
+                            <span class="text-sm text-gray-500">({{ $consultant->total_reviews }} reviews)</span>
+                        </div>
+                        @endif
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-green-600 font-medium">Rp {{ number_format($consultant->hourly_rate, 0, ',', '.') }}/jam</span>
                         </div>
                     </div>
                 </div>
             </a>
-        </template>
+            @endforeach
+        </div>
     </div>
     
+    <!-- All Mentor Section (menggabungkan mentoring dan consultant) -->
     <div id="allmentor-section" class="hidden mt-8">
-        <div id="allmentorcard-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center"></div>
-        <template id="allmentor-card-template">
-            <a href="/profil_consultan" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-                <img class="w-full h-60 object-cover rounded-t-xl" src="{{ asset('image/default.jpg') }}" alt="Mentor Photo" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
+            <!-- Consultants -->
+            @foreach($consultants as $consultant)
+            <a href="{{ route('profil_consultan', $consultant->id) }}" class="w-full max-w-sm bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+                <img class="w-full h-48 object-cover rounded-t-xl" 
+                     src="{{ $consultant->profile_image ? asset($consultant->profile_image) : asset('image/default.jpg') }}" 
+                     alt="{{ $consultant->name }}" />
                 <div class="p-4">
-                    <p class="text-sm text-gray-500 mb-1">Product Management</p>
-                    <h3 class="text-lg font-semibold text-gray-800 mentor-name">Nama Mentor</h3>
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="text-sm text-gray-500">{{ $consultant->specialty ?? 'Consultant' }}</p>
+                        <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Consultant</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-800">{{ $consultant->name }}</h3>
                     <div class="mt-3 space-y-2">
                         <div class="flex items-center gap-2">
-                            <span class="mentor-job text-sm text-gray-700">Jabatan Mentor</span>
+                            <span class="text-sm text-gray-700">{{ $consultant->position }}</span>
                         </div>
                         <div class="flex items-center gap-2">
-                            <span class="mentor-exp text-sm text-gray-700">Pengalaman Mentor</span>
+                            <span class="text-sm text-gray-700">📍 {{ $consultant->location }}</span>
                         </div>
+                        @if($consultant->total_reviews > 0)
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-yellow-500">⭐ {{ number_format($consultant->rating, 1) }}</span>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </a>
-        </template>
+            @endforeach
+        </div>
     </div>
 </section>
 
 <!-- Script -->
-<script src="/js/mentoring.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+// Carousel functionality
+let currentSlide = 1;
+const slides = document.querySelectorAll('.slide');
+const carouselBtns = document.querySelectorAll('.carousel-btn');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.classList.toggle('hidden', i !== index);
+    });
+    
+    carouselBtns.forEach((btn, i) => {
+        btn.classList.toggle('bg-white', i === index);
+        btn.classList.toggle('bg-transparent', i !== index);
+    });
+}
+
+carouselBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+    });
+});
+
+// Auto carousel
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}, 5000);
+
+// Tab functionality
+const btnMentoring = document.getElementById('btn-mentoring');
+const btnConsultan = document.getElementById('btn-consultan');
+const btnAllMentor = document.getElementById('btn-allmentor');
+
+const mentoringSection = document.getElementById('mentoring-section');
+const consultanSection = document.getElementById('consultan-section');
+const allMentorSection = document.getElementById('allmentor-section');
+
+function resetButtons() {
+    [btnMentoring, btnConsultan, btnAllMentor].forEach(btn => {
+        btn.classList.remove('text-white', 'bg-[#564AB1]');
+        btn.classList.add('border-2', 'border-[#564AB1]', 'text-[#564AB1]');
+    });
+}
+
+function setActiveButton(activeBtn) {
+    resetButtons();
+    activeBtn.classList.remove('border-2', 'border-[#564AB1]', 'text-[#564AB1]');
+    activeBtn.classList.add('text-white', 'bg-[#564AB1]');
+}
+
+function hideAllSections() {
+    mentoringSection.classList.add('hidden');
+    consultanSection.classList.add('hidden');
+    allMentorSection.classList.add('hidden');
+}
+
+btnMentoring.addEventListener('click', () => {
+    hideAllSections();
+    mentoringSection.classList.remove('hidden');
+    setActiveButton(btnMentoring);
+});
+
+btnConsultan.addEventListener('click', () => {
+    hideAllSections();
+    consultanSection.classList.remove('hidden');
+    setActiveButton(btnConsultan);
+});
+
+btnAllMentor.addEventListener('click', () => {
+    hideAllSections();
+    allMentorSection.classList.remove('hidden');
+    setActiveButton(btnAllMentor);
+});
+</script>
 @endsection

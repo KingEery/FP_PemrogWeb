@@ -46,6 +46,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MentoringDescriptionSeeder::class,
         ]);
+        $this->call([
+            ConsultantsSeeder::class,
+        ]);
+        $this->call([
+            FreeTrialsSeeder::class,
+        ]);
 
     }
 }
