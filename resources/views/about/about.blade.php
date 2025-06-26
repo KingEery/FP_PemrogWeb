@@ -28,51 +28,66 @@
     </div>
     @endif
 </div>
-
-{{-- SECTION: TEAM --}}
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Tim Kami</h2>
-    <div class="row justify-content-center">
+    <h2 class="text-center mb-4" style="font-weight: bold;">Tim Kami</h2>
+
+    <div class="d-grid" style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 50px;
+        justify-items: center;
+    ">
         @forelse ($team as $member)
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card h-100 text-center shadow-sm">
-                <div class="card-body">
+        <div class="shadow card" style="
+            width: 100%;
+            max-width: 260px;
+            min-height: 360px;
+            border: none;
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        " onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)';"
+          onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 10px rgba(0,0,0,0.05)';">
 
-                    {{-- FOTO TIM --}}
-                    @if($member->photo)
-                    <img src="{{ asset('storage/' . $member->photo) }}"
-     class="img-thumbnail rounded-circle mb-3"
-     style="width: 100px; height: 100px; object-fit: cover;"
-     alt="{{ $member->name }}">
+            {{-- FOTO TIM --}}
+            <img src="{{ asset('storage/' . $member->photo) }}"
+                 alt="{{ $member->name }}"
+                 style="
+                    width: 220px;
+                    height: 220px;
+                    object-fit: cover;
+                    border-radius: 100%;
+                    border: 10px solid #f0f0f0;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+                    margin-bottom: 16px;
+                 ">
 
+            {{-- NAMA --}}
+            <h5 style="font-weight: 600; margin-bottom: 8px;">{{ $member->name }}</h5>
 
+            {{-- SOCIAL MEDIA --}}
+            <div style="
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                margin-top: auto;
+            ">
+                @if (!empty($member->github))
+                    <a href="{{ $member->github }}" target="_blank" title="GitHub">
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                             style="width: 28px; height: 28px;" alt="GitHub">
+                    </a>
+                @endif
 
-                    @else
-                    <img src="https://via.placeholder.com/100"
-                         class="img-thumbnail rounded-circle mb-3"
-                         alt="Foto tidak tersedia">
-                    @endif
-
-                    {{-- NAMA --}}
-                    <h5 class="card-title">{{ $member->name }}</h5>
-
-                    {{-- SOCIAL MEDIA --}}
-                    <div class="d-flex justify-content-center align-items-center mt-3" style="gap: 10px;">
-                        @if($member->github)
-                        <a href="{{ $member->github }}" target="_blank" title="GitHub">
-                            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-                                 style="width: 24px; height: 24px;" alt="GitHub">
-                        </a>
-                        @endif
-                        @if($member->instagram)
-                        <a href="{{ $member->instagram }}" target="_blank" title="Instagram">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
-                                 style="width: 24px; height: 24px;" alt="Instagram">
-                        </a>
-                        @endif
-                    </div>
-
-                </div>
+                @if (!empty($member->instagram))
+                    <a href="{{ $member->instagram }}" target="_blank" title="Instagram">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
+                             style="width: 28px; height: 28px;" alt="Instagram">
+                    </a>
+                @endif
             </div>
         </div>
         @empty
@@ -80,5 +95,7 @@
         @endforelse
     </div>
 </div>
+
+
 
 @endsection
