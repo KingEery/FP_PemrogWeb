@@ -6,7 +6,7 @@ use App\Http\Controllers\DashboardConsultanController;
 use App\Http\Controllers\ConsultantController;
 use App\Http\Controllers\FreeTrialController;
 use Illuminate\Support\Facades\DB;
-
+use App\Http\Controllers\OrderController;
 
 // Tambahkan di bagian atas routes/api.php sebelum Route::prefix('v1')
 Route::get('/test-stats', function () {
@@ -84,4 +84,25 @@ Route::prefix('public')->group(function () {
     Route::get('/consultants/{id}', [ConsultantController::class, 'publicShow']);
     Route::get('/free-trials', [FreeTrialController::class, 'publicIndex']);
     Route::get('/free-trials/{id}', [FreeTrialController::class, 'publicShow']);
+    
+});
+Route::prefix('v1')->group(function () {
+    // CRUD Order
+    Route::prefix('orders')->group(function () {
+        Route::get('/', [OrderController::class, 'index']);             // GET /api/v1/orders
+        Route::post('/', [OrderController::class, 'store']);            // POST /api/v1/orders
+        Route::get('/{id}', [OrderController::class, 'show']);          // GET /api/v1/orders/{id}
+        Route::put('/{id}', [OrderController::class, 'update']);        // PUT /api/v1/orders/{id}
+        Route::delete('/{id}', [OrderController::class, 'destroy']);    // DELETE /api/v1/orders/{id}
+        
+        Route::get('/', function () {
+            return view('welcome');
+        });
+        
+        // INI ROUTE UNTUK HALAMAN PEMBAYARANMU
+        Route::get('/', function () {
+            return view('welcome');
+        });
+        Route::get('/checkout', [OrderController::class, 'createTransaction'])->name('checkout');
+    });
 });

@@ -62,9 +62,9 @@ Route::get('/course_content', function () {
 //     return view('mentoring.mentoring_mendaftar');
 // })->name('mentoring_mendaftar');
 
-Route::get('/payment', function() {
-    return view('payment.payment');
-})->name('payment');
+// Route::get('/payment', function() {
+//     return view('payment.payment');
+// })->name('payment');
 
 Route::get('/learnmore', function() {
     return view('learnmore.learnmore');
@@ -96,6 +96,7 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.for
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+
 Route::get('/tanyamentor', function () {
     return view('user.tanyamentor');
 })->name('tanyamentor');
@@ -125,7 +126,7 @@ Route::get('/profil_consultan/{id}', [ConsultantController::class, 'show'])->nam
 
 // API routes untuk AJAX (optional)
 Route::get('/api/consultants', [MentoringController::class, 'getConsultants'])->name('api.consultants');
-
+Route::get('/payment', [App\Http\Controllers\OrderController::class, 'createTransaction'])->name('payment');
 
 
 // Perbaiki (BENAR)
@@ -167,4 +168,3 @@ Route::post('/session/keep-alive', function () {
 //     Route::put('/booking/{id}/status', [DashboardConsultanController::class, 'updateBookingStatus'])->name('dashboard.consultan.booking.status');
 //     Route::get('/chart-data', [DashboardConsultanController::class, 'chartData'])->name('dashboard.consultan.chart');
 // });
-
