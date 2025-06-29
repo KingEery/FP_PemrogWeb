@@ -24,8 +24,19 @@
             <div class="md:w-2/3">
                 <!-- Event Image -->
                 <div>
-                    <img src="{{ $event->description->image ? asset('storage/' . $event->description->image) : ($event->image ? asset('storage/' . $event->image) : asset('images/default-event.jpg')) }}" 
-                        alt="Event Image" class="w-full h-96 rounded-xl object-cover">
+                    <img 
+                        src="{{ 
+                            $event->description && $event->description->image
+                            ? (Str::startsWith($event->description->image, 'image/') 
+                                    ? asset($event->description->image) 
+                                    : asset('storage/' . $event->description->image))
+                            : ($event->image 
+                                ? asset('storage/' . $event->image) 
+                                : asset('images/default-event.jpg')) 
+                        }}" 
+                        alt="Event Image" 
+                        class="w-full h-96 rounded-xl object-cover">
+> 
                     <div class="mt-4 p-3">
                         <span class="inline-block bg-[#564AB1] text-white px-7 py-3 rounded-full text-sm font-medium">
                             {{ ucfirst(str_replace('-', ' ', $event->category)) }}
@@ -80,9 +91,9 @@
                             Rp {{ number_format($event->description->price_original) }}
                         </p>
                     @endif
-                    <button class="block bg-[#564AB1] text-white text-center py-3 px-4 rounded-lg font-bold w-full hover:bg-[#463C8F] transition">
+                    <a href='/payment' class="block bg-[#564AB1] text-white text-center py-3 px-4 rounded-lg font-bold w-full hover:bg-[#463C8F] transition">
                         Daftar Event
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Speaker -->

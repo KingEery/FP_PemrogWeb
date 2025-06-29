@@ -35,10 +35,16 @@
             <a href="{{ route('event.show', $event->id) }}" class="block h-full">
               <div class="h-full flex flex-col bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg event-card" data-category="{{ $event->category }}">
                 <!-- Event Image -->
-                <img 
-                  src="{{ $event->description && $event->description->image ? asset('storage/' . $event->description->image) : ($event->image ? asset('storage/' . $event->image) : asset('images/default-event.jpg')) }}" 
-                  alt="{{ $event->description ? $event->description->title : $event->title }}" 
-                  class="w-full h-[150px] object-cover aspect-[4/3]">
+                <img src="{{ $event->description && $event->description->image ? (Str::startsWith($event->description->image, 'image/') 
+                              ? asset($event->description->image) : asset('storage/' . $event->description->image)) 
+                              : ($event->image 
+                                  ? asset('storage/' . $event->image) 
+                                  : asset('image/default-event.jpg')) 
+                        }}" 
+                        alt="{{ $event->description ? $event->description->title : $event->title }}" 
+                        class="w-full h-[150px] object-cover aspect-[4/3]"
+                      >
+
                 
                 <!-- Event Content -->
                 <div class="p-5 flex-1 flex flex-col">
@@ -89,8 +95,6 @@
   <script
   src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
   type="module" defer></script>
-
-  <script src="/js/event.js" defer></script>
 
 @endsection
 

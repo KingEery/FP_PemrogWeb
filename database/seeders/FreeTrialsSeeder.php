@@ -175,7 +175,7 @@ class FreeTrialsSeeder extends Seeder
                 $isActive = rand(1, 100) > 10;
                 
                 $freeTrials[] = [
-                    'consultan_id' => $consultanId,
+                    'consultant_id' => $consultanId,
                     'title' => $template['title'],
                     'description' => $template['description'],
                     'duration' => $template['duration'],
@@ -221,7 +221,7 @@ class FreeTrialsSeeder extends Seeder
         
         // Show some examples - DIPERBAIKI: consultants bukan consultans
         $examples = DB::table('free_trials')
-            ->join('consultants', 'free_trials.consultan_id', '=', 'consultants.id')
+            ->join('consultants', 'free_trials.consultant_id', '=', 'consultants.id')
             ->select('free_trials.title', 'consultants.name', 'consultants.specialty')
             ->limit(3)
             ->get();

@@ -9,12 +9,13 @@ class MentoringDescriptionSeeder extends Seeder
 {
     public function run()
     {
+        // ===== FULL STACK WEB =====
         MentoringDescription::firstOrCreate(
-            ['slug' => 'full-stack-web-developer-detail'], // cek unik
+            ['slug' => 'full-stack-web-developer-detail'],
             [
                 'title' => 'Full Stack Web Developer – Raih Penghasilan dari Proyek Freelance!',
                 'short_description' => 'Belajar coding dari nol hingga mahir dengan HTML, CSS, dan JavaScript.',
-                'long_description' => 'Program Exclusive Mentoring dari Dunia Coding menawarkan mentoring one-to-one yang dirancang khusus untuk kamu yang kesulitan belajar di lingkungan formal atau mandiri.',
+                'long_description' => 'Program Exclusive Mentoring dari Dunia Coding menawarkan mentoring one-to-one...',
                 'original_price' => 8000000,
                 'discounted_price' => 135000,
                 'image_path' => 'mentoring-descriptions/Mentoring-Mendaftar.avif',
@@ -54,12 +55,13 @@ class MentoringDescriptionSeeder extends Seeder
             ]
         );
 
+        // ===== FLUTTER =====
         MentoringDescription::firstOrCreate(
             ['slug' => 'flutter-mobile-development'],
             [
                 'title' => 'Mobile App Development with Flutter',
                 'short_description' => 'Kuasai pembuatan aplikasi mobile dengan Flutter untuk iOS dan Android.',
-                'long_description' => 'Program mentoring Flutter yang komprehensif untuk membangun aplikasi mobile cross-platform. Dari dasar hingga deployment ke App Store dan Google Play.',
+                'long_description' => 'Program mentoring Flutter yang komprehensif...',
                 'original_price' => 7500000,
                 'discounted_price' => 150000,
                 'image_path' => 'mentoring-descriptions/mobile-app.webp',
@@ -101,12 +103,13 @@ class MentoringDescriptionSeeder extends Seeder
             ]
         );
 
+        // ===== DATA SCIENCE =====
         MentoringDescription::firstOrCreate(
             ['slug' => 'data-science'],
             [
                 'title' => 'Program Data Science',
                 'short_description' => 'Pelajari data science dari dasar hingga mahir dengan Python, Pandas, dan visualisasi data.',
-                'long_description' => 'Mentoring intensif selama 4 bulan yang membahas seluruh fondasi data science. Mulai dari Python dasar, manipulasi data dengan Pandas dan Numpy, hingga visualisasi dan analisis data yang mendalam.',
+                'long_description' => 'Mentoring intensif selama 4 bulan yang membahas seluruh fondasi data science...',
                 'original_price' => 9000000,
                 'discounted_price' => 200000,
                 'image_path' => 'mentoring-descriptions/Data-Science-Images.webp',
@@ -115,7 +118,7 @@ class MentoringDescriptionSeeder extends Seeder
                     ['item' => 'Career Switcher', 'description' => 'Profesional yang ingin beralih ke bidang data dan analitik.'],
                     ['item' => 'Entrepreneur', 'description' => 'Pebisnis yang ingin memahami data untuk pengambilan keputusan.']
                 ],
-                'about_program' => 'Mentoring berbasis proyek yang dirancang untuk membentuk keterampilan analisis data, pemrograman Python, dan visualisasi yang relevan di dunia kerja.',
+                'about_program' => 'Mentoring berbasis proyek yang dirancang untuk membentuk keterampilan analisis data...',
                 'basic_materials' => [
                     ['item' => 'Dasar Python untuk Data Science'],
                     ['item' => 'Struktur Data Python'],

@@ -50,6 +50,12 @@ User::firstOrCreate(
         $this->call([
             MentoringDescriptionSeeder::class,
         ]);
+        $this->call([
+            ConsultantsSeeder::class,
+        ]);
+        $this->call([
+            FreeTrialsSeeder::class,
+        ]);
 
         $this->call(TeamMemberSeeder::class);
 

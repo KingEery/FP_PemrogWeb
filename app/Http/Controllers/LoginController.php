@@ -9,20 +9,17 @@ use App\Models\User;
 
 class LoginController extends Controller
 {
-    // Menampilkan form login
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
-    // Proses login
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            // Redirect sesuai role
             if (Auth::user()->role === 'admin') {
                 return redirect('/dashboard_consultant');
             }
@@ -34,13 +31,11 @@ class LoginController extends Controller
         ])->onlyInput('email');
     }
 
-    // Menampilkan form register
     public function showRegisterForm()
     {
         return view('auth.register');
     }
 
-    // Proses register
     public function register(Request $request)
     {
         $request->validate([
@@ -53,15 +48,14 @@ class LoginController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user', // pastikan default user
+            'role' => 'user', 
         ]);
 
         Auth::login($user);
 
-        return redirect('/'); // langsung ke homepage setelah register
+        return redirect('/'); 
     }
 
-    // Logout
     public function logout(Request $request)
     {
         Auth::logout();

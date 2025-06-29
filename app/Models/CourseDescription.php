@@ -28,8 +28,13 @@ class CourseDescription extends Model
         'image_url',
         'instructor_image_url',
     ];
+
+    protected $casts = [
+        'features' => 'array',
+    ];
+
     public function course()
     {
-        return $this->belongsTo(Course::class,'course_id');
+        return $this->belongsTo(Course::class);
     }
 }
