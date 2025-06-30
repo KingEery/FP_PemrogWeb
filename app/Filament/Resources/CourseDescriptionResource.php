@@ -26,6 +26,7 @@ class CourseDescriptionResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+
     public static function form(Form $form): Form
     {
         return $form
@@ -74,7 +75,7 @@ class CourseDescriptionResource extends Resource
                     ->preserveFilenames()
                     ->imagePreviewHeight('150')
                     ->required(),
-                    
+
                 Repeater::make('features')
                     ->schema([
                         Forms\Components\TextInput::make('value')->label('Feature')->required(),
@@ -139,5 +140,9 @@ class CourseDescriptionResource extends Resource
             'create' => Pages\CreateCourseDescription::route('/create'),
             'edit' => Pages\EditCourseDescription::route('/{record}/edit'),
         ];
+    }
+    public static function getNavigationLabel(): string
+    {
+        return 'Course';
     }
 }
