@@ -5,6 +5,6 @@ Anggota :
 2. 23.11.5538 - Satrio Raja Nabil Rizky
 3. 23.11.5539 - Dimas Bregas Khalis Sumarsana
 4. 23.11.5542 - Unzurna Zahira Wiyanda 
-6. 23.11.5543 - Rizqy Zulmiasta Albar
+6. 23.11.5543 - Rizqy Zulmiazta Albar
 7. 23.11.5548 - Muhammad Raihan Alfarizi
 8. 23.11.5555 - Yafa Nanda Putra

@@ -11,6 +11,7 @@ class CourseDescriptionsSeeder extends Seeder
     {
         CourseDescription::create([
             'course_id' => 1,
+            'title' => 'Web Programming Laravel',
             'tag' => 'Web Programming',
             'overview' => 'Kursus ini mengajarkan dasar-dasar pemrograman web menggunakan Laravel',
             'price' => 99000,

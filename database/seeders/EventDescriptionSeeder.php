@@ -10,14 +10,17 @@ class EventDescriptionSeeder extends Seeder
 {
     public function run()
     {
-        // Nonaktifkan foreign key checks sementara
-        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+       if (DB::getDriverName() === 'mysql') {
+    DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+}
 
-        // Kosongkan tabel jika ada
-        EventsDescription::query()->delete();
+// Kosongkan tabel
+EventsDescription::query()->delete();
 
-        // Aktifkan kembali foreign key checks
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+if (DB::getDriverName() === 'mysql') {
+    DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+}
+
 
         // Seeder data
         $events = [

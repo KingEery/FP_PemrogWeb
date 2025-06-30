@@ -193,9 +193,12 @@ class ConsultantsSeeder extends Seeder
                 'is_active' => true,
             ]
         ];
+foreach ($consultants as $consultant) {
+    Consultant::firstOrCreate(
+        ['email' => $consultant['email']], // kunci unik
+        $consultant                        // data lainnya
+    );
+}
 
-        foreach ($consultants as $consultant) {
-            Consultant::create($consultant);
-        }
     }
 }

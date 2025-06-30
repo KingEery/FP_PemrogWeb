@@ -29,6 +29,15 @@ Route::get('/', function () {
 //     return view('mentoring.about_consultan');
 // })->name('about_consultan');
 
+use App\Http\Controllers\AboutController;
+
+Route::get('/about', [AboutController::class, 'index']);
+
+use App\Http\Controllers\TeamMemberController;
+
+Route::get('/about', [TeamMemberController::class, 'index']);
+
+
 Route::get('/profil_consultan', function () {
     return view('mentoring.profil_consultan');
 })->name('profil_consultan');
