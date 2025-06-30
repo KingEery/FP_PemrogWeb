@@ -30,7 +30,11 @@ class CourseDescription extends Model
     ];
 
     protected $casts = [
-        'features' => 'array',
+        'features' => 'array', // Ensure features is an array
+        'price' => 'decimal:2', // Cast price as decimal
+        'price_discount' => 'decimal:2', // Cast discount as decimal
+        'video_count' => 'integer', // Cast video count as integer
+        'duration' => 'integer', // Cast duration as integer
     ];
 
     public function course()

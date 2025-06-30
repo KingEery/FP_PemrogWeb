@@ -126,9 +126,12 @@ Route::get('/profil_consultan/{id}', [ConsultantController::class, 'show'])->nam
 
 // API routes untuk AJAX (optional)
 Route::get('/api/consultants', [MentoringController::class, 'getConsultants'])->name('api.consultants');
-Route::get('/payment', [App\Http\Controllers\OrderController::class, 'createTransaction'])->name('payment');
+Route::get('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'show'])->name('payment.show');
+Route::get('/course_description/{id}', [CourseDescriptionController::class, 'show'])->name('course_description.show');
 
-
+Route::get('/payment/success', function () {
+    return view('payment.success');
+})->name('payment.success');
 // Perbaiki (BENAR)
 // Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 
