@@ -7,7 +7,9 @@ use App\Filament\Resources\CourseDescriptionResource\RelationManagers;
 use App\Models\CourseDescription;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\HasManyRepeater;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
@@ -55,12 +57,6 @@ class CourseDescriptionResource extends Resource
                 TextInput::make('instructor_position'),
                 TextInput::make('video_count')->numeric(),
                 TextInput::make('duration')->numeric(),
-                Repeater::make('features')
-    ->schema([
-        Forms\Components\TextInput::make('value')->label('Feature')->required(),
-    ])
-    ->label('Features')
-    ->default([]),
                 FileUpload::make('image_url')
                     ->label('Course Image') // bisa diganti sesuai kebutuhan
                     ->image() // ini wajib untuk validasi image/*
@@ -78,6 +74,28 @@ class CourseDescriptionResource extends Resource
                     ->preserveFilenames()
                     ->imagePreviewHeight('150')
                     ->required(),
+                    
+                Repeater::make('features')
+                    ->schema([
+                        Forms\Components\TextInput::make('value')->label('Feature')->required(),
+                    ])
+                    ->label('Features')
+                    ->default([]),
+
+                HasManyRepeater::make('materis')->columnSpanFull()
+                    ->relationship('materis')
+                    ->label('Daftar Materi')
+                    ->schema([
+                        TextInput::make('judul')->label('Judul')->required(),
+                        TextInput::make('slug')
+                            ->label('Slug')
+                            ->required()
+                            ->unique(ignoreRecord: true),
+                        Forms\Components\RichEditor::make('konten')->label('Isi Materi')->required()->columnSpanFull(),
+                    ])
+                    ->minItems(1)
+                    ->addActionLabel('Tambah Materi')
+                    ->columns(1),
             ]);
     }
 
@@ -113,12 +131,6 @@ class CourseDescriptionResource extends Resource
             ]);
     }
 
-    public static function getRelations(): array
-    {
-        return [
-            //
-        ];
-    }
 
     public static function getPages(): array
     {

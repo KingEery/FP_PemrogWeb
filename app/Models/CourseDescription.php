@@ -41,4 +41,8 @@ class CourseDescription extends Model
     {
         return $this->belongsTo(Course::class);
     }
+    public function materis()
+    {
+        return $this->hasMany(Materi::class);
+    }
 }

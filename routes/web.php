@@ -16,6 +16,7 @@ use App\Http\Controllers\CourseDescriptionController;
 use App\Http\Controllers\ConsultantController;
 use App\Http\Controllers\FreeTrialController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CourseContentController;
 use App\Http\Controllers\DashboardConsultanController;
 
 
@@ -136,7 +137,6 @@ Route::get('/profil_consultan/{id}', [ConsultantController::class, 'show'])->nam
 // API routes untuk AJAX (optional)
 Route::get('/api/consultants', [MentoringController::class, 'getConsultants'])->name('api.consultants');
 Route::get('/payment/{id}', [App\Http\Controllers\PaymentController::class, 'show'])->name('payment.show');
-Route::get('/course_description/{id}', [CourseDescriptionController::class, 'show'])->name('course_description.show');
 
 Route::get('/payment/success', function () {
     return view('payment.success');
@@ -153,7 +153,7 @@ Route::get('/mentoring/{id}', [MentoringController::class, 'show'])->name('mento
 Route::get('/course_description', [CourseDescriptionController::class,'index']);
 Route::get('/course', [CourseController::class, 'index'])->name('courses');
 Route::get('/course_description/{id}', [CourseDescriptionController::class, 'show']);
-
+Route::get('/course_content', [CourseContentController::class, 'index']);
 // Session keep alive route (for CSRF token refresh)
 Route::post('/session/keep-alive', function () {
     return response()->json(['status' => 'alive']);
@@ -172,7 +172,7 @@ Route::post('/session/keep-alive', function () {
 // // // Dashboard Consultan Routes - REAL-TIME ENABLED
 // Route::prefix('dashboard-consultan')->group(function () {
 //     Route::get('/', [DashboardConsultanController::class, 'dashboard'])->name('dashboard.consultan');
-    
+
 //     // API Routes untuk Real-time Dashboard
 //     Route::get('/stats', [DashboardConsultanController::class, 'getStats'])->name('dashboard.consultan.stats');
 //     Route::get('/bookings', [DashboardConsultanController::class, 'apiBookings'])->name('dashboard.consultan.bookings');

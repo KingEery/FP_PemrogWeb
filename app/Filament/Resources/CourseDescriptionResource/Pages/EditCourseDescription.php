@@ -16,4 +16,13 @@ class EditCourseDescription extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    protected function beforeSave(): void
+    {
+        $materiCount = $this->record->materis()->count();
+
+        if ($materiCount === 0) {
+            $this->notify('danger', 'Silakan tambahkan materi terlebih dahulu sebelum menyimpan.');
+            $this->halt(); // menghentikan proses simpan
+        }
+    }
 }

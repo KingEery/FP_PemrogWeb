@@ -46,7 +46,7 @@ User::firstOrCreate(
          $this->call([
             EventDescriptionSeeder::class,
         ]);
-       
+
         $this->call([
             MentoringDescriptionSeeder::class,
         ]);
@@ -56,6 +56,7 @@ User::firstOrCreate(
         $this->call([
             FreeTrialsSeeder::class,
         ]);
+        $this->call([MateriSeeder::class]);
 
         $this->call(TeamMemberSeeder::class);
 
